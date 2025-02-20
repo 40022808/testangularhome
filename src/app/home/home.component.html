@@ -1,0 +1,51 @@
+<div class="body">
+    <div class="moon">
+        <div class="moon_div1"></div>
+        <div class="moon_div2"></div>
+        <div class="moon_div3"></div>
+        <div class="moon_div4"></div>
+    </div>
+
+    <div class="h1s" *ngFor="let item of items">
+
+
+        <div class="h1div" #child>
+            <h1 class="h1">{{"Welcome!" | translate}} </h1>
+            <h1 class="h1">{{"to the barber shop!" | translate}}</h1>
+            <img src="assets/images/image1.svg" alt="scissors" class="imagebig">
+        </div>
+
+
+        <div class="h1div" #child>
+            <h1 class="h1">{{"Appointment time!" | translate}} <img src="assets/images/image2.svg" alt="time" class="imagesmall"></h1>
+            <h1 class="h1">{{"No need to wait!" | translate}} <img src="assets/images/image3.svg" alt="good" class="imagesmall"></h1>
+        </div>
+
+
+        <div class="h1div" #child>
+            <h1 class="h1">{{"Web Shop" | translate}} <img src="assets/images/image4.svg" alt="shop" class="imagesmall"></h1>
+            <h1 class="h1">{{"Affordable" | translate}} <img src="assets/images/image5.svg" alt="money" class="imagesmall2"></h1>
+            <br>
+            <h1 class="h1">{{"Complete range of products" | translate}} </h1>
+        </div>
+
+
+        <div class="h1div" #child>
+            <h1 class="h1">{{"express delivery" | translate}} <img src="assets/images/image6.svg" alt="express delivery" class="imagesmall"></h1>
+            <h1 class="h1">{{"fast and safe" | translate}} <img src="assets/images/image7.svg" alt="car" class="imagesmall2"></h1>
+        </div>
+        
+        
+        <div class="h1div" #child>
+            <a class="link">{{"Login Now!" | translate}}</a>
+            <br>
+            <img src="assets/images/image8.svg" alt="heart" class="imagebig">
+            
+        </div>
+        
+    </div>
+    
+    
+
+</div>
+

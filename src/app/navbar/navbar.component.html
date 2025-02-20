@@ -1,0 +1,23 @@
+<div class="nav">
+    <div class="logo">
+        <img src="assets/images/logo.png" alt="Logo" class="logoimage">
+        <pre>  </pre>
+        <h1 class="logoh1">LOGO</h1>
+    </div>
+    
+    <div class="nav-links">
+        <a [routerLink]="['/', currentLang, 'home']" routerLinkActive="active">{{"Home" | translate}}</a>
+        <a [routerLink]="['/', currentLang, 'service']" routerLinkActive="active">{{"Service" | translate}}</a>
+        <a [routerLink]="['/', currentLang, 'webshop']" routerLinkActive="active">{{"Web Shop" | translate}}</a>
+
+        <div class="language-switcher" (click)="toggleDropdown()">
+            <button class="language_btn">{{"Language" | translate}}</button>
+            <ul *ngIf="dropdownOpen" class="dropdown">
+              <li (click)="switchLang('en')">{{"English" | translate}}</li>
+              <li (click)="switchLang('hu')">{{"Hungarian" | translate}}</li>
+              <li (click)="switchLang('zh')">{{"Chinese" | translate}}</li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
