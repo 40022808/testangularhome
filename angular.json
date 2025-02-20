@@ -4,6 +4,13 @@
   "newProjectRoot": "projects",
   "projects": {
     "TestHome": {
+      "i18n": {
+         "sourceLocale": "en",
+         "locales": {
+            "zh": "src/locale/messages.zh.xlf",
+            "hu": "src/locale/messages.hu.xlf"
+         }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
