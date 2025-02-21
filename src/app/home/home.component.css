@@ -9,7 +9,7 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0);
     background-image:
-        url('/assets/images/stars.png'),
+        url('testangularhome/assets/images/stars.png'),
         linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
     background-size: auto, cover; 
     background-repeat: repeat, no-repeat;
