@@ -14,5 +14,22 @@
     "Complete range of products":"Complete range of products",
     "express delivery":"express delivery",
     "fast and safe":"fast and safe",
-    "Login Now!":"Login Now!"
+    "Login Now!":"Login Now!",
+    "Login":"Login",
+    "Register":"Register",
+    "Username":"Username",
+    "Email":"Email",
+    "Password":"Password",
+    "Confirm Password":"Confirm Password",
+    "Don't have an account?":"Don't have an account?",
+    "Click here":"Click here",
+    "Next":"Next",
+    "Back":"Back",
+    "Username is required!":"Username is required!",
+    "Email is required!":"Email is required!",
+    "Passwords do not match!":"Passwords do not match!",
+    "Invalid email format!":"Invalid email format!",
+    "Password cannot contain punctuation!":"Password cannot contain punctuation!",
+    "Passwords is required!":"Passwords is required!"
+
 }

@@ -14,5 +14,21 @@
     "Complete range of products":"Teljes termékpaletta",
     "express delivery":"expressz szállítás",
     "fast and safe":"gyors és biztonságos",
-    "Login Now!":"Jelentkezzen be most!"
+    "Login Now!":"Jelentkezzen be most!",
+    "Login":"Bejelentkezés",
+    "Register":"Regisztráció",
+    "Username":"Felhasználónév",
+    "Email":"Email",
+    "Password":"Jelszó",
+    "Confirm Password":"Jelszó megerősítése",
+    "Don't have an account?":"Nincs fiókja?",
+    "Click here":"Kattintson ide",
+    "Next":"Következő",
+    "Back":"Vissza",
+    "Username is required!":"Felhasználónév nem lehet üres!",
+    "Email is required!":"Az e-mail cím nem lehet üres!",
+    "Passwords do not match!":"A jelszavak nem egyeznek!",
+    "Invalid email format!":"Érvénytelen e-mail formátum!",
+    "Password cannot contain punctuation!":"A jelszó nem tartalmazhat írásjeleket!",
+    "Passwords is required!":"A jelszó nem lehet üres!"
 }

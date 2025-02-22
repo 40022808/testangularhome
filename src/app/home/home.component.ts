@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -32,7 +34,23 @@ export class HomeComponent implements AfterViewInit {
       observer.observe(child.nativeElement);
     });
   }
+  
 
+  ngOnInit() {
+      this.router.navigate([this.currentLang, 'home']);
+    }
+  
+  currentLang = 'en';
+  
+  constructor(private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
+    this.route.params.subscribe(params => {
+      const lang = params['lang'];
+      if (lang) {
+        this.currentLang = lang;
+        this.translate.use(lang);
+      }
+    });
+  }
   
 
 }

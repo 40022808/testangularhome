@@ -1,0 +1,42 @@
+<div class="body">
+
+    <div class="register">
+        <h1>{{"Register" | translate}}</h1>
+      
+        <div class="input-div">
+      
+          <!-- Username Input -->
+          <div class="input-div-1" *ngIf="currentStep === 1" [ngClass]="{'fade-in': currentStep === 1}">
+            <input type="text" placeholder='{{"Username" | translate}}' class="input" maxlength="20" [(ngModel)]="username" required>
+            <div *ngIf="usernameError" class="error">{{"Username is required!" | translate}}</div>
+          </div>
+          
+          <!-- Email Input -->
+          <div class="input-div-2" *ngIf="currentStep === 2" [ngClass]="{'fade-in': currentStep === 2}">
+            <input type="email" placeholder='{{"Email" | translate}}' class="input" [(ngModel)]="email" required>
+            <div *ngIf="emailError" class="error">{{"Email is required!" | translate}}</div>
+            <div *ngIf="emailFormatError" class="error">{{"Invalid email format!" | translate}}</div>
+          </div>
+      
+          <!-- Password Inputs -->
+          <div class="input-div-3" *ngIf="currentStep === 3" [ngClass]="{'fade-in': currentStep === 3}">
+            <input type="password" placeholder='{{"Password" | translate}}' class="input" maxlength="10" [(ngModel)]="password" required>
+            <input type="password" placeholder='{{"Confirm Password" | translate}}' class="input" maxlength="10" [(ngModel)]="confirmPassword" required>
+            <div *ngIf="passwordError" class="error">{{"Passwords do not match!" | translate}}</div>
+            <div *ngIf="passwordnullError" class="error">{{"Passwords is required!" | translate}}</div>
+            <div *ngIf="passwordFormatError" class="error">{{"Password cannot contain punctuation!" | translate}}</div>
+          </div>
+      
+        </div>
+      
+        <div class="register-btn-div">
+          <button class="register-btn" (click)="previousStep()">{{"Back" | translate}}</button>
+          <button class="register-btn" (click)="nextStep()">{{"Next" | translate}}</button>
+        </div>
+    </div>
+      
+      
+
+      
+      
+</div>

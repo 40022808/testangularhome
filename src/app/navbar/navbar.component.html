@@ -10,8 +10,10 @@
         <a [routerLink]="['/', currentLang, 'service']" routerLinkActive="active">{{"Service" | translate}}</a>
         <a [routerLink]="['/', currentLang, 'webshop']" routerLinkActive="active">{{"Web Shop" | translate}}</a>
 
+        <a [routerLink]="['/', currentLang, 'user']" routerLinkActive="active" class="user_a"><img src="assets/images/user.svg" alt="user" class="img_user"></a>
+
         <div class="language-switcher" (click)="toggleDropdown()">
-            <button class="language_btn">{{"Language" | translate}}</button>
+            <button class="language_btn"><img src="assets/images/language.svg" alt="language" class="img_lan"></button>
             <ul *ngIf="dropdownOpen" class="dropdown">
               <li (click)="switchLang('en')">{{"English" | translate}}</li>
               <li (click)="switchLang('hu')">{{"Hungarian" | translate}}</li>

@@ -37,7 +37,7 @@
         
         
         <div class="h1div" #child>
-            <a class="link">{{"Login Now!" | translate}}</a>
+            <a class="link" [routerLink]="['/', currentLang, 'user']" routerLinkActive="active">{{"Login Now!" | translate}}</a>
             <br>
             <img src="assets/images/image8.svg" alt="heart" class="imagebig">
             

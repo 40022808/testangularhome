@@ -9,6 +9,9 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -20,7 +23,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    UserComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

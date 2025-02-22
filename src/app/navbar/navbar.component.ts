@@ -32,8 +32,18 @@ export class NavbarComponent {
   }
 
   switchLang(lang: string) {
+    
+    const currentUrl = this.router.url;
+
+    
+    const newUrl = currentUrl.replace(`/${this.currentLang}`, `/${lang}`);
+
+    
     this.currentLang = lang;
     this.translate.use(lang);
-    this.router.navigate(['/', lang, 'home']);
+
+    
+    this.router.navigateByUrl(newUrl);
   }
+
 }
