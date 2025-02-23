@@ -2,23 +2,27 @@
 
     <div class="login">
         <h1>{{"Login" | translate}}</h1>
-
-
+      
         <div class="input-div">
-            <input type="text" placeholder='{{"Username" | translate}}' class="input" maxlength="20">
-            <input type="email" placeholder='{{"Email" | translate}}' class="input">
-            <input type="password" placeholder='{{"Password" | translate}}' class="input" maxlength="10">
-            <!-- <input type="text" placeholder='{{"Confirm Password" | translate}}' class="input"> -->
+            <div *ngIf="usernameError" class="error">{{"Username is required!" | translate}}</div>
+            <div *ngIf="emailError" class="error">{{"Email is required!" | translate}}</div>
+            <div *ngIf="passwordError" class="error">{{"Password is required!" | translate}}</div>
+            <div *ngIf="loginError" class="error">{{"Login failed. Please check your credentials and try again!" | translate}}</div>
+            <input type="text" [(ngModel)]="username" placeholder='{{"Username" | translate}}' class="input" maxlength="20">       
+            <input type="email" [(ngModel)]="email" placeholder='{{"Email" | translate}}' class="input">
+            <input type="password" [(ngModel)]="password" placeholder='{{"Password" | translate}}' class="input" maxlength="10">
+            
         </div>
-
+      
         <div class="login-btn-div">
-            <button class="login-btn">{{"Login" | translate}}</button>
+          <button class="login-btn" (click)="login()">{{"Login" | translate}}</button>
         </div>
-        
-
+      
         <div class="register-link">
-            <p>{{"Don't have an account?" | translate}}<a [routerLink]="['/', currentLang, 'register']" routerLinkActive="active">{{"Click here" | translate}}!</a></p>
+          <p>{{"Don't have an account?" | translate}}<a [routerLink]="['/', currentLang, 'register']" routerLinkActive="active">{{"Click here" | translate}}!</a></p>
         </div>
-    </div>
+      </div>
+      
+      
 
 </div>

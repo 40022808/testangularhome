@@ -30,6 +30,19 @@
     "Passwords do not match!":"Passwords do not match!",
     "Invalid email format!":"Invalid email format!",
     "Password cannot contain punctuation!":"Password cannot contain punctuation!",
-    "Passwords is required!":"Passwords is required!"
+    "Passwords is required!":"Passwords is required!",
+    "Password is required!":"Password is required!",
+    "Login failed. Please check your credentials and try again!":"Login failed. Please check your credentials and try again!",
+    "User Information":"User Information",
+    "Name":"Name",
+    "Logout":"Logout",
+    "Failed to fetch user information. Please try again later!":"Failed to fetch user information. Please try again later!",
+    "User is not logged in. Please log in!":"User is not logged in. Please log in!",
+    "Logout failed. Please try again later!":"Logout failed. Please try again later!",
+    "Loading user information...":"Loading user information...",
+    "User":"User",
+    "Admin":"Admin",
+    "Super Admin":"Super Admin",
+    "User Role":"User Role"
 
 }

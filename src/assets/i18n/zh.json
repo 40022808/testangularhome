@@ -30,5 +30,18 @@
     "Passwords do not match!":"密码不匹配!",
     "Invalid email format!":"无效的电子邮件格式!",
     "Password cannot contain punctuation!":"密码不能包含标点符号!",
-    "Passwords is required!":"密码是必需的!"
+    "Passwords is required!":"密码是必需的!",
+    "Password is required!":"密码是必需的!",
+    "Login failed. Please check your credentials and try again!":"登录失败。请检查您的信息，然后重试!",
+    "User Information":"用户信息",
+    "Name":"用户名",
+    "Logout":"登出",
+    "Failed to fetch user information. Please try again later!":"无法获取用户信息。请稍后重试!",
+    "User is not logged in. Please log in!":"用户未登录。请登录!",
+    "Logout failed. Please try again later!":"登出失败。请稍后重试!",
+    "Loading user information...":"正在加载用户信息...",
+    "User":"用户",
+    "Admin":"管理员",
+    "Super Admin":"超级管理员",
+    "User Role":"权限等级"
 }

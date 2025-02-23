@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.body {
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    background-image:
+        url('/assets/images/stars.png'),
+        linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
+    background-size: auto, cover; 
+    background-repeat: repeat, no-repeat;
+    background-position: center center, center center;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user-div-info {
+    width: 30vw;
+    height: 50vh;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.user-div-info h1 {
+    font-size: 1.5em;
+    margin: 20px;
+    position: absolute;
+    top: 1vh;
+    
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    position: relative;
+    top: 4vh;
+
+}
+
+.user-info h2 {
+    font-size: 1.2em;
+}
+
+.user-info p {
+    width: 20vw;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+
+.logout {
+    width: 20vw;
+    height: 5vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 5px rgba(0, 0, 0, 0);
+    transition: all 0.2s;
+    border-radius: 10px;
+}
+
+
+.logout:hover {
+    border: solid 5px black;
+}
+
+

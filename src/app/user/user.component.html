@@ -1,1 +1,31 @@
-<p>user works!</p>
+<div class="body">
+
+    <div class="user-div-info">
+        <h1>{{ 'User Information' | translate }}</h1>
+      
+        <div *ngIf="userInfo" class="user-info">
+            <h2>{{ 'User Role' | translate }}</h2>
+            <p>{{ getUserRoleTranslationKey(userRole) | translate }}</p>
+            <h2>{{ 'Name' | translate }}</h2>
+            <p>{{ userInfo.name }}</p>
+            <h2>{{ 'Email' | translate }}</h2>
+            <p>{{ userInfo.email }}</p>
+        </div>
+        
+        <div *ngIf="userError" class="error">{{ 'Failed to fetch user information. Please try again later!' | translate }}</div>
+        <div *ngIf="userloginError" class="error">{{ 'User is not logged in. Please log in!' | translate }}</div>
+        <div *ngIf="logoutError" class="error">{{ 'Logout failed. Please try again later!' | translate }}</div>
+      
+        <div *ngIf="!userInfo && !userError">
+          <p>{{ 'Loading user information...' | translate }}</p>
+        </div>
+    </div>
+      
+    <button (click)="logout()" class="logout">{{ 'Logout' | translate }}</button>
+    
+    
+
+      
+
+</div>
+  

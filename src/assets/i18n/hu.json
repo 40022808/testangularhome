@@ -30,5 +30,18 @@
     "Passwords do not match!":"A jelszavak nem egyeznek!",
     "Invalid email format!":"Érvénytelen e-mail formátum!",
     "Password cannot contain punctuation!":"A jelszó nem tartalmazhat írásjeleket!",
-    "Passwords is required!":"A jelszó nem lehet üres!"
+    "Passwords is required!":"A jelszó nem lehet üres!",
+    "Password is required!":"A jelszó nem lehet üres!",
+    "Login failed. Please check your credentials and try again!":"Sikertelen bejelentkezés. Kérjük, ellenőrizze az adatait, majd próbálja újra!",
+    "User Information":"Felhasználói információ",
+    "Name":"Név",
+    "Logout":"Kijelentkezés",
+    "Failed to fetch user information. Please try again later!":"Nem sikerült lekérni a felhasználói információkat. Kérjük, próbálja újra később!",
+    "User is not logged in. Please log in!":"A felhasználó nincs bejelentkezve. Kérjük, jelentkezzen be!",
+    "Logout failed. Please try again later!":"A kijelentkezés nem sikerült. Kérjük, próbálja újra később!",
+    "Loading user information...":"Felhasználói információk betöltése...",
+    "User":"Felhasználó",
+    "Admin":"Admin",
+    "Super Admin":"Szuper Admin",
+    "User Role":"Felhasználói engedélyek"
 }

@@ -100,8 +100,8 @@
 }
 
 .language-switcher {
-    position: relative;
-    left: 16vw;
+    position: absolute;
+    right: -15vw;
     display: inline-block;
 }
   
@@ -136,8 +136,8 @@
 
 
 .user_a {
-    position: relative;
-    left: 20vw;
+    position: absolute;
+    right: -10vw;
     display: flex;
     align-items: center;
 }

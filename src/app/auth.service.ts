@@ -1,25 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { ApiService } from './api.service';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private router: Router) { }
 
-  isLoggedIn(): boolean {
-    // 这里可以添加具体的逻辑，例如检查本地存储或调用后端 API 以确定用户是否已登录
-    return !!localStorage.getItem('userToken');
+  constructor(private apiService: ApiService) { }
+
+  isLoggedIn(): Observable<boolean> {
+    const token = localStorage.getItem('userToken');
+    if (!token) {
+      return new Observable(observer => observer.next(false));
+    }
+    return this.verifyToken(token);
   }
 
-  login(): void {
-    // 模拟登录逻辑
-    localStorage.setItem('userToken', 'sampleToken');
+  verifyToken(token: string): Observable<boolean> {
+    return new Observable(observer => {
+      this.apiService.verifyToken(token).subscribe(
+        response => {
+          observer.next(response.isValid);
+        },
+        error => {
+          console.error('Token verification error', error);
+          observer.next(false);
+        }
+      );
+    });
   }
-
-  logout(): void {
-    // 模拟登出逻辑
-    localStorage.removeItem('userToken');
-    this.router.navigate(['/login']);
-  }
+  
 }

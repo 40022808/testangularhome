@@ -16,7 +16,13 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
-    this.router.navigate([this.currentLang, 'home']);
+    const storedLang = localStorage.getItem('language');
+    if (storedLang) {
+      this.currentLang = storedLang;
+      this.translate.use(storedLang);
+    } else {
+      this.router.navigate([this.currentLang, 'home']);
+    }
   }
 
   currentLang = 'en';
@@ -27,23 +33,21 @@ export class NavbarComponent {
       if (lang) {
         this.currentLang = lang;
         this.translate.use(lang);
+        localStorage.setItem('language', lang);
       }
     });
   }
 
   switchLang(lang: string) {
-    
     const currentUrl = this.router.url;
-
-    
     const newUrl = currentUrl.replace(`/${this.currentLang}`, `/${lang}`);
 
-    
     this.currentLang = lang;
     this.translate.use(lang);
+    localStorage.setItem('language', lang);
 
-    
     this.router.navigateByUrl(newUrl);
   }
 
 }
+

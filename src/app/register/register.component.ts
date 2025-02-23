@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   currentStep: number = 1;
   username: string = '';
   email: string = '';
@@ -21,6 +22,27 @@ export class RegisterComponent {
   passwordnullError: boolean = false;
   passwordFormatError: boolean = false;
 
+  currentLang = 'en';
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService,
+    private translate: TranslateService
+  ) {
+    this.route.params.subscribe(params => {
+      const lang = params['lang'];
+      if (lang) {
+        this.currentLang = lang;
+        this.translate.use(lang);
+      }
+    });
+  }
+
+  ngOnInit() {
+    this.router.navigate([this.currentLang, 'register']);
+  }
+
   nextStep() {
     this.resetErrors();
 
@@ -30,8 +52,7 @@ export class RegisterComponent {
       } else {
         this.currentStep = 2;
       }
-    } 
-    else if (this.currentStep === 2) {
+    } else if (this.currentStep === 2) {
       if (this.email.trim() === '') {
         this.emailError = true;
       } else if (!this.isEmailValid(this.email)) {
@@ -39,21 +60,15 @@ export class RegisterComponent {
       } else {
         this.currentStep = 3;
       }
-    } 
-    else if (this.currentStep === 3) {
+    } else if (this.currentStep === 3) {
       if (this.password.trim() === '') {
         this.passwordnullError = true;
-      }
-      else if (this.password !== this.confirmPassword) {
+      } else if (this.password !== this.confirmPassword) {
         this.passwordError = true;
-      }
-      else if (this.containsPunctuation(this.password)) {
+      } else if (this.containsPunctuation(this.password)) {
         this.passwordFormatError = true;
       } else {
-
-        console.log('name:', this.username);
-        console.log('email:', this.email);
-        console.log('password:', this.password);
+        this.registerUser();
       }
     }
   }
@@ -83,20 +98,24 @@ export class RegisterComponent {
     return punctuationPattern.test(password);
   }
 
-  ngOnInit() {
-    this.router.navigate([this.currentLang, 'register']);
-  }
-  
-  currentLang = 'en';
-  
-  constructor(private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
-    this.route.params.subscribe(params => {
-      const lang = params['lang'];
-      if (lang) {
-        this.currentLang = lang;
-        this.translate.use(lang);
+  registerUser() {
+    const formData = {
+      name: this.username,
+      email: this.email,
+      password: this.password,
+      password_confirmation: this.confirmPassword
+    };
+
+    this.apiService.registerUser(this.currentLang, formData).subscribe(
+      response => {
+        console.log('User registered successfully', response);
+        this.router.navigate([this.currentLang, 'login']);
+      },
+      error => {
+        console.error('Registration error', error);
+        
       }
-    });
+    );
   }
 }
 
