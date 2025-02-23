@@ -43,5 +43,13 @@
     "User":"用户",
     "Admin":"管理员",
     "Super Admin":"超级管理员",
-    "User Role":"权限等级"
+    "User Role":"权限等级",
+    "Superadmin Actions":"超级管理员操作",
+    "Id":"Id",
+    "Give Admin":"授予管理员权限",
+    "Deprive Admin":"剥夺管理员权限",
+    "Product Management":"商品管理",
+    "Register failed! Email already exists!":"注册失败！电子邮件已存在!",
+    "Changed user status successfully!":"更改用户权限成功!",
+    "Error!":"错误!"
 }

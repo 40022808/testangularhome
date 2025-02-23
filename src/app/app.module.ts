@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     NavbarComponent,
     LoginComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

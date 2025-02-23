@@ -4,6 +4,8 @@
         <h1>{{ 'User Information' | translate }}</h1>
       
         <div *ngIf="userInfo" class="user-info">
+            <h2>{{ 'Id' | translate}}</h2>
+            <p>{{ userInfo.id }}</p>
             <h2>{{ 'User Role' | translate }}</h2>
             <p>{{ getUserRoleTranslationKey(userRole) | translate }}</p>
             <h2>{{ 'Name' | translate }}</h2>
@@ -20,7 +22,45 @@
           <p>{{ 'Loading user information...' | translate }}</p>
         </div>
     </div>
+
+
+
+    <div class="user-div-superadmin" *ngIf="userRole == '2'">
+        <h1>{{ 'Superadmin Actions' | translate }}</h1>
       
+        <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
+            <button (click)="give()">{{ 'Give Admin' | translate }}</button>
+            <button (click)="deprive()">{{ 'Deprive Admin' | translate }}</button>
+            <button >{{ 'Product Management' | translate }}</button>
+        </div>
+        
+        <div class="superadmin-actions-give" [ngClass]="{'fade-in': currentStep === 2}" *ngIf="currentStep === 2">
+            <input type="text" placeholder="{{ 'Id' | translate }}" required [(ngModel)]="giveId">
+            <button (click)="giveAdmin()">{{ 'Give Admin' | translate }}</button>
+            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+        </div>
+
+
+        <div class="superadmin-actions-deprive" [ngClass]="{'fade-in': currentStep === 3}" *ngIf="currentStep === 3">
+            <input type="text" placeholder="{{ 'Id' | translate }}" required [(ngModel)]="depriveId">
+            <button (click)="depriveAdmin()">{{ 'Deprive Admin' | translate }}</button>
+            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+        </div>
+
+        <div class="superadmin-actions-success" [ngClass]="{'fade-in': currentStep === 4}" *ngIf="currentStep === 4">
+            <p>{{ 'Changed user status successfully!' | translate }}</p>
+            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+        </div>
+
+        <div class="superadmin-actions-error" [ngClass]="{'fade-in': currentStep === 5}" *ngIf="currentStep === 5">
+            <p>{{ 'Error!' | translate }}</p>
+            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+        </div>
+
+
+    </div>
+      
+    
     <button (click)="logout()" class="logout">{{ 'Logout' | translate }}</button>
     
     

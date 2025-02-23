@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
   passwordError: boolean = false;
   passwordnullError: boolean = false;
   passwordFormatError: boolean = false;
+  registerError: boolean = false;
 
   currentLang = 'en';
 
@@ -86,6 +87,7 @@ export class RegisterComponent implements OnInit {
     this.passwordError = false;
     this.passwordnullError = false;
     this.passwordFormatError = false;
+    this.registerError = false;
   }
 
   isEmailValid(email: string): boolean {
@@ -113,6 +115,7 @@ export class RegisterComponent implements OnInit {
       },
       error => {
         console.error('Registration error', error);
+        this.registerError = true;
         
       }
     );

@@ -43,5 +43,14 @@
     "User":"Felhasználó",
     "Admin":"Admin",
     "Super Admin":"Szuper Admin",
-    "User Role":"Felhasználói engedélyek"
+    "User Role":"Felhasználói engedélyek",
+    "Superadmin Actions":"Szuperadmin műveletek",
+    "Id":"Azonosító",
+    "Give Admin":"Admin adása",
+    "Deprive Admin":"Admin megfosztása",
+    "Product Management":"Termék kezelés",
+    "Register failed! Email already exists!":"Regisztráció sikertelen! E-mail cím már létezik!",
+    "Changed user status successfully!":"A felhasználó állapota sikeresen megváltozott!",
+    "Error!":"Hiba!"
+
 }

@@ -7,7 +7,7 @@
 .body {
 
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgba(0, 0, 0, 0);
     background-image:
         url('/assets/images/stars.png'),
@@ -20,13 +20,15 @@
     gap: 10vh;
     justify-content: center;
     align-items: center;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
 
 }
 
 .user-div-info {
     width: 30vw;
-    height: 50vh;
-    background-color: white;
+    height: 60vh;
+    background-color: rgb(201, 201, 201);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -65,13 +67,14 @@
     border-radius: 10px;
     text-align: center;
     margin-bottom: 2vh;
+    background-color: rgb(236, 236, 236);
 }
 
 
 .logout {
     width: 20vw;
     height: 5vh;
-    background-color: black;
+    background-color: red;
     color: white;
     display: flex;
     align-items: center;
@@ -87,4 +90,132 @@
     border: solid 5px black;
 }
 
+.user-div-superadmin {
+    width: 30vw;
+    height: 50vh;
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
 
+
+.user-div-superadmin input {
+    width: 80%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.user-div-superadmin h1 {
+    font-size: 1.5em;
+    margin: 20px;
+    position: absolute;
+    top: 1vh;
+    
+}
+
+.superadmin-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.user-div-superadmin button {
+    width: 15vw;
+    height: 5vh;
+    background-color:#3b385d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 2px black;
+    transition: all 0.2s;
+    border-radius: 10px;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.user-div-superadmin button:hover {
+    background-color: #776092;
+    
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+}
+
+.superadmin-actions-give {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.superadmin-actions-deprive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.superadmin-actions-success, .superadmin-actions-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.superadmin-actions-success p {
+    width: 20vw;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 1.2em;
+    background-color: #3b385d;
+    color: rgb(0, 223, 0);
+}
+
+.superadmin-actions-error p {
+    width: 20vw;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2vh;
+    background-color: #3b385d;
+    color: red;
+    font-size: 1.2em;
+}

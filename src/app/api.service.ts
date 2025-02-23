@@ -35,4 +35,20 @@ export class ApiService {
     });
   }
 
+  upgradeToAdmin(userId: string): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.put(`${this.baseUrl}/api/users/${userId}/upgrade`, {},{
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
+  downgradeFromAdmin( userId: string): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.put(`${this.baseUrl}/api/users/${userId}/downgrade`, {},{
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
 }
+
+

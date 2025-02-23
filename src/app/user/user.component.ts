@@ -15,8 +15,11 @@ export class UserComponent implements OnInit {
   userError: boolean = false;
   userloginError: boolean = false;
   logoutError: boolean = false;
+  currentStep: number = 1;
+  giveId: string = '';
+  depriveId: string = '';
 
-  
+
   userRoleMap: { [key: string]: string } = {
     '0': 'User',
     '1': 'Admin',
@@ -80,6 +83,55 @@ export class UserComponent implements OnInit {
   getUserRoleTranslationKey(role: string): string {
     return this.userRoleMap[role] || 'Unknown';
   }
+
+  giveAdmin() {
+    this.apiService.upgradeToAdmin(this.giveId).subscribe(
+      response => {
+        console.log('User upgraded to admin successfully', response);
+        this.getUserInfo(); 
+        this.currentStep = 4;
+      },
+      error => {
+        console.error('Failed to upgrade user to admin', error);
+        this.currentStep = 5;
+      }
+    );
+    this.giveId = '';
+  }
+
+  depriveAdmin() {
+    this.apiService.downgradeFromAdmin(this.depriveId).subscribe(
+      response => {
+        console.log('User downgraded from admin successfully', response);
+        this.getUserInfo(); 
+        this.currentStep = 4;
+      },
+      error => {
+        console.error('Failed to downgrade user from admin', error);
+        this.currentStep = 5;
+      }
+    );
+    this.depriveId = '';
+  }
+
+
+  previousStep() {
+    if (this.currentStep > 1) {
+      this.currentStep = 1;
+      this.giveId = '';
+      this.depriveId = '';
+    }
+  }
+
+  give() {
+    this.currentStep = 2;
+  }
+
+  deprive() {
+    this.currentStep = 3;
+  }
+
+
 }
 
 

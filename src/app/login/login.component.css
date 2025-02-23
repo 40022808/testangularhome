@@ -31,6 +31,12 @@
     border-radius: 15px;
     padding: 30px;
     border: solid 4px black;
+    position: relative;
+}
+
+.login h1 {
+    position: absolute;
+    top: 1vh;
 }
 
 .input-div {
@@ -38,6 +44,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: 6vh;
+    gap: 1vh;
 }
 
 
@@ -94,3 +103,10 @@
     color: red;
     font-size: 1.2em;
 }
+
+.login-btn-div , .register-link {
+    position: relative;
+    top: 10vh;
+}
+
+

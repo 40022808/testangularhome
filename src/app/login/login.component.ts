@@ -13,10 +13,12 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  usernameError: boolean = false;
+  
   emailError: boolean = false;
   passwordError: boolean = false;
   loginError: boolean = false;
+
+  loading: boolean = false;
 
   currentLang = 'en';
 
@@ -42,14 +44,16 @@ export class LoginComponent implements OnInit {
   login() {
     this.resetErrors();
   
-    if (this.username.trim() === '') {
-      this.usernameError = true;
-    } else if (this.email.trim() === '') {
+    if (this.email.trim() === '') {
       this.emailError = true;
     } 
     else if (this.password.trim() === '') {
       this.passwordError = true;
-    } else {
+    } 
+    else {
+
+      this.loading = true;
+
       const formData = {
         email: this.email,
         password: this.password
@@ -57,12 +61,12 @@ export class LoginComponent implements OnInit {
   
       this.apiService.loginUser(this.currentLang, formData).subscribe(
         response => {
-          console.log('User logged in successfully', response);
           localStorage.setItem('userToken', response.token);
-          console.log('Token stored:', localStorage.getItem('userToken'));
           this.router.navigate([this.currentLang, 'user']);
+          this.loading = false;
         },
         error => {
+          this.loading = false;
           this.loginError = true;
         }
       );
@@ -71,7 +75,6 @@ export class LoginComponent implements OnInit {
   
 
   resetErrors() {
-    this.usernameError = false;
     this.emailError = false;
     this.passwordError = false;
     this.loginError = false;

@@ -43,6 +43,15 @@
     "User":"User",
     "Admin":"Admin",
     "Super Admin":"Super Admin",
-    "User Role":"User Role"
+    "User Role":"User Role",
+    "Superadmin Actions":"Superadmin Actions",
+    "Id":"Id",
+    "Give Admin":"Give Admin",
+    "Deprive Admin":"Deprive Admin",
+    "Product Management":"Product Management",
+    "Register failed! Email already exists!":"Register failed! Email already exists!",
+    "Changed user status successfully!":"Changed user status successfully!",
+    "Error!":"Error!"
+
 
 }
