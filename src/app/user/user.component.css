@@ -102,6 +102,47 @@
     position: relative;
 }
 
+.user-div-admin {
+    width: 30vw;
+    height: 50vh;
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.user-div-admin h1 {
+    font-size: 1.5em;
+    margin: 20px;
+    position: absolute;
+    top: 1vh;
+    
+}
+
+.user-div-admin button {
+    width: 15vw;
+    height: 5vh;
+    background-color:#3b385d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 2px black;
+    transition: all 0.2s;
+    border-radius: 10px;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+
+.user-div-admin button:hover {
+    background-color: #776092;
+    
+}
+
 
 .user-div-superadmin input {
     width: 80%;

@@ -51,7 +51,10 @@
     "Product Management":"Product Management",
     "Register failed! Email already exists!":"Register failed! Email already exists!",
     "Changed user status successfully!":"Changed user status successfully!",
-    "Error!":"Error!"
+    "Error!":"Error!",
+    "Password must be at least 6 characters long!":"Password must be at least 6 characters long!",
+    "Password cannot be longer than 10 characters!":"Password cannot be longer than 10 characters!",
+    "Admin Actions":"Admin Actions"
 
 
 }

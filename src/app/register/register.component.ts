@@ -21,6 +21,8 @@ export class RegisterComponent implements OnInit {
   passwordError: boolean = false;
   passwordnullError: boolean = false;
   passwordFormatError: boolean = false;
+  passwordMinError: boolean = false;
+  passwordMaxError: boolean = false;
   registerError: boolean = false;
 
   currentLang = 'en';
@@ -53,7 +55,8 @@ export class RegisterComponent implements OnInit {
       } else {
         this.currentStep = 2;
       }
-    } else if (this.currentStep === 2) {
+    } 
+    else if (this.currentStep === 2) {
       if (this.email.trim() === '') {
         this.emailError = true;
       } else if (!this.isEmailValid(this.email)) {
@@ -61,9 +64,14 @@ export class RegisterComponent implements OnInit {
       } else {
         this.currentStep = 3;
       }
-    } else if (this.currentStep === 3) {
+    } 
+    else if (this.currentStep === 3) {
       if (this.password.trim() === '') {
         this.passwordnullError = true;
+      } else if (this.password.length < 6) {
+        this.passwordMinError = true;
+      } else if (this.password.length > 10) {
+        this.passwordMaxError = true;
       } else if (this.password !== this.confirmPassword) {
         this.passwordError = true;
       } else if (this.containsPunctuation(this.password)) {
@@ -87,7 +95,10 @@ export class RegisterComponent implements OnInit {
     this.passwordError = false;
     this.passwordnullError = false;
     this.passwordFormatError = false;
+    this.passwordMinError = false;
+    this.passwordMaxError = false;
     this.registerError = false;
+
   }
 
   isEmailValid(email: string): boolean {

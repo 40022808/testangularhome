@@ -51,6 +51,9 @@
     "Product Management":"Termék kezelés",
     "Register failed! Email already exists!":"Regisztráció sikertelen! E-mail cím már létezik!",
     "Changed user status successfully!":"A felhasználó állapota sikeresen megváltozott!",
-    "Error!":"Hiba!"
+    "Error!":"Hiba!",
+    "Password must be at least 6 characters long!":"A jelszó legalább 6 karakter hosszú kell legyen!",
+    "Password cannot be longer than 10 characters!":"A jelszó nem lehet hosszabb 10 karakternél!",
+    "Admin Actions":"Admin műveletek"
 
 }

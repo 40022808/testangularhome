@@ -59,7 +59,15 @@
 
 
     </div>
+
+
+    <div class="user-div-admin" *ngIf="userRole == '1'">
+        <h1>{{ 'Admin Actions' | translate }}</h1>
       
+        <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
+            <button >{{ 'Product Management' | translate }}</button>
+        </div>
+    </div>  
     
     <button (click)="logout()" class="logout">{{ 'Logout' | translate }}</button>
     
