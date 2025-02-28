@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { ServiceComponent } from './service/service/service.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: ':lang/login', component: LoginComponent },
   { path: ':lang/user', component: UserComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
+  { path: ':lang/service', component: ServiceComponent },
 ];
 
 @NgModule({
