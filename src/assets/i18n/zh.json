@@ -54,5 +54,16 @@
     "Error!":"错误!",
     "Password must be at least 6 characters long!":"密码必须至少6个字符!",
     "Password cannot be longer than 10 characters!":"密码不能超过10个字符!",
-    "Admin Actions":"管理员操作"
+    "Admin Actions":"管理员操作",
+    "Sure":"确定",
+    "Change Username":"更改用户名",
+    "Change Password":"更改密码",
+    "Old Password":"旧密码",
+    "Old Password is required!":"旧密码是必需的!",
+    "Old Password is incorrect!":"旧密码不正确!",
+    "New Password":"新密码",
+    "Failed to change password. Please try again later!":"更改密码失败。请稍后重试!",
+    "The new password is the same as the old password!":"新密码与旧密码相同!",
+    "Password Changed Successfully!":"密码更改成功!",
+    "Loading...":"正在加载..."
 }

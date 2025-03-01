@@ -49,6 +49,25 @@ export class ApiService {
     });
   }
 
+  updateUserName(lang: string, formData: any): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.post(`${this.baseUrl}/api/${lang}/update-username`, formData, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
+  updatePassword(lang: string, formData: any): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.post(`${this.baseUrl}/api/${lang}/update-password`, formData, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
+  checkOldPassword(formData: any): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.post(`${this.baseUrl}/api/checkoldpassword`, formData, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
 }
-
-

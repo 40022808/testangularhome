@@ -54,7 +54,18 @@
     "Error!":"Error!",
     "Password must be at least 6 characters long!":"Password must be at least 6 characters long!",
     "Password cannot be longer than 10 characters!":"Password cannot be longer than 10 characters!",
-    "Admin Actions":"Admin Actions"
+    "Admin Actions":"Admin Actions",
+    "Sure":"Sure",
+    "Change Username":"Change Username",
+    "Change Password":"Change Password",
+    "Old Password":"Old Password",
+    "Old Password is required!":"Old Password is required!",
+    "Old Password is incorrect!":"Old Password is incorrect!",
+    "New Password":"New Password",
+    "Failed to change password. Please try again later!":"Failed to change password. Please try again later!",
+    "The new password is the same as the old password!":"The new password is the same as the old password!",
+    "Password Changed Successfully!":"Password Changed Successfully!",
+    "Loading...":"Loading..."
 
 
 }

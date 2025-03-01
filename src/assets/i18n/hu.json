@@ -54,6 +54,17 @@
     "Error!":"Hiba!",
     "Password must be at least 6 characters long!":"A jelszó legalább 6 karakter hosszú kell legyen!",
     "Password cannot be longer than 10 characters!":"A jelszó nem lehet hosszabb 10 karakternél!",
-    "Admin Actions":"Admin műveletek"
+    "Admin Actions":"Admin műveletek",
+    "Sure":"Biztos",
+    "Change Username":"Felhasználónév módosítása",
+    "Change Password":"Jelszó módosítás",
+    "Old Password":"Régi jelszó",
+    "Old Password is required!":"A régi jelszó nem lehet üres!",
+    "Old Password is incorrect!":"A régi jelszó helytelen!",
+    "New Password":"Új jelszó",
+    "Failed to change password. Please try again later!":"Nem sikerült megváltoztatni a jelszót. Kérjük, próbálja újra később!",
+    "The new password is the same as the old password!":"Az új jelszó megegyezik a régi jelszóval!",
+    "Password Changed Successfully!":"A jelszó sikeresen megváltoztatva!",
+    "Loading...":"Betöltés..."
 
 }
