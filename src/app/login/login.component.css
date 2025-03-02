@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        url('/assets/images/stars.png'),
+        linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
+    background-size: auto, cover; 
+    background-repeat: repeat, no-repeat;
+    background-position: center center, center center;
+}
+
+.login {
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 30px;
+    border: solid 4px black;
+    position: relative;
+}
+
+.Loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login h1 {
+    position: absolute;
+    top: 1vh;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 6vh;
+    gap: 1vh;
+}
+
+
+.input-div input {
+    width: 80%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.login-btn {
+    min-width: 80%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #1b2947;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+
+}
+
+.login-btn:hover {
+    background-color: #29447e;
+}
+
+.register-link {
+    color: black;
+    font-size: 1.2em;
+}
+
+.register-link a {
+    color: black;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    color: #1047c0;
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-size: 1.2em;
+}
+
+.login-btn-div , .register-link {
+    position: relative;
+    top: 10vh;
+}
+
+

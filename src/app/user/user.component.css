@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.body {
+
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    background-image:
+        url('/assets/images/stars.png'),
+        linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
+    background-size: auto, cover; 
+    background-repeat: repeat, no-repeat;
+    background-position: center center, center center;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+
+}
+
+<<<<<<< HEAD
+.error {
+    color: red;
+}
+
+=======
+>>>>>>> 033531b (Webshop)
+.user-div-info {
+    width: 30vw;
+    height: 60vh;
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.user-div-info h1 {
+    font-size: 1.5em;
+    margin: 20px;
+    position: absolute;
+    top: 1vh;
+    
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    position: relative;
+    top: 4vh;
+
+}
+
+.user-info h2 {
+    font-size: 1.2em;
+}
+
+.user-info p {
+    width: 20vw;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2vh;
+    background-color: rgb(236, 236, 236);
+}
+
+
+.logout {
+    width: 20vw;
+    height: 5vh;
+    background-color: red;
+<<<<<<< HEAD
+    color: black;
+    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+=======
+    color: white;
+>>>>>>> 033531b (Webshop)
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 5px rgba(0, 0, 0, 0);
+<<<<<<< HEAD
+    transition: all 0.1s;
+    border-radius: 10px;
+}
+
+.change-password-btn {
+    width: 20vw;
+    height: 5vh;
+    background-color: rgb(0, 132, 255);
+    color: black;
+    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 5px rgba(0, 0, 0, 0);
+    transition: all 0.1s;
+    border-radius: 10px;
+}
+
+.change-password-btn:hover {
+    border: solid 5px black;
+}
+=======
+    transition: all 0.2s;
+    border-radius: 10px;
+}
+
+>>>>>>> 033531b (Webshop)
+
+.logout:hover {
+    border: solid 5px black;
+}
+
+.user-div-superadmin {
+    width: 30vw;
+    height: 50vh;
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+<<<<<<< HEAD
+.user-div-admin {
+    width: 30vw;
+    height: 50vh;
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.user-div-admin h1 {
+    font-size: 1.5em;
+    margin: 20px;
+    position: absolute;
+    top: 1vh;
+    
+}
+
+.user-div-admin button {
+    width: 15vw;
+    height: 5vh;
+    background-color:#3b385d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 2px black;
+    transition: all 0.2s;
+    border-radius: 10px;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+
+.user-div-admin button:hover {
+    background-color: #776092;
+    
+}
+
+=======
+>>>>>>> 033531b (Webshop)
+
+.user-div-superadmin input {
+    width: 80%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.user-div-superadmin h1 {
+    font-size: 1.5em;
+    margin: 20px;
+    position: absolute;
+    top: 1vh;
+    
+}
+
+.superadmin-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.user-div-superadmin button {
+    width: 15vw;
+    height: 5vh;
+    background-color:#3b385d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 2px black;
+    transition: all 0.2s;
+    border-radius: 10px;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.user-div-superadmin button:hover {
+    background-color: #776092;
+    
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+}
+
+.superadmin-actions-give {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.superadmin-actions-deprive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.superadmin-actions-success, .superadmin-actions-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    position: relative;
+    top: 2vh;
+}
+
+.superadmin-actions-success p {
+    width: 20vw;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 1.2em;
+    background-color: #3b385d;
+    color: rgb(0, 223, 0);
+}
+
+.superadmin-actions-error p {
+    width: 20vw;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2vh;
+    background-color: #3b385d;
+    color: red;
+    font-size: 1.2em;
+<<<<<<< HEAD
+}
+
+.username-btn {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: relative;
+    left: 10px;
+}
+
+.username-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.username-img {
+    width: 30px;
+    height: 30px;
+}
+
+.username-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 22.5px;
+    
+}
+
+.user-div-username-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.user-div-username-div {
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 20px;
+    border: solid 5px #776092;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+}
+
+.user-div-username-div-h1 {
+    position: relative;
+    top: -3vh;
+}
+
+.input {
+    width: 80%;
+    height: 60px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+.user-div-username-div-buttons {
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-div-username-div-button-sure {
+    font-size: 1.2em;
+    width: 10vw;
+    height: 5vh;
+    background-color: rgb(0, 228, 0);
+    color: black;
+}
+
+.user-div-username-div-button-sure:hover {
+    background-color: rgb(0, 255, 0);
+}
+
+.user-div-username-div-button-back {
+    font-size: 1.2em;
+    width: 10vw;
+    height: 5vh;
+    background-color: rgb(202, 0, 0);
+    color: black;
+}
+
+.user-div-username-div-button-back:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.user-div-password-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+.user-div-password-div {
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 20px;
+    border: solid 5px #776092;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.close-btn {
+    width: 1.2em;
+    height: 1.2em;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5em;
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px black;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s;
+}
+.close-btn:hover {
+    color: white;
+    background-color: black;
+}
+
+
+.Changepassword-btn {
+    width: 10vw;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #1b2947;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+
+}
+
+.Changepassword-btn:hover {
+    background-color: #29447e;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.user-div-password-div-ok {
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 20px;
+    border: solid 5px #776092;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.user-div-button {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+=======
+>>>>>>> 033531b (Webshop)
+}

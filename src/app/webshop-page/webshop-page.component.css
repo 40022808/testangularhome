@@ -1,0 +1,38 @@
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 6rem;
+}
+
+ul li a{
+  height: 30rem;
+  width: 30rem;
+  border-radius: 1rem;
+  border: 1px solid whitesmoke;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(190, 190, 190, 0.062);
+  padding: 9rem;
+  text-decoration: none;
+}
+
+li a:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.content{
+  padding: .5rem, 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.price {
+  margin-top: .7rem;
+}

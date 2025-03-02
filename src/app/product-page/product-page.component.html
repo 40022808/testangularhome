@@ -1,0 +1,17 @@
+<div class="container">
+    <img [src]="product.imageURL" [alt]="product.name" />
+
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{ product.name }}
+            </span>
+            <div class="price">
+                <span class="price">
+                    {{ product.price | currency : "Ft " }}
+                </span>
+            </div>
+            <button>{{ "Add to cart" | translate }}</button>
+        </div>
+    </div>
+</div>
