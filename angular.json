@@ -9,7 +9,7 @@
         "locales": {
           "zh": "src/locale/messages.zh.xlf",
           "hu": "src/locale/messages.hu.xlf"
-        }
+        },
          "sourceLocale": "en",
          "locales": {
             "zh": "src/locale/messages.zh.xlf",
@@ -53,7 +53,7 @@
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css",
-              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
+              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -112,26 +112,17 @@
               }
             ],
             "styles": [
-<<<<<<< HEAD
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css",
               "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
-=======
-              "src/styles.css"
->>>>>>> 033531b (Webshop)
             ],
             "scripts": []
           }
         }
       }
     }
-<<<<<<< HEAD
   },
   "cli": {
     "analytics": false
   }
 }
-=======
-  }
-}
->>>>>>> 033531b (Webshop)

@@ -5,16 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-<<<<<<< HEAD
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 
-=======
-  styleUrl: './navbar.component.css',
-})
-export class NavbarComponent {
->>>>>>> 033531b (Webshop)
   dropdownOpen = false;
 
   toggleDropdown() {
@@ -33,17 +27,8 @@ export class NavbarComponent {
 
   currentLang = 'en';
 
-<<<<<<< HEAD
   constructor(private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
     this.route.params.subscribe(params => {
-=======
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private translate: TranslateService
-  ) {
-    this.route.params.subscribe((params) => {
->>>>>>> 033531b (Webshop)
       const lang = params['lang'];
       if (lang) {
         this.currentLang = lang;
@@ -64,12 +49,7 @@ export class NavbarComponent {
     this.router.navigateByUrl(newUrl);
   }
 
-<<<<<<< HEAD
-}
-
-=======
   switchtoWebShop() {
     this.router.navigate([this.currentLang, 'webshop']);
   }
 }
->>>>>>> 033531b (Webshop)

@@ -51,7 +51,6 @@
     "Product Management":"Termék kezelés",
     "Register failed! Email already exists!":"Regisztráció sikertelen! E-mail cím már létezik!",
     "Changed user status successfully!":"A felhasználó állapota sikeresen megváltozott!",
-<<<<<<< HEAD
     "Error!":"Hiba!",
     "Password must be at least 6 characters long!":"A jelszó legalább 6 karakter hosszú kell legyen!",
     "Password cannot be longer than 10 characters!":"A jelszó nem lehet hosszabb 10 karakternél!",
@@ -67,8 +66,5 @@
     "The new password is the same as the old password!":"Az új jelszó megegyezik a régi jelszóval!",
     "Password Changed Successfully!":"A jelszó sikeresen megváltoztatva!",
     "Loading...":"Betöltés..."
-=======
-    "Error!":"Hiba!"
->>>>>>> 033531b (Webshop)
 
 }

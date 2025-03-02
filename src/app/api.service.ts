@@ -49,7 +49,6 @@ export class ApiService {
     });
   }
 
-<<<<<<< HEAD
   updateUserName(lang: string, formData: any): Observable<any> {
     const token = localStorage.getItem('userToken');
     return this.http.post(`${this.baseUrl}/api/${lang}/update-username`, formData, {
@@ -72,8 +71,3 @@ export class ApiService {
   }
 
 }
-=======
-}
-
-
->>>>>>> 033531b (Webshop)

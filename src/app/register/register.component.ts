@@ -21,11 +21,8 @@ export class RegisterComponent implements OnInit {
   passwordError: boolean = false;
   passwordnullError: boolean = false;
   passwordFormatError: boolean = false;
-<<<<<<< HEAD
   passwordMinError: boolean = false;
   passwordMaxError: boolean = false;
-=======
->>>>>>> 033531b (Webshop)
   registerError: boolean = false;
 
   currentLang = 'en';
@@ -58,12 +55,8 @@ export class RegisterComponent implements OnInit {
       } else {
         this.currentStep = 2;
       }
-<<<<<<< HEAD
     } 
     else if (this.currentStep === 2) {
-=======
-    } else if (this.currentStep === 2) {
->>>>>>> 033531b (Webshop)
       if (this.email.trim() === '') {
         this.emailError = true;
       } else if (!this.isEmailValid(this.email)) {
@@ -71,7 +64,6 @@ export class RegisterComponent implements OnInit {
       } else {
         this.currentStep = 3;
       }
-<<<<<<< HEAD
     } 
     else if (this.currentStep === 3) {
       if (this.password.trim() === '') {
@@ -80,11 +72,6 @@ export class RegisterComponent implements OnInit {
         this.passwordMinError = true;
       } else if (this.password.length > 10) {
         this.passwordMaxError = true;
-=======
-    } else if (this.currentStep === 3) {
-      if (this.password.trim() === '') {
-        this.passwordnullError = true;
->>>>>>> 033531b (Webshop)
       } else if (this.password !== this.confirmPassword) {
         this.passwordError = true;
       } else if (this.containsPunctuation(this.password)) {
@@ -108,14 +95,10 @@ export class RegisterComponent implements OnInit {
     this.passwordError = false;
     this.passwordnullError = false;
     this.passwordFormatError = false;
-<<<<<<< HEAD
     this.passwordMinError = false;
     this.passwordMaxError = false;
     this.registerError = false;
 
-=======
-    this.registerError = false;
->>>>>>> 033531b (Webshop)
   }
 
   isEmailValid(email: string): boolean {

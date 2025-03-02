@@ -21,7 +21,6 @@
 }
 
 .music span:nth-child(1) {
-    /* 时间递增，参差不齐的效果 */
     animation: bar1 2s 0.2s infinite linear;
 }
 

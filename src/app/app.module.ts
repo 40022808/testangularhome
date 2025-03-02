@@ -13,7 +13,6 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
 import { LoadingComponent } from './loading/loading.component';
-<<<<<<< HEAD
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -27,14 +26,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatHint } from '@angular/material/form-field';
 import { ServiceComponent } from './service/service/service.component';
 import {MatCardModule} from '@angular/material/card';
-=======
 import { WebshopPageComponent } from './webshop-page/webshop-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 
 
 
->>>>>>> 033531b (Webshop)
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
@@ -48,23 +45,19 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     UserComponent,
     RegisterComponent,
     LoadingComponent,
-<<<<<<< HEAD
     DatepickerComponent,
     ServiceComponent,
     
     
   
-=======
     WebshopPageComponent,
     ProductPageComponent,
     CartPageComponent
->>>>>>> 033531b (Webshop)
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-<<<<<<< HEAD
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormField,
@@ -77,11 +70,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     TranslateModule.forRoot({loader:{ provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] } })
   ],
   providers: [provideHttpClient(), provideAnimationsAsync()],
-=======
-    TranslateModule.forRoot({loader:{ provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] } })
-  ],
-  providers: [provideHttpClient()],
->>>>>>> 033531b (Webshop)
   bootstrap: [AppComponent]
 })
 export class AppModule { }

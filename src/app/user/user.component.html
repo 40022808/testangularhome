@@ -8,14 +8,10 @@
             <p>{{ userInfo.id }}</p>
             <h2>{{ 'User Role' | translate }}</h2>
             <p>{{ getUserRoleTranslationKey(userRole) | translate }}</p>
-<<<<<<< HEAD
             <div class="username-div">
                 <h2>{{ 'Name' | translate }}</h2>
                 <button class="username-btn"><img src="assets/images/username.svg" alt="username" class="username-img" (click)="Username()"></button> 
             </div>
-=======
-            <h2>{{ 'Name' | translate }}</h2>
->>>>>>> 033531b (Webshop)
             <p>{{ userInfo.name }}</p>
             <h2>{{ 'Email' | translate }}</h2>
             <p>{{ userInfo.email }}</p>
@@ -66,7 +62,6 @@
 
 
     </div>
-<<<<<<< HEAD
 
 
     <div class="user-div-admin" *ngIf="userRole == '1'">
@@ -147,15 +142,6 @@
         <button (click)="logout()" class="logout">{{ 'Logout' | translate }}</button>
     </div>
 
-=======
-      
-    
-    <button (click)="logout()" class="logout">{{ 'Logout' | translate }}</button>
-    
-    
-
-      
->>>>>>> 033531b (Webshop)
 
 </div>
   

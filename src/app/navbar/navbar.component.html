@@ -1,6 +1,5 @@
 <div class="nav">
     <div class="logo">
-<<<<<<< HEAD
         <img src="assets/images/logo.png" alt="Logo" class="logoimage">
         <pre>  </pre>
         <h1 class="logoh1">LOGO</h1>
@@ -21,48 +20,11 @@
               <li (click)="switchLang('zh')">{{"Chinese" | translate}}</li>
             </ul>
         </div>
+
+        <a [routerLink]="['/', currentLang, 'cart']" routerLinkActive="active" class="cart_a">
+            <img src="assets/images/cart.svg" alt="cart" class="img_cart" />
+        </a>
         
     </div>
 </div>
-=======
-        <img src="assets/images/logo.png" alt="Logo" class="logoimage" />
-        <pre></pre>
-        <h1 class="logoh1">LOGO</h1>
-    </div>
 
-    <div class="nav-links">
-
-
-        <a [routerLink]="['/', currentLang, 'home']" routerLinkActive="active">{{
-            "Home" | translate
-            }}</a>
-        <a [routerLink]="['/', currentLang, 'service']" routerLinkActive="active">{{
-            "Service" | translate
-            }}</a>
-        <a [routerLink]="['/', currentLang, 'webshop']" routerLinkActive="active">{{
-            "Web Shop" | translate
-            }}</a>
-
-
-        <a [routerLink]="['/', currentLang, 'user']" routerLinkActive="active" class="user_a"><img
-                src="assets/images/user.svg" alt="user" class="img_user" /></a>
-
-
-        <div class="language-switcher" (click)="toggleDropdown()">
-            <button class="language_btn">
-                <img src="assets/images/language.svg" alt="language" class="img_lan" />
-            </button>
-            <ul *ngIf="dropdownOpen" class="dropdown">
-                <li (click)="switchLang('en')">{{ "English" | translate }}</li>
-                <li (click)="switchLang('hu')">{{ "Hungarian" | translate }}</li>
-                <li (click)="switchLang('zh')">{{ "Chinese" | translate }}</li>
-            </ul>
-        </div>
-
-        <a [routerLink]="['/', currentLang, 'cart']" routerLinkActive="active" class="cart_a"><img
-                src="assets/images/cart.svg" alt="cart" class="img_cart" /></a>
-
-
-    </div>
-</div>
->>>>>>> 033531b (Webshop)

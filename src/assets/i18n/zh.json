@@ -51,7 +51,6 @@
     "Product Management":"商品管理",
     "Register failed! Email already exists!":"注册失败！电子邮件已存在!",
     "Changed user status successfully!":"更改用户权限成功!",
-<<<<<<< HEAD
     "Error!":"错误!",
     "Password must be at least 6 characters long!":"密码必须至少6个字符!",
     "Password cannot be longer than 10 characters!":"密码不能超过10个字符!",
@@ -67,7 +66,4 @@
     "The new password is the same as the old password!":"新密码与旧密码相同!",
     "Password Changed Successfully!":"密码更改成功!",
     "Loading...":"正在加载..."
-=======
-    "Error!":"错误!"
->>>>>>> 033531b (Webshop)
 }

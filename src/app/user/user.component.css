@@ -25,13 +25,10 @@
 
 }
 
-<<<<<<< HEAD
 .error {
     color: red;
 }
 
-=======
->>>>>>> 033531b (Webshop)
 .user-div-info {
     width: 30vw;
     height: 60vh;
@@ -82,18 +79,13 @@
     width: 20vw;
     height: 5vh;
     background-color: red;
-<<<<<<< HEAD
     color: black;
     text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
-=======
-    color: white;
->>>>>>> 033531b (Webshop)
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
     border: solid 5px rgba(0, 0, 0, 0);
-<<<<<<< HEAD
     transition: all 0.1s;
     border-radius: 10px;
 }
@@ -116,12 +108,6 @@
 .change-password-btn:hover {
     border: solid 5px black;
 }
-=======
-    transition: all 0.2s;
-    border-radius: 10px;
-}
-
->>>>>>> 033531b (Webshop)
 
 .logout:hover {
     border: solid 5px black;
@@ -139,7 +125,6 @@
     position: relative;
 }
 
-<<<<<<< HEAD
 .user-div-admin {
     width: 30vw;
     height: 50vh;
@@ -181,8 +166,6 @@
     
 }
 
-=======
->>>>>>> 033531b (Webshop)
 
 .user-div-superadmin input {
     width: 80%;
@@ -299,7 +282,6 @@
     background-color: #3b385d;
     color: red;
     font-size: 1.2em;
-<<<<<<< HEAD
 }
 
 .username-btn {
@@ -509,6 +491,4 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-=======
->>>>>>> 033531b (Webshop)
 }

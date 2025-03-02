@@ -51,7 +51,6 @@
     "Product Management":"Product Management",
     "Register failed! Email already exists!":"Register failed! Email already exists!",
     "Changed user status successfully!":"Changed user status successfully!",
-<<<<<<< HEAD
     "Error!":"Error!",
     "Password must be at least 6 characters long!":"Password must be at least 6 characters long!",
     "Password cannot be longer than 10 characters!":"Password cannot be longer than 10 characters!",
@@ -67,9 +66,6 @@
     "The new password is the same as the old password!":"The new password is the same as the old password!",
     "Password Changed Successfully!":"Password Changed Successfully!",
     "Loading...":"Loading..."
-=======
-    "Error!":"Error!"
->>>>>>> 033531b (Webshop)
 
 
 }

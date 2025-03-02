@@ -18,7 +18,6 @@ export class UserComponent implements OnInit {
   currentStep: number = 1;
   giveId: string = '';
   depriveId: string = '';
-<<<<<<< HEAD
   UsernameDiv: boolean = false;
   PasswordDiv: boolean = false;
   newUsername: string = '';
@@ -40,9 +39,6 @@ export class UserComponent implements OnInit {
 
   PasswordDiv_ok: boolean = false;
   oldpasswordloading: boolean = false;
-=======
-
->>>>>>> 033531b (Webshop)
 
   userRoleMap: { [key: string]: string } = {
     '0': 'User',
@@ -155,7 +151,6 @@ export class UserComponent implements OnInit {
     this.currentStep = 3;
   }
 
-<<<<<<< HEAD
   Username() {
     this.UsernameDiv = true;
   }
@@ -284,8 +279,6 @@ export class UserComponent implements OnInit {
     );
   }
 
-=======
->>>>>>> 033531b (Webshop)
 
 }
 
