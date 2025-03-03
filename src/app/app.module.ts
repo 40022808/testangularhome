@@ -29,6 +29,9 @@ import {MatCardModule} from '@angular/material/card';
 import { WebshopPageComponent } from './webshop-page/webshop-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+
 
 
 
@@ -47,12 +50,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     LoadingComponent,
     DatepickerComponent,
     ServiceComponent,
-    
-    
-  
     WebshopPageComponent,
     ProductPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -67,6 +69,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatInputModule,
     MatHint,
     MatCardModule,
+    NgxMaterialTimepickerModule,
+   
     TranslateModule.forRoot({loader:{ provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] } })
   ],
   providers: [provideHttpClient(), provideAnimationsAsync()],

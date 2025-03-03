@@ -21,3 +21,12 @@
     padding-bottom: 15vh;
 
 }
+.container{
+    display: flex;
+    
+    
+}
+.input {
+    display: flex;
+    left: -15vw;
+}

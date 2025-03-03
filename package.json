@@ -24,6 +24,7 @@
     "@ngx-translate/http-loader": "^16.0.1",
     "@syncfusion/ej2-angular-calendars": "^28.2.7",
     "@syncfusion/ej2-material-theme": "~28.2.7",
+    "ngx-material-timepicker": "^13.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
