@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product/product.service';
+import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
   selector: 'app-product-page',
@@ -13,13 +14,24 @@ export class ProductPageComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private shoppingCartService: ShoppingCartService
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id'])
         this.product = productService.getProductById(params['id']);
     });
+
+
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  addtoCart(): void {
+    this.shoppingCartService.addToCart(this.product);
+  }
+
+  goBack(): void {
+    window.history.back();
+  }
 }

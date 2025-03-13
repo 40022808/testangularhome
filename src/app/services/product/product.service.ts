@@ -4,8 +4,9 @@ import { Product } from '../../shared/models/product';
 @Injectable({
   providedIn: 'root',
 })
+
 export class ProductService {
-  constructor() {}
+  constructor() { }
 
   getProductById(id: number): Product {
     return this.getAll().find((product) => product.id == id)!;

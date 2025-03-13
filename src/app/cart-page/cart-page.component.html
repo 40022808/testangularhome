@@ -1,1 +1,22 @@
-<p>cart-page works!</p>
+<div class="body">
+    <h2>Kosár</h2>
+    <div *ngIf="cart.length === 0">
+        <p>A kosara üres!</p>
+    </div>
+    <div *ngIf="cart.length > 0" class="cart-container">
+        <ul class="product-list">
+            <li *ngFor="let product of cart" class="product-item">
+                <img [src]="product.imageURL" alt="{{product.name}}" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">{{product.name}}</div>
+                </div>
+            </li>
+        </ul>
+        <div class="total-price">
+            <div *ngFor="let product of cart" class="product-price">
+                {{product.price |currency: " Ft "}}
+            </div>
+            <p> Teljes összeg: {{totalPrice | currency: " Ft "}}</p>
+        </div>
+    </div>
+</div>
