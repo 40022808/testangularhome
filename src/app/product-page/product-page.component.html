@@ -15,6 +15,9 @@
                 </div>
                 <button (click)="addtoCart()">{{ "Hozzáad" | translate }}</button>
                 <Button (click)="goBack()">{{ "Vissza" | translate }}</Button>
+                <div *ngIf="itemAdded" class="success-message">
+                    Hozzáadva a kosárhoz!
+                </div>
             </div>
         </div>
     </div>

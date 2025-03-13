@@ -21,14 +21,19 @@ export class ProductPageComponent implements OnInit {
       if (params['id'])
         this.product = productService.getProductById(params['id']);
     });
-
-
   }
 
-  ngOnInit(): void { }
+  itemAdded = false;
+
+  ngOnInit(): void {}
 
   addtoCart(): void {
     this.shoppingCartService.addToCart(this.product);
+    this.itemAdded = true;
+
+    setTimeout(() => {
+      this.itemAdded = false;
+    }, 1000);
   }
 
   goBack(): void {

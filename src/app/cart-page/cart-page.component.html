@@ -5,11 +5,12 @@
     </div>
     <div *ngIf="cart.length > 0" class="cart-container">
         <ul class="product-list">
-            <li *ngFor="let product of cart" class="product-item">
+            <li *ngFor="let product of cart; let i = index" class="product-item">
                 <img [src]="product.imageURL" alt="{{product.name}}" class="product-image">
                 <div class="product-details">
                     <div class="product-name">{{product.name}}</div>
                 </div>
+                <button (click)="removeFromCart(i)">Törlés</button>
             </li>
         </ul>
         <div class="total-price">
@@ -17,6 +18,9 @@
                 {{product.price |currency: " Ft "}}
             </div>
             <p> Teljes összeg: {{totalPrice | currency: " Ft "}}</p>
+            <div class="delivery-button">
+                <a routerLink="/delivery" class="delivery-link">Szállításhoz</a>
+            </div>
         </div>
     </div>
 </div>
