@@ -30,6 +30,8 @@ import { WebshopPageComponent } from './webshop-page/webshop-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { MapComponent } from './map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -53,6 +55,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     WebshopPageComponent,
     ProductPageComponent,
     CartPageComponent,
+    MapComponent,
     
     
   ],
@@ -70,12 +73,26 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatHint,
     MatCardModule,
     NgxMaterialTimepickerModule,
+    GoogleMapsModule,
    
     TranslateModule.forRoot({loader:{ provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] } })
   ],
   providers: [provideHttpClient(), provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    this.loadGoogleMaps();
+  }
+
+  private loadGoogleMaps() {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDdI4oqyU3e2sFX-JLOEI-s3h0G0tMfYN4`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+}
+
 
 

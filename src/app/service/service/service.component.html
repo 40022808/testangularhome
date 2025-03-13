@@ -1,26 +1,50 @@
+
 <div class="body">
 
 
 
-  <div class="container" style=" display: flex; justify-content: center; margin-top: 100px;">
-    <mat-form-field>
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker>
-        <mat-datepicker-actions>
-          <button mat-button matDatepickerCancel>Cancel</button>
-          <button class="mat-button" mat-raised-button matDatepickerApply>Apply</button>
-        </mat-datepicker-actions>
-      </mat-datepicker>
-    </mat-form-field>
-
-   
-
-    
-
+  <div class="container">
+    <!-- Bal oldalon a Google Maps -->
+    <div class="map-container">
+      <app-map></app-map>
+    </div>
+  
+    <!-- Jobb oldalon a Datepicker -->
+    <div class="datepicker-container">
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button class="mat-button" mat-raised-button matDatepickerApply>Apply</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
   </div>
-  <br><br><br><br><br><br><br><br><br>
-  <p>LLegjobb tanárúr: J.B :3</p>
-</div>
+  
+  <!-- Elérhetőségek -->
+  <div class="contact-card">
+    <h3>Elérhetőségek</h3>
+    <p><mat-icon>phone</mat-icon> +36 20 351 8200</p>
+    <p><mat-icon>email</mat-icon> info&#64;example.com</p>
+    <p><mat-icon>location_on</mat-icon> Budapest, Révay u. 16, 1065</p>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank">
+      <i class="fab fa-facebook"> Facebook</i> <!-- Facebook ikon -->
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <i class="fab fa-instagram">Instagram</i> <!-- Instagram ikon -->
+    </a>
+    <a href="https://twitter.com" target="_blank">
+      <i class="fab fa-twitter">Twitter</i>   <!-- Twitter ikon -->
+    </a>
+  </div>
+ 
+
+  

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
 
 @Component({
   selector: 'app-service',
@@ -13,9 +12,6 @@ export class ServiceComponent {
    
     return day !== 0 && day !== 6;
   };
-
-
-
 
   selected() {
     throw new Error('Method not implemented.');
