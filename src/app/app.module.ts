@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
@@ -14,8 +13,6 @@ import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
 import { LoadingComponent } from './loading/loading.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
-
-
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -34,12 +31,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MapComponent } from './map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ShoppingCartService } from './shopping-cart.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-
-
-
-
-
+import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -61,8 +53,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ProductPageComponent,
     CartPageComponent,
     MapComponent,
-
-
+    DeliveryPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,10 +73,20 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HttpClientModule,
     
 
-    TranslateModule.forRoot({ loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] } })
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi()), provideAnimationsAsync(), ShoppingCartService],
-  bootstrap: [AppComponent]
+  providers: [
+    provideHttpClient(),
+    provideAnimationsAsync(),
+    ShoppingCartService,
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor() {
@@ -100,6 +101,3 @@ export class AppModule {
     document.head.appendChild(script);
   }
 }
-
-
-
