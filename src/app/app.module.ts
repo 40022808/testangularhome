@@ -16,21 +16,21 @@ import { LoadingComponent } from './loading/loading.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatFormField } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatHint } from '@angular/material/form-field';
 import { ServiceComponent } from './service/service/service.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { WebshopPageComponent } from './webshop-page/webshop-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { ShoppingCartService } from './shopping-cart.service';
 
 
 
@@ -53,8 +53,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     WebshopPageComponent,
     ProductPageComponent,
     CartPageComponent,
-    
-    
+
+
   ],
   imports: [
     BrowserModule,
@@ -70,10 +70,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatHint,
     MatCardModule,
     NgxMaterialTimepickerModule,
-   
-    TranslateModule.forRoot({loader:{ provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] } })
+
+    TranslateModule.forRoot({ loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] } })
   ],
-  providers: [provideHttpClient(), provideAnimationsAsync()],
+  providers: [provideHttpClient(), provideAnimationsAsync(), ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

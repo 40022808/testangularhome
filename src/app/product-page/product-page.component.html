@@ -13,7 +13,8 @@
                         {{ product.price | currency : "Ft " }}
                     </span>
                 </div>
-                <button>{{ "Add to cart" | translate }}</button>
+                <button (click)="addtoCart()">{{ "Hozzáad" | translate }}</button>
+                <Button (click)="goBack()">{{ "Vissza" | translate }}</Button>
             </div>
         </div>
     </div>

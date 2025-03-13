@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: ':lang/service', component: ServiceComponent },
   { path: ':lang/webshop', component: WebshopPageComponent },
   { path: 'product/:id', component: ProductPageComponent },
-  { path: 'lang/cart', component: CartPageComponent },
+  { path: ':lang/cart', component: CartPageComponent },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
 ];
 
