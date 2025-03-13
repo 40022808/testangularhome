@@ -110,3 +110,15 @@
     transform: scale(1.3); 
     color: #ff7e5f; 
 }
+.mat-form-field-appearance-fill .mat-form-field-label {
+    color: #007bff;
+  }
+  
+  .mat-datepicker-content {
+    background-color: #ffffff;
+  }
+  
+  .booked {
+    background-color: #ff0000; 
+    color: white;
+  }
