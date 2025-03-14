@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BookingService {
-  private apiUrl = 'http://localhost:8000/api/check-booking/store'; // Cseréld le a saját API végpontodra
+  private apiUrl = 'http://localhost:8000/api/check-booking/store';
 
   constructor(private http: HttpClient) {}
 
