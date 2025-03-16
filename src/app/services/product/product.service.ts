@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../shared/models/product';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-
 export class ProductService {
-  getProduct(productId: number) {
+  getProduct(productId: number): Observable<Product[]> {
     throw new Error('Method not implemented.');
   }
-  constructor() { }
+  constructor() {}
 
   getProductById(id: number): Product {
     return this.getAll().find((product) => product.id == id)!;
