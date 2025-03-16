@@ -1,3 +1,4 @@
+// filepath: src/app/product-page/product-page.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ActivatedRoute } from '@angular/router';
@@ -7,7 +8,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
-  styleUrl: './product-page.component.css',
+  styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent implements OnInit {
   product!: Product;
@@ -16,16 +17,16 @@ export class ProductPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
     private shoppingCartService: ShoppingCartService
-  ) {
-    activatedRoute.params.subscribe((params) => {
-      if (params['id'])
-        this.product = productService.getProductById(params['id']);
-    });
-  }
+  ) {}
 
   itemAdded = false;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const productId = +this.activatedRoute.snapshot.paramMap.get('id')!;
+    this.productService.getProduct(productId).subscribe((product: Product) => {
+      this.product = product;
+    });
+  }
 
   addtoCart(): void {
     this.shoppingCartService.addToCart(this.product);

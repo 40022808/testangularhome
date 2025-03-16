@@ -4,7 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import {
+  HttpClient,
+  provideHttpClient,
+} from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
@@ -32,6 +35,7 @@ import { MapComponent } from './map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ShoppingCartService } from './shopping-cart.service';
 import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
+import { ProductService } from './product.service';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -69,7 +73,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatCardModule,
     NgxMaterialTimepickerModule,
     GoogleMapsModule,
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -82,6 +85,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     provideHttpClient(),
     provideAnimationsAsync(),
     ShoppingCartService,
+    [ProductService],
   ],
   bootstrap: [AppComponent],
 })

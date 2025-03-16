@@ -6,6 +6,9 @@ import { Product } from '../../shared/models/product';
 })
 
 export class ProductService {
+  getProduct(productId: number) {
+    throw new Error('Method not implemented.');
+  }
   constructor() { }
 
   getProductById(id: number): Product {
