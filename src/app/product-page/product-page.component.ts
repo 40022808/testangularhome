@@ -4,7 +4,7 @@ import { Product } from '../shared/models/product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product/product.service';
 import { ShoppingCartService } from '../shopping-cart.service';
-
+import { Observable, of } from 'rxjs'; // Ensure RxJS is imported
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
