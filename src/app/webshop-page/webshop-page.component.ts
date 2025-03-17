@@ -1,6 +1,6 @@
 import { Component, importProvidersFrom } from '@angular/core';
 import { ProductService } from '../services/product/product.service';
-import { Product } from '../shared/models/product';
+import { Product } from '../shared/models/product.model';
 
 @Component({
   selector: 'app-webshop-page',

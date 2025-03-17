@@ -1,0 +1,34 @@
+<div>
+  <h2>Add Product</h2>
+  <form (ngSubmit)="addProduct()">
+    <div>
+      <label for="name">Név:</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="product.name"
+        name="name"
+        required
+      />
+    </div>
+    <div>
+      <label for="price">Ár:</label>
+      <input
+        type="number"
+        id="price"
+        [(ngModel)]="product.price"
+        name="price"
+        required
+      />
+    </div>
+    <div>
+      <label for="imageURL"></label>
+      <textarea
+        id="imageURL"
+        [(ngModel)]="product.imageURL"
+        name="description"
+      ></textarea>
+    </div>
+    <button type="submit">Termék hozzáadás</button>
+  </form>
+</div>

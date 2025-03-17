@@ -33,6 +33,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { ShoppingCartService } from './shopping-cart.service';
 import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
 import { ProductService } from './product.service';
+import { AddProductComponent } from './add-product/add-product.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -55,6 +56,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     CartPageComponent,
     MapComponent,
     DeliveryPageComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,

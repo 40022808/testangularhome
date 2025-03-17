@@ -1,6 +1,6 @@
 // filepath: src/app/product-page/product-page.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../shared/models/product';
+import { Product } from '../shared/models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product/product.service';
 import { ShoppingCartService } from '../shopping-cart.service';
