@@ -1,34 +1,18 @@
-<div>
-  <h2>Add Product</h2>
-  <form (ngSubmit)="addProduct()">
-    <div>
-      <label for="name">Név:</label>
-      <input
-        type="text"
-        id="name"
-        [(ngModel)]="product.name"
-        name="name"
-        required
-      />
+<div class="body">
+  <h2 class="title">Add Product</h2>
+  <form (ngSubmit)="addProduct()" class="product-form">
+    <div class="form-group">
+      <label for="name" class="form-label">Név:</label>
+      <input type="text" id="name" [(ngModel)]="product.name" name="name" class="form-input" required />
     </div>
-    <div>
-      <label for="price">Ár:</label>
-      <input
-        type="number"
-        id="price"
-        [(ngModel)]="product.price"
-        name="price"
-        required
-      />
+    <div class="form-group">
+      <label for="price" class="form-label">Ár:</label>
+      <input type="number" id="price" [(ngModel)]="product.price" name="price" class="form-input" required />
     </div>
-    <div>
-      <label for="imageURL"></label>
-      <textarea
-        id="imageURL"
-        [(ngModel)]="product.imageURL"
-        name="description"
-      ></textarea>
+    <div class="form-group">
+      <label for="imageURL" class="form-label"></label>
+      <textarea id="imageURL" [(ngModel)]="product.imageURL" name="description" class="form-textarea"></textarea>
     </div>
-    <button type="submit">Termék hozzáadás</button>
+    <button type="submit" class="submit-button">Termék hozzáadás</button>
   </form>
 </div>
