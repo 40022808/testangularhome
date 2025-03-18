@@ -10,6 +10,7 @@ import { ServiceComponent } from './service/service/service.component';
 import { WebshopPageComponent } from './webshop-page/webshop-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes: Routes = [
   { path: ':lang/home', component: HomeComponent },
@@ -20,11 +21,12 @@ const routes: Routes = [
   { path: ':lang/webshop', component: WebshopPageComponent },
   { path: 'product/:id', component: ProductPageComponent },
   { path: ':lang/cart', component: CartPageComponent },
+  { path: ':lang/add-product', component: AddProductComponent },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

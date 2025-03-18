@@ -1,0 +1,21 @@
+<div class="body">
+  <h1>Termék hozzáadása</h1>
+  <form (submit)="onSubmit()" enctype="multipart/form-data">
+    <label for="name">Név</label>
+    <input type="text" id="name" [(ngModel)]="product.name" name="name" required />
+
+    <label for="description">Leírás</label>
+    <textarea id="description" [(ngModel)]="product.description" name="description"></textarea>
+
+    <label for="price">Ár</label>
+    <input type="number" id="price" [(ngModel)]="product.price" name="price" required />
+
+    <label for="image">Kép</label>
+    <input type="file" id="image" (change)="onFileSelected($event)" />
+
+    <button type="submit">Hozzáadás</button>
+  </form>
+  <div *ngIf="successMessage" class="success-message">
+    Sikeres hozzáadás!
+  </div>
+</div>

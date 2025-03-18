@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../../shared/models/product';
+import { Product } from '../../shared/models/product.model';
 import { Observable, of } from 'rxjs'; // Ensure RxJS is imported
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   getProduct(productId: number): Observable<Product> {
-    
-    return of({ id: productId, name: 'Sample Product', price: 0 }); 
+    return of({ id: productId, name: 'Sample Product', price: 0 });
   }
   constructor() {}
 

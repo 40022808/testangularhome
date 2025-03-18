@@ -1,9 +1,9 @@
 <div class="body">
-
+  <button (click)="addProduct()">Termék Hozzáadás</button>
   <ul>
     <li *ngFor="let product of products">
       <a routerLink="/product/{{ product.id }}">
-        <img src="{{ product.imageURL }}" />
+        <img [src]="product.imageURL" alt="{{ product.name }}" />
         <div class="content">
           <div class="name">
             {{ product.name }}
