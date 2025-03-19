@@ -22,11 +22,24 @@
           </mat-datepicker-actions>
         </mat-datepicker>
       </mat-form-field>
-      <div *ngIf="showBookedMessage" class="booked-message">
-        Lefoglalva
+    
+      <mat-form-field>
+        <mat-label>Choose a time</mat-label>
+        <mat-select (selectionChange)="onTimeSelect($event)">
+          <mat-option *ngFor="let time of availableTimes" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <!-- Lefoglalva üzenet -->
+      <div class="booked-message-container">
+        <div *ngIf="showBookedMessage" class="booked-message">
+          Lefoglalva
+        </div>
       </div>
     </div>
-  
+
 
     <div class="contact-card">
       <h3>Elérhetőségek</h3>

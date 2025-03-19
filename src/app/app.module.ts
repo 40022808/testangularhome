@@ -38,7 +38,7 @@ import { ShoppingCartService } from './shopping-cart.service';
 import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
 import { ProductService } from './product.service';
 import { AddProductComponent } from './add-product/add-product.component';
-
+import { MatSelectModule } from '@angular/material/select';
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
@@ -77,6 +77,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     NgxMaterialTimepickerModule,
     GoogleMapsModule,
     HttpClientModule,
+    MatSelectModule,
 
     TranslateModule.forRoot({
       loader: {
@@ -102,7 +103,7 @@ export class AppModule {
 
   private loadGoogleMaps() {
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDdI4oqyU3e2sFX-JLOEI-s3h0G0tMfYN4`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDuF5NvfwBB7tlim1hmMXnGdGSlGmNQHug`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);

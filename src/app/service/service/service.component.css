@@ -122,3 +122,20 @@
     background-color: #ff0000; 
     color: white;
   }
+  .booked-message-container {
+    display: flex;
+    justify-content: center; /* Középre igazítás vízszintesen */
+    margin-top: 10px; /* Távolság a datepicker-től */
+  }
+  
+  .booked-message {
+    font-size: 35px;
+    color: #007bff; 
+    cursor: pointer; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+  }
+  
+  .booked-message:hover {
+    transform: scale(1.3); /* Ugyanaz a hover effekt */
+    color: #ff7e5f; /* Ugyanaz a hover szín */
+  }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 import { HttpClient } from '@angular/common/http';
-import { BookingService } from '../../booking.service'; // Importáld a BookingService-t
+import { BookingService } from '../../booking.service';
 
 @Component({
   selector: 'app-service',
@@ -9,11 +10,20 @@ import { BookingService } from '../../booking.service'; // Importáld a BookingS
 })
 export class ServiceComponent {
   selectedDate: any;
+  selectedTime: string | null = null;
   bookedDates: any[] = [];
-  showBookedMessage: boolean = false; // Új változó az üzenet megjelenítéséhez
+  availableTimes: string[] = [];
+  showBookedMessage: boolean = false;
 
   constructor(private http: HttpClient, private bookingService: BookingService) {
     this.loadBookedDates();
+    this.generateAvailableTimes();
+  }
+  generateAvailableTimes() {
+    for (let hour = 0; hour < 24; hour++) {
+      const formattedHour = hour.toString().padStart(2, '0') + ':00';
+      this.availableTimes.push(formattedHour);
+    }
   }
 
   onDateChange(event: any) {
@@ -26,9 +36,9 @@ export class ServiceComponent {
       this.bookingService.storeBooking(this.selectedDate).subscribe((response: any) => {
         console.log('Booking stored:', response);
         this.bookedDates.push(this.selectedDate);
-        this.showBookedMessage = true; // Üzenet megjelenítése
+        this.showBookedMessage = true;
         setTimeout(() => {
-          this.showBookedMessage = false; // Üzenet eltüntetése 5 másodperc után
+          this.showBookedMessage = false;
         }, 5000);
       }, (error: any) => {
         console.error('Error storing booking:', error);
@@ -57,9 +67,9 @@ export class ServiceComponent {
       response => {
         console.log('Dátum eltárolva:', response);
         this.loadBookedDates();
-        this.showBookedMessage = true; // Üzenet megjelenítése
+        this.showBookedMessage = true;
         setTimeout(() => {
-          this.showBookedMessage = false; // Üzenet eltüntetése 5 másodperc után
+          this.showBookedMessage = false;
         }, 5000);
       },
       error => {
@@ -86,10 +96,14 @@ export class ServiceComponent {
   myFilter = (d: Date | null): boolean => {
     const date = d || new Date();
     const day = date.getDay();
-    // A hétvége kizárása (szombat és vasárnap)
+
     if (day === 0 || day === 6) {
       return false;
     }
     return !this.isDateBooked(date.toISOString().split('T')[0]);
+  }
+  onTimeSelect(event: MatSelectChange) {
+    this.selectedTime = event.value;
+    console.log('Selected time:', this.selectedTime);
   }
 }
