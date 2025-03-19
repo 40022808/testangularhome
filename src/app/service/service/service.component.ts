@@ -20,43 +20,68 @@ export class ServiceComponent {
     this.generateAvailableTimes();
   }
   generateAvailableTimes() {
-    for (let hour = 0; hour < 24; hour++) {
+    this.availableTimes = []; // Tisztítsuk meg a tömböt
+    for (let hour = 8; hour <= 18; hour++) { // Csak 8-tól 18-ig
       const formattedHour = hour.toString().padStart(2, '0') + ':00';
       this.availableTimes.push(formattedHour);
     }
   }
 
-  onDateChange(event: any) {
-    this.selectedDate = event.value;
-    this.checkBooking();
-  }
+  isDayFullyBooked: boolean = false;
+
+onDateChange(event: any) {
+  this.selectedDate = event.value;
+  const formattedDate = this.selectedDate.toISOString().split('T')[0];
+
+  // Ellenőrizd, hogy az adott napon minden időpont foglalt-e
+  this.isDayFullyBooked = this.availableTimes.every((time) =>
+    this.isDateBooked(formattedDate, time)
+  );
+
+  this.checkBooking();
+}
 
   onApplyClick() {
-    if (this.selectedDate) {
-      this.bookingService.storeBooking(this.selectedDate).subscribe((response: any) => {
-        console.log('Booking stored:', response);
-        this.bookedDates.push(this.selectedDate);
-        this.showBookedMessage = true;
-        setTimeout(() => {
-          this.showBookedMessage = false;
-        }, 5000);
-      }, (error: any) => {
-        console.error('Error storing booking:', error);
-      });
+    if (this.selectedDate && this.selectedTime) {
+      const bookingData = {
+        date: this.selectedDate.toISOString().split('T')[0], // Formázott dátum
+        time: this.selectedTime, // Kiválasztott idő
+      };
+  
+      this.bookingService.storeBooking(bookingData).subscribe(
+        (response: any) => {
+          console.log('Booking stored:', response);
+          this.bookedDates.push({ date: bookingData.date, time: bookingData.time });
+          this.showBookedMessage = true;
+          setTimeout(() => {
+            this.showBookedMessage = false;
+          }, 5000);
+        },
+        (error: any) => {
+          console.error('Error storing booking:', error);
+        }
+      );
+    } else {
+      console.error('Date and time must be selected!');
     }
   }
 
   checkBooking() {
-    this.http.get(`http://localhost:8000/api/check-booking?date=${this.selectedDate}`).subscribe(
+    if (!this.selectedDate || !this.selectedTime) {
+      console.error('Date and time must be selected!');
+      return;
+    }
+  
+    const formattedDate = this.selectedDate.toISOString().split('T')[0];
+    this.http.get(`http://localhost:8000/api/check-booking?date=${formattedDate}&time=${this.selectedTime}`).subscribe(
       (response: any) => {
         if (response.booked) {
-          console.log('A dátum már le van foglalva!');
+          console.log('A dátum és időpont már le van foglalva!');
         } else {
-          console.log('A dátum szabad!');
-          this.storeBooking(this.selectedDate);
+          console.log('A dátum és időpont szabad!');
         }
       },
-      error => {
+      (error) => {
         console.error('Hiba történt:', error);
       }
     );
@@ -81,27 +106,40 @@ export class ServiceComponent {
   loadBookedDates() {
     this.http.get('http://localhost:8000/api/check-booking/booked-dates').subscribe(
       (response: any) => {
-        this.bookedDates = response.dates;
+        this.bookedDates = response.bookings; 
       },
-      error => {
+      (error) => {
         console.error('Hiba történt:', error);
       }
     );
   }
 
-  isDateBooked(date: any): boolean {
-    return this.bookedDates.includes(date);
+  isDateBooked(date: string, time: string): boolean {
+    if (!date || !time) {
+      return false;
+    }
+    return this.bookedDates.some(
+      (booking) => booking.date === date && booking.time === time
+    );
   }
 
   myFilter = (d: Date | null): boolean => {
     const date = d || new Date();
     const day = date.getDay();
-
+    const formattedDate = date.toISOString().split('T')[0];
+  
+    // A hétvége kizárása (szombat és vasárnap)
     if (day === 0 || day === 6) {
       return false;
     }
-    return !this.isDateBooked(date.toISOString().split('T')[0]);
-  }
+  
+    // Ellenőrizd, hogy van-e szabad időpont az adott napra
+    const allTimesBooked = this.availableTimes.every((time) =>
+      this.isDateBooked(formattedDate, time)
+    );
+  
+    return !allTimesBooked; // Csak akkor engedélyezett, ha van szabad időpont
+  };
   onTimeSelect(event: MatSelectChange) {
     this.selectedTime = event.value;
     console.log('Selected time:', this.selectedTime);

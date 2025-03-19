@@ -26,11 +26,14 @@
       <mat-form-field>
         <mat-label>Choose a time</mat-label>
         <mat-select (selectionChange)="onTimeSelect($event)">
-          <mat-option *ngFor="let time of availableTimes" [value]="time">
+          <mat-option *ngFor="let time of availableTimes" [value]="time" [disabled]="isDateBooked(selectedDate?.toISOString().split('T')[0], time)">
             {{ time }}
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <div *ngIf="isDayFullyBooked" class="fully-booked-message">
+        Minden időpont foglalt erre a napra!
+      </div>
     
       <!-- Lefoglalva üzenet -->
       <div class="booked-message-container">
