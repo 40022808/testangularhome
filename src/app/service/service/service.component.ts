@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { HttpClient } from '@angular/common/http';
 import { BookingService } from '../../booking.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-service',
@@ -9,19 +10,29 @@ import { BookingService } from '../../booking.service';
   styleUrls: ['./service.component.css']
 })
 export class ServiceComponent {
+  // origin: string = ''; 
+  // destination: string = ''; 
+  // map: any;
+  // directionsService: any;
+  // directionsRenderer: any;
   selectedDate: any;
   selectedTime: string | null = null;
   bookedDates: any[] = [];
   availableTimes: string[] = [];
   showBookedMessage: boolean = false;
+  selectedGender: string | null = null;
+  Router: any;
+  address: string = 'Budapest, Révay u. 16, 1065';
+  
 
-  constructor(private http: HttpClient, private bookingService: BookingService) {
+  constructor(private http: HttpClient, private bookingService: BookingService,private router: Router) {
+    this.Router = router;
     this.loadBookedDates();
     this.generateAvailableTimes();
   }
   generateAvailableTimes() {
-    this.availableTimes = []; // Tisztítsuk meg a tömböt
-    for (let hour = 8; hour <= 18; hour++) { // Csak 8-tól 18-ig
+    this.availableTimes = []; 
+    for (let hour = 8; hour <= 18; hour++) { 
       const formattedHour = hour.toString().padStart(2, '0') + ':00';
       this.availableTimes.push(formattedHour);
     }
@@ -33,7 +44,7 @@ onDateChange(event: any) {
   this.selectedDate = event.value;
   const formattedDate = this.selectedDate.toISOString().split('T')[0];
 
-  // Ellenőrizd, hogy az adott napon minden időpont foglalt-e
+  
   this.isDayFullyBooked = this.availableTimes.every((time) =>
     this.isDateBooked(formattedDate, time)
   );
@@ -41,30 +52,31 @@ onDateChange(event: any) {
   this.checkBooking();
 }
 
-  onApplyClick() {
-    if (this.selectedDate && this.selectedTime) {
-      const bookingData = {
-        date: this.selectedDate.toISOString().split('T')[0], // Formázott dátum
-        time: this.selectedTime, // Kiválasztott idő
-      };
-  
-      this.bookingService.storeBooking(bookingData).subscribe(
-        (response: any) => {
-          console.log('Booking stored:', response);
-          this.bookedDates.push({ date: bookingData.date, time: bookingData.time });
-          this.showBookedMessage = true;
-          setTimeout(() => {
-            this.showBookedMessage = false;
-          }, 5000);
-        },
-        (error: any) => {
-          console.error('Error storing booking:', error);
-        }
-      );
-    } else {
-      console.error('Date and time must be selected!');
-    }
+onApplyClick() {
+  if (this.selectedDate && this.selectedTime && this.selectedGender) {
+    const bookingData = {
+      date: this.selectedDate.toISOString().split('T')[0], // Formázott dátum
+      time: this.selectedTime, // Kiválasztott idő
+      gender: this.selectedGender, // Kiválasztott nem
+    };
+
+    this.bookingService.storeBooking(bookingData).subscribe(
+      (response: any) => {
+        console.log('Booking stored:', response);
+        this.bookedDates.push({ date: bookingData.date, time: bookingData.time, gender: bookingData.gender });
+        this.showBookedMessage = true;
+        setTimeout(() => {
+          this.showBookedMessage = false;
+        }, 5000);
+      },
+      (error: any) => {
+        console.error('Error storing booking:', error);
+      }
+    );
+  } else {
+    console.error('Date, time, and gender must be selected!');
   }
+}
 
   checkBooking() {
     if (!this.selectedDate || !this.selectedTime) {
@@ -144,4 +156,17 @@ onDateChange(event: any) {
     this.selectedTime = event.value;
     console.log('Selected time:', this.selectedTime);
   }
+  navigateToHome() {
+    this.router.navigate(['/']); // Navigálás a kezdőlapra
+  }
+  navigateToWebshop() {
+    this.router.navigate(['/webshop']); // Navigálás a webshop oldalra
+  }
+  openGoogleMaps() {
+    const encodedAddress = encodeURIComponent(this.address);
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+    window.open(googleMapsUrl, '_blank'); // Új lapon nyitja meg a Google Maps-et
+  }
+  
 }
+

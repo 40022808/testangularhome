@@ -39,6 +39,8 @@ import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
 import { ProductService } from './product.service';
 import { AddProductComponent } from './add-product/add-product.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
@@ -78,6 +80,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     GoogleMapsModule,
     HttpClientModule,
     MatSelectModule,
+    MatFormFieldModule,
 
     TranslateModule.forRoot({
       loader: {
@@ -103,7 +106,7 @@ export class AppModule {
 
   private loadGoogleMaps() {
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDuF5NvfwBB7tlim1hmMXnGdGSlGmNQHug`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDuF5NvfwBB7tlim1hmMXnGdGSlGmNQHug&libraries=places`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);

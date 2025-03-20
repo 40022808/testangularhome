@@ -6,6 +6,9 @@
 
     <div class="map-container">
       <app-map></app-map>
+      <div class="google-maps-link-container">
+        <button class="google-maps-link" (click)="openGoogleMaps()">Megnyitás a Google Maps-en</button>
+      </div>
     </div>
 
 
@@ -13,7 +16,7 @@
       <mat-form-field>
         <mat-label>Choose a date</mat-label>
         <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" (dateChange)="onDateChange($event)">
-        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-hint></mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker>
           <mat-datepicker-actions>
@@ -35,6 +38,14 @@
         Minden időpont foglalt erre a napra!
       </div>
     
+      <mat-form-field>
+        <mat-label>Choose your gender</mat-label>
+        <mat-select [(value)]="selectedGender">
+          <mat-option value="male">Férfi</mat-option>
+          <mat-option value="female">Nő</mat-option>
+          <mat-option value="other">Egyéb</mat-option>
+        </mat-select>
+      </mat-form-field>
       <!-- Lefoglalva üzenet -->
       <div class="booked-message-container">
         <div *ngIf="showBookedMessage" class="booked-message">
@@ -69,3 +80,11 @@
         font-weight: bold;
       }
     </style>
+    <div class="home-button-container">
+      <button class="home-button" (click)="navigateToHome()">Vissza a Kezdőlapra</button>
+    </div>
+    <div class="webshop-button-container">
+      <button class="webshop-button" (click)="navigateToWebshop()">Webshop</button>
+    </div>
+   
+   

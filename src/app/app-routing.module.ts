@@ -23,6 +23,9 @@ const routes: Routes = [
   { path: ':lang/cart', component: CartPageComponent },
   { path: ':lang/add-product', component: AddProductComponent },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
+  { path: '', component: HomeComponent }, 
+  { path: 'service', component: ServiceComponent },
+  { path: 'webshop', component: WebshopPageComponent },
 ];
 
 @NgModule({
