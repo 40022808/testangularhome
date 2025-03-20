@@ -16,16 +16,14 @@ const routes: Routes = [
   { path: ':lang/home', component: HomeComponent },
   { path: ':lang/register', component: RegisterComponent },
   { path: ':lang/login', component: LoginComponent },
-  { path: ':lang/user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: ':lang/user', component: UserComponent }, /* , canActivate: [AuthGuard] */
   { path: ':lang/service', component: ServiceComponent },
   { path: ':lang/webshop', component: WebshopPageComponent },
   { path: 'product/:id', component: ProductPageComponent },
   { path: ':lang/cart', component: CartPageComponent },
   { path: ':lang/add-product', component: AddProductComponent },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
-  { path: '', component: HomeComponent }, 
-  { path: 'service', component: ServiceComponent },
-  { path: 'webshop', component: WebshopPageComponent },
+
 ];
 
 @NgModule({

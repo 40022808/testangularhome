@@ -64,6 +64,8 @@
 .logoh1 {
     color: white;
     text-shadow: white 0px 0px 7px;
+    position: relative;
+    left: 20px;
 }
 
 .logo:hover {

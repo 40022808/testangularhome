@@ -62,7 +62,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigate([this.currentLang, 'user']);
+    /* this.router.navigate([this.currentLang, 'user']); */
     this.getUserInfo();
   }
 
