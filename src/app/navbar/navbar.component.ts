@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,6 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NavbarComponent {
   dropdownOpen = false;
+
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
@@ -54,5 +60,18 @@ export class NavbarComponent {
 
   switchtoWebShop() {
     this.router.navigate([this.currentLang, 'webshop']);
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    const targetElement = event.target as HTMLElement;
+
+    if (!targetElement.closest('.language-switcher')) {
+      this.dropdownOpen = false;
+    }
+
+    if (!targetElement.closest('.menu-toggle') && !targetElement.closest('.nav-links.open')) {
+      this.menuOpen = false;
+    } 
   }
 }
