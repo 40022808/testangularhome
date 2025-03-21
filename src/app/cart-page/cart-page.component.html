@@ -6,18 +6,16 @@
     <div *ngIf="cart.length > 0" class="cart-container">
         <ul class="product-list">
             <li *ngFor="let product of cart; let i = index" class="product-item">
-                <img [src]="product.imageURL" alt="{{product.name}}" class="product-image">
+                <img *ngIf="product.imageURL" [src]="'http://localhost:8000' + product.imageURL" alt="{{ product.name }}" />
                 <div class="product-details">
-                    <div class="product-name">{{product.name}}</div>
+                    <div class="product-name">{{ product.name }}</div>
+                    <div class="product-price">{{ product.price | currency: 'Ft' }}</div>
                 </div>
                 <button (click)="removeFromCart(i)">Törlés</button>
             </li>
         </ul>
         <div class="total-price">
-            <div *ngFor="let product of cart" class="product-price">
-                {{product.price |currency: " Ft "}}
-            </div>
-            <p> Teljes összeg: {{totalPrice | currency: " Ft "}}</p>
+            <p>Teljes összeg: {{ totalPrice | currency: 'Ft' }}</p>
             <div class="delivery-button">
                 <a routerLink="/delivery" class="delivery-link">Szállításhoz</a>
             </div>

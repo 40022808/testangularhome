@@ -1,7 +1,6 @@
-<div class="body">
+<div class="body" *ngIf="product">
     <div class="container">
-        <img [src]="product.imageURL" [alt]="product.name" />
-
+        <img *ngIf="product.imageURL" [src]="'http://localhost:8000' + product.imageURL" alt="{{ product.name }}" />
         <div class="details">
             <div class="header">
                 <span class="name">
@@ -13,11 +12,14 @@
                     </span>
                 </div>
                 <button (click)="addtoCart()">{{ "Hozzáad" | translate }}</button>
-                <Button (click)="goBack()">{{ "Vissza" | translate }}</Button>
+                <button (click)="goBack()">{{ "Vissza" | translate }}</button>
                 <div *ngIf="itemAdded" class="success-message">
                     Hozzáadva a kosárhoz!
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div *ngIf="!product">
+    <p>Termék betöltése...</p>
 </div>

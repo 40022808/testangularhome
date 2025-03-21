@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../shared/models/product.model';
 
+
 @Component({
   selector: 'app-webshop-page',
   templateUrl: './webshop-page.component.html',
