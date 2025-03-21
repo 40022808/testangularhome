@@ -16,12 +16,12 @@ const routes: Routes = [
   { path: ':lang/home', component: HomeComponent },
   { path: ':lang/register', component: RegisterComponent },
   { path: ':lang/login', component: LoginComponent },
-  { path: ':lang/user', component: UserComponent, canActivate: [AuthGuard] }, /* , canActivate: [AuthGuard] */
+  { path: ':lang/user', component: UserComponent, canActivate: [AuthGuard] },
   { path: ':lang/service', component: ServiceComponent, canActivate: [AuthGuard] },
   { path: ':lang/webshop', component: WebshopPageComponent, canActivate: [AuthGuard] },
-  { path: 'product/:id', component: ProductPageComponent },
-  { path: ':lang/cart', component: CartPageComponent },
-  { path: ':lang/add-product', component: AddProductComponent },
+  { path: 'product/:id', component: ProductPageComponent, canActivate: [AuthGuard] },
+  { path: ':lang/cart', component: CartPageComponent, canActivate: [AuthGuard] },
+  { path: ':lang/add-product', component: AddProductComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
 
 ];
