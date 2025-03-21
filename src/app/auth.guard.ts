@@ -12,9 +12,10 @@ import { AuthService } from './auth.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) { }
-
+  
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.authService.isLoggedIn()) {
+      console.log(true);
       return true;
     } else {
       const lang = route.params['lang'] || 'en'; 
