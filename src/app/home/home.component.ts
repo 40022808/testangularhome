@@ -18,20 +18,40 @@ export class HomeComponent implements AfterViewInit {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1 
+      threshold: 0.6
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('slide-up');
+          const element = entry.target as HTMLElement;
+          
+          
+          setTimeout(() => {
+            if (element.classList.contains('divcontainer_III_text')) {
+              element.classList.add('moveLeft');
+            }
+            else if (element.classList.contains('divcontainer') && element.classList.contains('II')) {
+              element.classList.add('fadeInFromLeft');
+            }
+            else if (element.classList.contains('shop')) {
+              element.classList.add('fadeInAndGrow');
+            }
+            else if ( element.classList.contains('good1') || element.classList.contains('good2') || element.classList.contains('good3') ) {
+              element.classList.add('slide-up2');
+            }
+            else {
+              element.classList.add('slide-up');
+            }
+          }, index * 400);
+  
           observer.unobserve(entry.target); 
         }
       });
     }, observerOptions);
-
+  
     this.children.forEach(child => {
-      observer.observe(child.nativeElement);
+      observer.observe(child.nativeElement); 
     });
   }
   

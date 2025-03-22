@@ -22,11 +22,11 @@
             <img src="assets/images/user.svg" alt="user" class="img_user" />
         </a>
         <a [routerLink]="['/', currentLang, 'cart']" routerLinkActive="active" class="cart_a">
-            <img src="assets/images/cart.svg" alt="cart" class="img_cart" />
+            <img src="assets/images/cart2.svg" alt="cart" class="img_cart" />
         </a>
         <div class="language-switcher" (click)="toggleDropdown()">
             <button class="language_btn">
-                <img src="assets/images/language.svg" alt="language" class="img_lan" />
+                <img [src]="'assets/images/' + currentLang + '.svg'" alt="language" class="img_lan" />
             </button>
             <ul *ngIf="dropdownOpen" class="dropdown">
                 <li (click)="switchLang('en')">English</li>
