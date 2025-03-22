@@ -198,7 +198,7 @@
     .nav-links.open {
         display: flex;
         position: relative;
-        top: 250%;
+        top: 270%;
         width: 20vw;
         left: 30vw;
 

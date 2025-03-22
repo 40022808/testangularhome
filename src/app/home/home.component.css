@@ -392,6 +392,16 @@
     }
 }
 
+@keyframes moveLeft2 {
+    from {
+      transform: translateX(50px) skewX(9deg);
+    }
+    to {
+      transform: translateX(0px) skewX(9deg);
+
+    }
+}
+
 @keyframes fadeInAndGrow {
     from {
       opacity: 0; 
@@ -438,6 +448,115 @@
 }
 
 @media (max-width: 768px) {
+    .h1s {
+        top: 100px;
+        gap: 7vh;
+    }
 
+    .h1 {
+        font-size: 4vmin;
+    }
+
+    .h1div {
+        position: relative;
+        top: -14vh;
+    }
+
+    .divblock {
+        height: 80vh;
+    }
+
+    .image1 {
+        right: 20vw;
+        top: -13vh;
+        width: 23vw;
+        height: 23vw;
+    }
+    .image2 {
+        top: 0;
+        width: 75vw;
+        height: 30vh;
+    }
+    .image3 {
+        top: -22vh;
+        left: 22vw;
+        width: 25vw;
+        height: 25vw;
+    }
+    .image4 {
+        top: -45vh;
+        right: 30vw;
+        width: 30vw;
+        height: 30vw;
+    }
+    .image5 {
+        top: -55vh;
+        left: 25vw;
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .time , .good {
+        width: 100px;
+        height: 100px;
+    
+    }
+
+    .divcontainer.II {
+        height: 60vh;
+    }
+
+    .divcontainer_II_text_h1 {
+        font-size: 5vmin;
+        color: white;
+    }
+
+    .divcontainer.IV {
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 17vh;
+    }
+
+    .divcontainer.IV div {
+        gap: 2vh;
+    }
+
+    .shop {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 30vh;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+    }
+
+    .good1, .good2, .good3 {
+        width: 35px;
+        height: 35px;
+    
+    }
+
+    .divcontainer.III {
+        height: 35vh;
+        top: 25vh;
+    }
+    
+    .divcontainer_III_img {
+        width: 70vw;
+        height: 100%;
+    }
+
+    .divcontainer_III_text {
+        width: 70vw;
+        right: calc(-10vw - 50px);
+    }
+
+
+    .moveLeft {
+        right: -10vw;
+        animation: moveLeft2 2s ease-out forwards;
+    }
 
 }
