@@ -67,11 +67,15 @@
         
         <div class="divcontainer V">
 
-            <div class="divcontainer_V_div">
-                <a class="divcontainer_V_btn" [routerLink]="['/', currentLang, 'user']" routerLinkActive="active">{{"Login Now!" | translate}}</a>
-                <img src="assets/images/image8.svg" alt="heart" class="heart">
-                <div #meteorContainer class="meteor-container"></div>
-              </div>
+
+            <div class="divcontainer_V_div_block" #child>
+                <div class="divcontainer_V_div" #child>
+                    <a class="divcontainer_V_btn" [routerLink]="['/', currentLang, 'user']" routerLinkActive="active">{{"Login Now!" | translate}}</a>
+                    <img src="assets/images/image8.svg" alt="heart" class="heart">
+                </div>
+            </div>
+
+
               
             
         </div> 

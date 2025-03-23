@@ -1,12 +1,5 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  QueryList,
-  ViewChildren,
-  Renderer2
-} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -22,9 +15,7 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private translate: TranslateService,
-    private renderer: Renderer2
   ) {
     this.route.params.subscribe(params => {
       const lang = params['lang'];
@@ -60,9 +51,23 @@ export class HomeComponent implements AfterViewInit {
               element.classList.contains('II')
             ) {
               element.classList.add('fadeInFromLeft');
-            } else if (element.classList.contains('shop')) {
+            } 
+            else if (element.classList.contains('shop')) {
               element.classList.add('fadeInAndGrow');
-            } else if (
+            }
+            else if (element.classList.contains('divcontainer_V_div_block')) {
+              setTimeout(() => {
+                element.classList.add('shadow-inset-center');
+              }, 1000);
+                           
+            }
+            else if (element.classList.contains('divcontainer_V_div')) {
+              setTimeout(() => {
+                element.classList.add('bounce-in-top');
+              }, 2300);
+              
+            }
+            else if (
               element.classList.contains('good1') ||
               element.classList.contains('good2') ||
               element.classList.contains('good3')
@@ -82,36 +87,10 @@ export class HomeComponent implements AfterViewInit {
       observer.observe(child.nativeElement);
     });
 
-    // 开始流星雨效果
-    this.startMeteorRain();
+    
+
   }
 
-  startMeteorRain(): void {
-    const container = this.meteorContainer.first.nativeElement;
 
-    // 每隔 500ms 创建一个流星
-    setInterval(() => {
-      this.createMeteor(container);
-    }, 500);
-  }
 
-  createMeteor(container: HTMLElement): void {
-    const meteor = this.renderer.createElement('div');
-    this.renderer.addClass(meteor, 'meteor');
-
-    // 设置流星的随机位置和动画延迟
-    const startLeft = Math.random() * container.offsetWidth;
-    const delay = Math.random() * 2;
-
-    this.renderer.setStyle(meteor, 'left', `${startLeft}px`);
-    this.renderer.setStyle(meteor, 'animationDelay', `${delay}s`);
-
-    // 添加流星到容器中
-    this.renderer.appendChild(container, meteor);
-
-    // 动画完成后移除流星
-    setTimeout(() => {
-      this.renderer.removeChild(container, meteor);
-    }, 3000);
-  }
 }
