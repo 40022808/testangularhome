@@ -57,8 +57,10 @@ export class HomeComponent implements AfterViewInit {
   
 
   ngOnInit() {
-      this.router.navigate([this.currentLang, 'home']);
-    }
+
+  }
+
+  
   
   currentLang = 'en';
   

@@ -66,15 +66,11 @@
      
         
         <div class="divcontainer V">
-            <div class="moon">
-                <div class="moon_div1"></div>
-                <div class="moon_div2"></div>
-                <div class="moon_div3"></div>
-                <div class="moon_div4"></div>
+
+            <div class="divcontainer_V_div">
+                <a class="divcontainer_V_btn" [routerLink]="['/', currentLang, 'user']" routerLinkActive="active">{{"Login Now!" | translate}}</a>
+                <img src="assets/images/image8.svg" alt="heart" class="heart">
             </div>
-            <a class="divcontainer_V_btn" [routerLink]="['/', currentLang, 'user']" routerLinkActive="active">{{"Login Now!" | translate}}</a>
-            <br>
-            <img src="assets/images/image8.svg" alt="heart" class="heart">
             
         </div> 
         
@@ -84,3 +80,9 @@
 
 </div>
 
+<!-- <div class="moon">
+    <div class="moon_div1"></div>
+    <div class="moon_div2"></div>
+    <div class="moon_div3"></div>
+    <div class="moon_div4"></div>
+</div> -->

@@ -100,7 +100,7 @@
 .h1s {
     position: relative;
     top: 80px;
-    gap: 10vh;
+    gap: 30vh;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -111,15 +111,14 @@
     flex-direction: column;
     gap: 0;
     position: relative;
-    top: 15vh;
     z-index: 3;
     background: #fff;
-    background: -moz-linear-gradient(top, #ffffff 0%, #cadcff 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #cadcff));
-    background: -webkit-linear-gradient(top, #ffffff 0%, #cadcff 100%);
-    background: -o-linear-gradient(top, #ffffff 0%, #cadcff 100%);
-    background: -ms-linear-gradient(top, #ffffff 0%, #cadcff 100%);
-    background: linear-gradient(to bottom, #ffffff 0%, #cadcff 100%);
+    background: -moz-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #bdd3ff));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #bdd3ff 100%);
 }
 
 .divcontainer.II {
@@ -131,7 +130,6 @@
     background: -ms-linear-gradient(left, #11e1db 0%, #2c4ce9 100%);
     background: linear-gradient(to right, #11e1db 0%, #2c4ce9 100%);
     height: 100vh;
-    top: 25vh;
     z-index: 2;
     opacity: 0;
     display: flex;
@@ -147,19 +145,6 @@
     align-items: center;
 }
 
-.divcontainer_II_text {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.divcontainer_II_img {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-}
 
 .divcontainer_II_text_h1 {
     font-size: 7vmin;
@@ -174,7 +159,6 @@
 
 .divcontainer.III {
     height: 50vh;
-    top: 25vh;
 }
 
 .divcontainer_III_img {
@@ -256,6 +240,7 @@
     height: 100vh;
     background-color: rgba(255, 255, 255, 0);
     position: relative;
+    top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -281,29 +266,29 @@
 
 .image1 {
     right: 35vw;
-    top: -10vh;
+    top: -0vh;
     width: 10vw;
     height: 10vw;
 }
 .image2 {
-    top: -30vh;
+    top: -20vh;
     width: 45vw;
     height: 20vw;
 }
 .image3 {
-    top: -35vh;
+    top: -25vh;
     left: 35vw;
     width: 13vw;
     height: 13vw;
 }
 .image4 {
-    top: -50vh;
+    top: -40vh;
     right: 40vw;
     width: 13vw;
     height: 13vw;
 }
 .image5 {
-    top: -70vh;
+    top: -60vh;
     left: 35vw;
     width: 13vw;
     height: 13vw;
@@ -312,18 +297,23 @@
 .divcontainer.V {
     height: 120vh;
     position: relative;
-    background-image:
-        url('/assets/images/stars.png'),
-        linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #4c4067, #615383, #776092);
-    background-size: auto, cover; 
-    background-repeat: repeat, no-repeat;
-    background-position: center center, center center;
-    top: 14.5vh;
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5vh;
+}
+
+.divcontainer_V_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15vh;
+    background-color: #131934;
+    width: 90vmin;
+    height: 90vmin;
+    border-radius: 100%;
 }
 
 .divcontainer_V_btn {
@@ -468,7 +458,7 @@
 @media (max-width: 768px) {
     .h1s {
         top: 100px;
-        gap: 7vh;
+        gap: 15vh;
     }
 
     .h1 {
@@ -533,18 +523,22 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        top: 17vh;
+        top: 0vh;
+        gap: 8vh;
     }
 
     .divcontainer.IV div {
         gap: 2vh;
+        position: relative;
+        left: 0;
+        top: 0;
     }
 
     .shop {
         width: 200px;
         height: 200px;
         position: relative;
-        top: 30vh;
+        top: 0vh;
         bottom: 0;
         right: 0;
         opacity: 0;
@@ -558,7 +552,7 @@
 
     .divcontainer.III {
         height: 35vh;
-        top: 25vh;
+        top: 0vh;
     }
     
     .divcontainer_III_img {
@@ -577,4 +571,24 @@
         animation: moveLeft2 2s ease-out forwards;
     }
 
+    .divcontainer_V_btn {
+        padding: 15px;
+    }
+
+    .divcontainer_V_div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        background-color: #131934;
+        width: 80vmin;
+        height: 80vmin;
+        border-radius: 100%;
+    }
+
+    .heart {
+        width: 100px;
+        height: 100px;
+    }
 }
