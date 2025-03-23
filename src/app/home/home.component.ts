@@ -58,13 +58,13 @@ export class HomeComponent implements AfterViewInit {
             else if (element.classList.contains('divcontainer_V_div_block')) {
               setTimeout(() => {
                 element.classList.add('shadow-inset-center');
-              }, 1000);
+              }, 500);
                            
             }
             else if (element.classList.contains('divcontainer_V_div')) {
               setTimeout(() => {
                 element.classList.add('bounce-in-top');
-              }, 2300);
+              }, 1000);
               
             }
             else if (

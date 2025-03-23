@@ -35,16 +35,16 @@ export class ApiService {
     });
   }
 
-  upgradeToAdmin(userId: string): Observable<any> {
+  upgradeToAdmin(useremail: string): Observable<any> {
     const token = localStorage.getItem('userToken');
-    return this.http.put(`${this.baseUrl}/api/users/${userId}/upgrade`, {},{
+    return this.http.put(`${this.baseUrl}/api/users/${useremail}/upgrade`, {},{
       headers: { Authorization: `Bearer ${token}` }
     });
   }
 
-  downgradeFromAdmin( userId: string): Observable<any> {
+  downgradeFromAdmin( useremail: string): Observable<any> {
     const token = localStorage.getItem('userToken');
-    return this.http.put(`${this.baseUrl}/api/users/${userId}/downgrade`, {},{
+    return this.http.put(`${this.baseUrl}/api/users/${useremail}/downgrade`, {},{
       headers: { Authorization: `Bearer ${token}` }
     });
   }
@@ -66,6 +66,12 @@ export class ApiService {
   checkOldPassword(formData: any): Observable<any> {
     const token = localStorage.getItem('userToken');
     return this.http.post(`${this.baseUrl}/api/checkoldpassword`, formData, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
+  getUserByEmail(email: string,token: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/getUserByEmail/${email}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
   }

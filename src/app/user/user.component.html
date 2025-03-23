@@ -4,8 +4,6 @@
         <h1>{{ 'User Information' | translate }}</h1>
       
         <div *ngIf="userInfo" class="user-info">
-            <h2>{{ 'Id' | translate}}</h2>
-            <p>{{ userInfo.id }}</p>
             <h2>{{ 'User Role' | translate }}</h2>
             <p>{{ getUserRoleTranslationKey(userRole) | translate }}</p>
             <div class="username-div">
@@ -38,14 +36,14 @@
         </div>
         
         <div class="superadmin-actions-give" [ngClass]="{'fade-in': currentStep === 2}" *ngIf="currentStep === 2">
-            <input type="text" placeholder="{{ 'Id' | translate }}" required [(ngModel)]="giveId">
+            <input type="text" placeholder="{{ 'Email' | translate }}" required [(ngModel)]="giveEmail">
             <button (click)="giveAdmin()">{{ 'Give Admin' | translate }}</button>
             <button  (click)="previousStep()">{{"Back" | translate}}</button>
         </div>
 
 
         <div class="superadmin-actions-deprive" [ngClass]="{'fade-in': currentStep === 3}" *ngIf="currentStep === 3">
-            <input type="text" placeholder="{{ 'Id' | translate }}" required [(ngModel)]="depriveId">
+            <input type="text" placeholder="{{ 'Email' | translate }}" required [(ngModel)]="depriveEmail">
             <button (click)="depriveAdmin()">{{ 'Deprive Admin' | translate }}</button>
             <button  (click)="previousStep()">{{"Back" | translate}}</button>
         </div>
@@ -86,6 +84,26 @@
 
         </div>
     </div>
+
+    <!-- <div class="user-div-sure-give-body">
+        <div class="user-div-sure-give-div">
+            <h1 class="user-div-sure-give-div-h1">{{ 'Give Admin' | translate }}</h1>
+            <div class="user-div-sure-give-div-text"></div>
+            <div class="user-div-sure-give-div-buttons">
+
+            </div>
+        </div>
+    </div> -->
+    
+    <!-- <div class="user-div-sure-deprive-body">
+        <div class="user-div-sure-deprive-div">
+            <h1 class="user-div-sure-deprive-div-h1">{{ 'Deprive Admin' | translate }}</h1>
+            <div class="user-div-sure-deprive-div-text"></div>
+            <div class="user-div-sure-deprive-div-buttons">
+
+            </div>
+        </div>
+    </div> -->
 
     <div class="user-div-password-body" *ngIf="PasswordDiv">
         <div class="user-div-password-div" *ngIf=!PasswordDiv_ok>

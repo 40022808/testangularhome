@@ -310,7 +310,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15vh;
+    gap: 10vh;
     background-color: #131934;
     background-image:
         url('/assets/images/stars.png'),
@@ -318,8 +318,8 @@
     background-size: auto, cover; 
     background-repeat: repeat, no-repeat;
     background-position: center center, center center;
-    width: 70vmin;
-    height: 70vmin;
+    width: 50vmin;
+    height: 50vmin;
     border-radius: 100%;
     overflow: hidden; 
     opacity: 0;

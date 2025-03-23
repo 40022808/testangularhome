@@ -16,8 +16,8 @@ export class UserComponent implements OnInit {
   userloginError: boolean = false;
   logoutError: boolean = false;
   currentStep: number = 1;
-  giveId: string = '';
-  depriveId: string = '';
+  giveEmail: string = '';
+  depriveEmail: string = '';
   UsernameDiv: boolean = false;
   PasswordDiv: boolean = false;
   newUsername: string = '';
@@ -104,8 +104,10 @@ export class UserComponent implements OnInit {
     return this.userRoleMap[role] || 'Unknown';
   }
 
+  
+
   giveAdmin() {
-    this.apiService.upgradeToAdmin(this.giveId).subscribe(
+    this.apiService.upgradeToAdmin(this.giveEmail).subscribe(
       response => {
         console.log('User upgraded to admin successfully', response);
         this.getUserInfo(); 
@@ -116,11 +118,11 @@ export class UserComponent implements OnInit {
         this.currentStep = 5;
       }
     );
-    this.giveId = '';
+    this.giveEmail = '';
   }
 
   depriveAdmin() {
-    this.apiService.downgradeFromAdmin(this.depriveId).subscribe(
+    this.apiService.downgradeFromAdmin(this.depriveEmail).subscribe(
       response => {
         console.log('User downgraded from admin successfully', response);
         this.getUserInfo(); 
@@ -131,15 +133,15 @@ export class UserComponent implements OnInit {
         this.currentStep = 5;
       }
     );
-    this.depriveId = '';
+    this.depriveEmail = '';
   }
 
 
   previousStep() {
     if (this.currentStep > 1) {
       this.currentStep = 1;
-      this.giveId = '';
-      this.depriveId = '';
+      this.giveEmail = '';
+      this.depriveEmail = '';
     }
   }
 
