@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../shared/models/product.model';
-
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-webshop-page',
@@ -10,14 +10,31 @@ import { Product } from '../shared/models/product.model';
   styleUrls: ['./webshop-page.component.css'],
 })
 export class WebshopPageComponent implements OnInit {
+  userRole: string | null = null;
   products: Product[] = [];
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.loadProducts();
+    this.loadUserRole();
   }
 
+  loadUserRole(): void {
+    this.userService.getUserRole().subscribe(
+      (role: string) => {
+        this.userRole = role;
+        console.log('User role:', this.userRole); // Debugging statement
+      },
+      (error) => {
+        console.error('Error fetching user role:', error); // Debugging statement
+      }
+    );
+  }
   loadProducts(): void {
     this.productService.getProducts(1).subscribe(
       (response: Product[]) => {
@@ -28,9 +45,5 @@ export class WebshopPageComponent implements OnInit {
         console.error('Error loading products:', error); // Debugging statement
       }
     );
-  }
-  addProduct(): void {
-    const currentLang = 'en'; // Replace this with logic to get the current language dynamically
-    this.router.navigate([`/${currentLang}/add-product`]);
   }
 }
