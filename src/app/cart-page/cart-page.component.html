@@ -1,24 +1,28 @@
 <div class="body">
     <h2>Kosár</h2>
     <div *ngIf="cart.length === 0">
-        <p>A kosara üres!</p>
+      <p>A kosara üres!</p>
     </div>
     <div *ngIf="cart.length > 0" class="cart-container">
-        <ul class="product-list">
-            <li *ngFor="let product of cart; let i = index" class="product-item">
-                <img *ngIf="product.imageURL" [src]="'http://localhost:8000' + product.imageURL" alt="{{ product.name }}" />
-                <div class="product-details">
-                    <div class="product-name">{{ product.name }}</div>
-                    <div class="product-price">{{ product.price | currency: 'Ft' }}</div>
-                </div>
-                <button (click)="removeFromCart(i)">Törlés</button>
-            </li>
-        </ul>
-        <div class="total-price">
-            <p>Teljes összeg: {{ totalPrice | currency: 'Ft' }}</p>
-            <div class="delivery-button">
-                <a routerLink="/delivery" class="delivery-link">Szállításhoz</a>
-            </div>
+      <ul class="product-list">
+        <li *ngFor="let item of cart" class="product-item">
+          <img *ngIf="item.product.imageURL" 
+               [src]="'http://localhost:8000' + item.product.imageURL" 
+               alt="{{ item.product.name }}" 
+               class="cart-image" />
+          <div class="product-details">
+            <div class="product-name">{{ item.product.name }}</div>
+            <div class="product-price">{{ item.product.price | number:'1.2-2' }} Ft</div>
+            <div class="product-quantity">Darabszám: {{ item.quantity }}</div>
+          </div>
+          <button *ngIf="item.product.id !== undefined" (click)="removeFromCart(item.product.id)">Törlés</button>
+        </li>
+      </ul>
+      <div class="total-price">
+        <p>Teljes összeg: {{ totalPrice | number:'1.2-2' }} Ft</p>
+        <div class="delivery-button">
+          <a routerLink="/delivery" class="delivery-link">Szállításhoz</a>
         </div>
+      </div>
     </div>
-</div>
+  </div>

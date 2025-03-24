@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
+  private loggedInn = false;
   constructor(private apiService: ApiService) { }
  
     isLoggedIn(): boolean {

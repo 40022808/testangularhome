@@ -6,7 +6,7 @@ import { ApiService } from '../api.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  styleUrl: './user.component.css',
 })
 export class UserComponent implements OnInit {
   currentLang: string = 'en';
@@ -43,7 +43,7 @@ export class UserComponent implements OnInit {
   userRoleMap: { [key: string]: string } = {
     '0': 'User',
     '1': 'Admin',
-    '2': 'Super Admin'
+    '2': 'Super Admin',
   };
 
   constructor(
@@ -52,7 +52,7 @@ export class UserComponent implements OnInit {
     private apiService: ApiService,
     private translate: TranslateService
   ) {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const lang = params['lang'];
       if (lang) {
         this.currentLang = lang;
@@ -70,11 +70,11 @@ export class UserComponent implements OnInit {
     const token = localStorage.getItem('userToken');
     if (token) {
       this.apiService.getUserInfo(token).subscribe(
-        response => {
+        (response) => {
           this.userInfo = response.userInfo;
           this.userRole = response.userRole;
         },
-        error => {
+        (error) => {
           console.error('Failed to fetch user information', error);
           this.userError = true;
         }
@@ -88,12 +88,12 @@ export class UserComponent implements OnInit {
 
   logout() {
     this.apiService.logoutUser(this.currentLang).subscribe(
-      response => {
+      (response) => {
         console.log('User logged out successfully', response);
         localStorage.removeItem('userToken');
         this.router.navigate([this.currentLang, 'login']);
       },
-      error => {
+      (error) => {
         console.error('Logout error', error);
         this.logoutError = true;
       }
@@ -104,16 +104,14 @@ export class UserComponent implements OnInit {
     return this.userRoleMap[role] || 'Unknown';
   }
 
-  
-
   giveAdmin() {
     this.apiService.upgradeToAdmin(this.giveEmail).subscribe(
-      response => {
+      (response) => {
         console.log('User upgraded to admin successfully', response);
-        this.getUserInfo(); 
+        this.getUserInfo();
         this.currentStep = 4;
       },
-      error => {
+      (error) => {
         console.error('Failed to upgrade user to admin', error);
         this.currentStep = 5;
       }
@@ -123,19 +121,18 @@ export class UserComponent implements OnInit {
 
   depriveAdmin() {
     this.apiService.downgradeFromAdmin(this.depriveEmail).subscribe(
-      response => {
+      (response) => {
         console.log('User downgraded from admin successfully', response);
-        this.getUserInfo(); 
+        this.getUserInfo();
         this.currentStep = 4;
       },
-      error => {
+      (error) => {
         console.error('Failed to downgrade user from admin', error);
         this.currentStep = 5;
       }
     );
     this.depriveEmail = '';
   }
-
 
   previousStep() {
     if (this.currentStep > 1) {
@@ -160,30 +157,27 @@ export class UserComponent implements OnInit {
   changeUsername() {
     if (this.newUsername === '') {
       this.usernameError = true;
-    }
-    else {
-      const formData = { name: this.newUsername};
+    } else {
+      const formData = { name: this.newUsername };
       this.apiService.updateUserName('zh', formData).subscribe(
-        response => {
+        (response) => {
           console.log('Username updated successfully', response);
           this.UsernameDiv = false;
           this.newUsername = '';
           this.usernameError = false;
-          this.getUserInfo(); 
+          this.getUserInfo();
         },
-        error => {
+        (error) => {
           console.error('Failed to update username', error);
         }
       );
     }
-
   }
   Username_back() {
     this.UsernameDiv = false;
     this.newUsername = '';
     this.usernameError = false;
   }
-
 
   changePassword_div() {
     this.PasswordDiv = true;
@@ -206,7 +200,6 @@ export class UserComponent implements OnInit {
     this.passwordSameError = false;
     this.PasswordDiv_ok = false;
     this.oldpasswordloading = false;
-
   }
 
   PasswordDiv_next() {
@@ -214,19 +207,16 @@ export class UserComponent implements OnInit {
     this.oldPasswordincorrectError = false;
     if (this.oldPassword === '') {
       this.oldPasswordError = true;
-    }
-    else {
+    } else {
       this.oldpasswordloading = true;
       const FormData = { old_password: this.oldPassword };
       this.apiService.checkOldPassword(FormData).subscribe(
-        response => {
+        (response) => {
           console.log('Old password checked successfully', response);
           this.oldpasswordloading = false;
           this.user_div_password_div_input_number = 2;
-
-
         },
-        error => {
+        (error) => {
           console.error('Failed to check old password', error);
           this.oldpasswordloading = false;
           this.oldPasswordincorrectError = true;
@@ -260,31 +250,29 @@ export class UserComponent implements OnInit {
     }
   }
 
-
   containsPunctuation(password: string): boolean {
     const punctuationPattern = /[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/;
     return punctuationPattern.test(password);
   }
 
-
   changePassword_api() {
-    const formdata = { new_password: this.newPassword, new_password_confirmation: this.confirmPassword };
+    const formdata = {
+      new_password: this.newPassword,
+      new_password_confirmation: this.confirmPassword,
+    };
     this.apiService.updatePassword('zh', formdata).subscribe(
-      response => {
+      (response) => {
         this.PasswordDiv_ok = true;
         console.log('Password updated successfully', response);
       },
-      error => {
+      (error) => {
         console.error('Failed to update password', error);
         this.apiError = true;
       }
     );
   }
 
-
+  addProductPage() {
+    this.router.navigate([this.currentLang, 'add-product']);
+  }
 }
-
-
-
-
-

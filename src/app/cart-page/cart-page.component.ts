@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart.service';
 import { Product } from '../shared/models/product.model';
-import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
-  styleUrl: './cart-page.component.css',
+  styleUrls: ['./cart-page.component.css'],
 })
 export class CartPageComponent implements OnInit {
-  cart: Product[] = [];
-  groupedCart = [];
+  cart: { product: Product; quantity: number }[] = [];
   totalPrice: number = 0;
-  product: any;
-  item: any;
 
   constructor(private shoppingCartService: ShoppingCartService) {}
 
@@ -22,15 +18,15 @@ export class CartPageComponent implements OnInit {
     this.calculateTotalPrice();
   }
 
-  removeFromCart(index: number): void {
-    this.shoppingCartService.removeFromCart(index);
+  removeFromCart(productId: number): void {
+    this.shoppingCartService.removeFromCart(productId);
     this.cart = this.shoppingCartService.getCart();
     this.calculateTotalPrice();
   }
 
   calculateTotalPrice(): void {
     this.totalPrice = this.cart.reduce(
-      (sum, product) => sum + product.price,
+      (sum, item) => sum + item.product.price * item.quantity,
       0
     );
   }

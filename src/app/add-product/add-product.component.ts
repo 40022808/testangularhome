@@ -13,6 +13,8 @@ export class AddProductComponent {
     description: '',
     price: 0,
     imageURL: '',
+    quantity: undefined,
+    product: undefined
   };
   selectedFile: File | null = null;
   successMessage: boolean = false;
@@ -40,16 +42,18 @@ export class AddProductComponent {
         console.log('Product added successfully:', response);
         this.successMessage = true;
 
-        // Reset the form
+        
         this.product = {
           name: '',
           description: '',
           price: 0,
           imageURL: '',
+          quantity: 0, 
+          product: '', 
         };
         this.selectedFile = null;
 
-        // Hide the success message after 3 seconds
+        
         setTimeout(() => {
           this.successMessage = false;
         }, 3000);

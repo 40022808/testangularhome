@@ -63,12 +63,13 @@
 }
 
 .product-name {
-  font-weight: bold;
+ 
   margin-bottom: 5px;
+  color: whitesmoke;
 }
 
 .product-price {
-  color: black;
+  color: whitesmoke;
 }
 
 button {
@@ -116,4 +117,18 @@ button {
   align-self: flex-start;
   margin-left: 35rem;
   margin-bottom: 20px;
+}
+.cart-image {
+  width: 80px; 
+  height: auto;
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+.product-quantity {
+  font-size: 1rem;
+  color: whitesmoke;
+  margin-top: 5px;
+}
+h2{
+  color: whitesmoke;
 }

@@ -2,25 +2,27 @@
 
     <div class="user-div-info">
         <h1>{{ 'User Information' | translate }}</h1>
-      
+
         <div *ngIf="userInfo" class="user-info">
             <h2>{{ 'User Role' | translate }}</h2>
             <p>{{ getUserRoleTranslationKey(userRole) | translate }}</p>
             <div class="username-div">
                 <h2>{{ 'Name' | translate }}</h2>
-                <button class="username-btn"><img src="assets/images/username.svg" alt="username" class="username-img" (click)="Username()"></button> 
+                <button class="username-btn"><img src="assets/images/username.svg" alt="username" class="username-img"
+                        (click)="Username()"></button>
             </div>
             <p>{{ userInfo.name }}</p>
             <h2>{{ 'Email' | translate }}</h2>
             <p>{{ userInfo.email }}</p>
         </div>
-        
-        <div *ngIf="userError" class="error">{{ 'Failed to fetch user information. Please try again later!' | translate }}</div>
+
+        <div *ngIf="userError" class="error">{{ 'Failed to fetch user information. Please try again later!' | translate
+            }}</div>
         <div *ngIf="userloginError" class="error">{{ 'User is not logged in. Please log in!' | translate }}</div>
         <div *ngIf="logoutError" class="error">{{ 'Logout failed. Please try again later!' | translate }}</div>
-      
+
         <div *ngIf="!userInfo && !userError">
-          <p>{{ 'Loading user information...' | translate }}</p>
+            <p>{{ 'Loading user information...' | translate }}</p>
         </div>
     </div>
 
@@ -28,34 +30,34 @@
 
     <div class="user-div-superadmin" *ngIf="userRole == '2'">
         <h1>{{ 'Superadmin Actions' | translate }}</h1>
-      
+
         <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
             <button (click)="give()">{{ 'Give Admin' | translate }}</button>
             <button (click)="deprive()">{{ 'Deprive Admin' | translate }}</button>
-            <button >{{ 'Product Management' | translate }}</button>
+            <button (click)="addProductPage()">{{ 'Product Management' | translate }}</button>
         </div>
-        
+
         <div class="superadmin-actions-give" [ngClass]="{'fade-in': currentStep === 2}" *ngIf="currentStep === 2">
             <input type="text" placeholder="{{ 'Email' | translate }}" required [(ngModel)]="giveEmail">
             <button (click)="giveAdmin()">{{ 'Give Admin' | translate }}</button>
-            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+            <button (click)="previousStep()">{{"Back" | translate}}</button>
         </div>
 
 
         <div class="superadmin-actions-deprive" [ngClass]="{'fade-in': currentStep === 3}" *ngIf="currentStep === 3">
             <input type="text" placeholder="{{ 'Email' | translate }}" required [(ngModel)]="depriveEmail">
             <button (click)="depriveAdmin()">{{ 'Deprive Admin' | translate }}</button>
-            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+            <button (click)="previousStep()">{{"Back" | translate}}</button>
         </div>
 
         <div class="superadmin-actions-success" [ngClass]="{'fade-in': currentStep === 4}" *ngIf="currentStep === 4">
             <p>{{ 'Changed user status successfully!' | translate }}</p>
-            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+            <button (click)="previousStep()">{{"Back" | translate}}</button>
         </div>
 
         <div class="superadmin-actions-error" [ngClass]="{'fade-in': currentStep === 5}" *ngIf="currentStep === 5">
             <p>{{ 'Error!' | translate }}</p>
-            <button  (click)="previousStep()">{{"Back" | translate}}</button>
+            <button (click)="previousStep()">{{"Back" | translate}}</button>
         </div>
 
 
@@ -64,22 +66,25 @@
 
     <div class="user-div-admin" *ngIf="userRole == '1'">
         <h1>{{ 'Admin Actions' | translate }}</h1>
-      
-        <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
-            <button >{{ 'Product Management' | translate }}</button>
-        </div>
-    </div>  
-    
 
-    
+        <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
+            <button (click)="addProductPage()">{{ 'Product Management' | translate }}</button>
+        </div>
+    </div>
+
+
+
     <div class="user-div-username-body" *ngIf="UsernameDiv">
         <div class="user-div-username-div">
             <h1 class="user-div-username-div-h1">{{ 'Change Username' | translate }}</h1>
-            <input type="text" placeholder="{{ 'Username' | translate }}" required [(ngModel)]="newUsername" maxlength="20" class="input">
+            <input type="text" placeholder="{{ 'Username' | translate }}" required [(ngModel)]="newUsername"
+                maxlength="20" class="input">
             <div *ngIf="usernameError" class="error">{{ 'Username is required!' | translate }}</div>
             <div class="user-div-username-div-buttons">
-                <button (click)="changeUsername()" class="user-div-username-div-button-sure">{{ 'Sure' | translate }}</button>
-                <button (click)="Username_back()" class="user-div-username-div-button-back">{{ 'Back' | translate }}</button>
+                <button (click)="changeUsername()" class="user-div-username-div-button-sure">{{ 'Sure' | translate
+                    }}</button>
+                <button (click)="Username_back()" class="user-div-username-div-button-back">{{ 'Back' | translate
+                    }}</button>
             </div>
 
         </div>
@@ -94,7 +99,7 @@
             </div>
         </div>
     </div> -->
-    
+
     <!-- <div class="user-div-sure-deprive-body">
         <div class="user-div-sure-deprive-div">
             <h1 class="user-div-sure-deprive-div-h1">{{ 'Deprive Admin' | translate }}</h1>
@@ -110,40 +115,47 @@
             <button class="close-btn" (click)="PasswordDiv_close()">X</button>
             <h1 class="user-div-password-div-h1">{{ 'Change Password' | translate }}</h1>
 
-            <div class="input-div" *ngIf="user_div_password_div_input_number === 1" [ngClass]="{'fade-in': user_div_password_div_input_number === 1}">
-                <input type="password" placeholder="{{ 'Old Password' | translate }}" required [(ngModel)]="oldPassword" class="input">
+            <div class="input-div" *ngIf="user_div_password_div_input_number === 1"
+                [ngClass]="{'fade-in': user_div_password_div_input_number === 1}">
+                <input type="password" placeholder="{{ 'Old Password' | translate }}" required [(ngModel)]="oldPassword"
+                    class="input">
                 <div *ngIf="oldPasswordError" class="error">{{ 'Old Password is required!' | translate }}</div>
-                <div *ngIf="oldPasswordincorrectError" class="error">{{ 'Old Password is incorrect!' | translate }}</div>
+                <div *ngIf="oldPasswordincorrectError" class="error">{{ 'Old Password is incorrect!' | translate }}
+                </div>
                 <div *ngIf="oldpasswordloading">
                     <p>{{ 'Loading...' | translate }}</p>
                 </div>
             </div>
 
-            <div class="input-div" *ngIf="user_div_password_div_input_number === 2" [ngClass]="{'fade-in': user_div_password_div_input_number === 2}">
-                <input type="password" placeholder='{{"New Password" | translate}}' class="input" maxlength="10" [(ngModel)]="newPassword" required>
-                <input type="password" placeholder='{{"Confirm Password" | translate}}' class="input" maxlength="10" [(ngModel)]="confirmPassword" required>
+            <div class="input-div" *ngIf="user_div_password_div_input_number === 2"
+                [ngClass]="{'fade-in': user_div_password_div_input_number === 2}">
+                <input type="password" placeholder='{{"New Password" | translate}}' class="input" maxlength="10"
+                    [(ngModel)]="newPassword" required>
+                <input type="password" placeholder='{{"Confirm Password" | translate}}' class="input" maxlength="10"
+                    [(ngModel)]="confirmPassword" required>
                 <div *ngIf="passwordError" class="error">{{"Passwords do not match!" | translate}}</div>
                 <div *ngIf="passwordnullError" class="error">{{"Passwords is required!" | translate}}</div>
-                <div *ngIf="passwordFormatError" class="error">{{"Password cannot contain punctuation!" | translate}}</div>
-                <div *ngIf="passwordMinError" class="error">{{"Password must be at least 6 characters long!" | translate}}</div>
-                <div *ngIf="passwordMaxError" class="error">{{"Password cannot be longer than 10 characters!" | translate}}</div>
-                <div *ngIf="passwordSameError" class="error">{{"The new password is the same as the old password!" | translate}}</div>
-                <div *ngIf="apiError" class="error">{{"Failed to change password. Please try again later!" | translate}}</div>
+                <div *ngIf="passwordFormatError" class="error">{{"Password cannot contain punctuation!" | translate}}
+                </div>
+                <div *ngIf="passwordMinError" class="error">{{"Password must be at least 6 characters long!" |
+                    translate}}</div>
+                <div *ngIf="passwordMaxError" class="error">{{"Password cannot be longer than 10 characters!" |
+                    translate}}</div>
+                <div *ngIf="passwordSameError" class="error">{{"The new password is the same as the old password!" |
+                    translate}}</div>
+                <div *ngIf="apiError" class="error">{{"Failed to change password. Please try again later!" | translate}}
+                </div>
             </div>
 
-            <button class="Changepassword-btn" 
-            *ngIf="user_div_password_div_input_number === 1" 
-            [ngClass]="{'fade-in': user_div_password_div_input_number === 1}" 
-            (click)="PasswordDiv_next()"
-            >{{"Sure" | translate}}
+            <button class="Changepassword-btn" *ngIf="user_div_password_div_input_number === 1"
+                [ngClass]="{'fade-in': user_div_password_div_input_number === 1}" (click)="PasswordDiv_next()">{{"Sure"
+                | translate}}
             </button>
-            
-            
-            <button class="Changepassword-btn" 
-            *ngIf="user_div_password_div_input_number === 2" 
-            [ngClass]="{'fade-in': user_div_password_div_input_number === 2}" 
-            (click)="changePassword()"
-            >{{"Sure" | translate}}
+
+
+            <button class="Changepassword-btn" *ngIf="user_div_password_div_input_number === 2"
+                [ngClass]="{'fade-in': user_div_password_div_input_number === 2}" (click)="changePassword()">{{"Sure" |
+                translate}}
             </button>
         </div>
 
@@ -162,4 +174,3 @@
 
 
 </div>
-  
