@@ -59,10 +59,7 @@ li a:hover {
   text-align: center;
 }
 
-.price {
-  margin-top: 0.7rem;
-  color: whitesmoke;
-}
+
 .name {
   color: whitesmoke;
 }
@@ -94,36 +91,35 @@ li a:hover {
 
 .product-grid {
   display: flex;
-  flex-wrap: wrap; /* A sorok automatikusan törnek */
-  gap: 20px; /* Távolság a termékek között */
-  justify-content: center; /* Középre igazítás */
-  padding: 0 20px; /* Margó jobb és bal oldalon */
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center; 
+  padding: 0 20px; 
 }
-
 .product-item {
-  flex: 1 1 calc(20% - 30px); /* Egy sorban 5 elem */
+  flex: 1 1 calc(20% - 30px); 
   box-sizing: border-box;
   max-width: calc(20% - 30px);
   text-align: center;
   margin: 0 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Halvány keret alapértelmezett állapotban */
-  border-radius: 15px; /* Lekerekített sarkok */
-  transition: all 0.3s ease; /* Simább animáció */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Alapértelmezett árnyék */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 15px; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 .product-item:hover {
   border: 1px solid transparent;
 
   background-origin: border-box;
   background-clip: content-box, border-box;
-  box-shadow: 0 8px 15px rgba(27, 41, 71, 0.3); /* Árnyék hover állapotban */
-  transform: translateY(-5px); /* Finom emelkedés hover állapotban */
-  border-radius: 15px; /* Lekerekített sarkok hover állapotban */
+  box-shadow: 0 8px 15px rgba(27, 41, 71, 0.3); 
+  transform: translateY(-5px); 
+  border-radius: 15px; 
 }
 .product-image {
-  width: 100%; /* A kép kitölti a szülő elem szélességét */
-  height: auto; /* Arányos magasság */
-  border-radius: 8px; /* Lekerekített sarkok (opcionális) */
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
 }
 
 .name {
@@ -134,26 +130,26 @@ li a:hover {
 
 .price {
   font-size: 0.9rem;
-  color: #333;
+  color: whitesmoke;
   margin-top: 5px;
 }
 @media (max-width: 1024px) {
   .product-item {
-    flex: 1 1 calc(25% - 30px); /* Egy sorban 4 elem */
+    flex: 1 1 calc(25% - 30px);
     max-width: calc(25% - 30px);
   }
 }
 
 @media (max-width: 768px) {
   .product-item {
-    flex: 1 1 calc(33.33% - 30px); /* Egy sorban 3 elem */
+    flex: 1 1 calc(33.33% - 30px);
     max-width: calc(33.33% - 30px);
   }
 }
 
 @media (max-width: 480px) {
   .product-item {
-    flex: 1 1 calc(50% - 30px); /* Egy sorban 2 elem */
+    flex: 1 1 calc(50% - 30px); 
     max-width: calc(50% - 30px);
   }
 }
