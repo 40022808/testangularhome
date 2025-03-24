@@ -1,5 +1,6 @@
 <div class="body">
   <button (click)="addProduct()">Termék Hozzáadás</button>
+  {{products|json}}
   <ul>
     <li *ngFor="let product of products">
       <a routerLink="/product/{{ product.id }}">

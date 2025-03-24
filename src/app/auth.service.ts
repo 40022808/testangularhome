@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
+  private loggedInn = false;
   constructor(private apiService: ApiService) { }
 
   isLoggedIn(): Observable<boolean> {
@@ -17,6 +17,8 @@ export class AuthService {
     }
     return this.verifyToken(token);
   }
+  
+  
 
   verifyToken(token: string): Observable<boolean> {
     return new Observable(observer => {
