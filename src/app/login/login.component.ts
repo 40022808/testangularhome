@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigate([this.currentLang, 'login']);
+    
   }
 
   login() {
@@ -51,9 +51,8 @@ export class LoginComponent implements OnInit {
       this.passwordError = true;
     } 
     else {
-
       this.loading = true;
-
+  
       const formData = {
         email: this.email,
         password: this.password
@@ -62,7 +61,10 @@ export class LoginComponent implements OnInit {
       this.apiService.loginUser(this.currentLang, formData).subscribe(
         response => {
           localStorage.setItem('userToken', response.token);
-          this.router.navigate([this.currentLang, 'user']);
+  
+          const redirectUrl = this.route.snapshot.queryParams['redirectUrl'] || `${this.currentLang}/user`;
+          this.router.navigateByUrl(redirectUrl);
+  
           this.loading = false;
         },
         error => {

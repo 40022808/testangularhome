@@ -9,16 +9,12 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private loggedInn = false;
   constructor(private apiService: ApiService) { }
-
-  isLoggedIn(): Observable<boolean> {
-    const token = localStorage.getItem('userToken');
-    if (!token) {
-      return new Observable(observer => observer.next(false));
+ 
+    isLoggedIn(): boolean {
+      const token = localStorage.getItem('userToken');
+      return token != null; 
     }
-    return this.verifyToken(token);
-  }
-  
-  
+    
 
   verifyToken(token: string): Observable<boolean> {
     return new Observable(observer => {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../shared/models/product.model';
+import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
   selector: 'app-webshop-page',
@@ -11,7 +12,11 @@ import { Product } from '../shared/models/product.model';
 export class WebshopPageComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(
+    private productService: ProductService,
+    private shoppingCartService: ShoppingCartService, // ShoppingCartService injektálása
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -28,8 +33,14 @@ export class WebshopPageComponent implements OnInit {
       }
     );
   }
+
   addProduct(): void {
     const currentLang = 'en'; // Replace this with logic to get the current language dynamically
     this.router.navigate([`/${currentLang}/add-product`]);
+  }
+
+  addToCart(product: Product): void {
+    this.shoppingCartService.addToCart(product); // Helyesen használja a ShoppingCartService-t
+    alert(`${product.name} hozzáadva a kosárhoz!`);
   }
 }

@@ -11,21 +11,21 @@ import { WebshopPageComponent } from './webshop-page/webshop-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
 
 const routes: Routes = [
   { path: ':lang/home', component: HomeComponent },
   { path: ':lang/register', component: RegisterComponent },
   { path: ':lang/login', component: LoginComponent },
   { path: ':lang/user', component: UserComponent, canActivate: [AuthGuard] },
-  { path: ':lang/service', component: ServiceComponent , canActivate: [AuthGuard]},
-  { path: ':lang/webshop', component: WebshopPageComponent , canActivate: [AuthGuard]},
+  { path: ':lang/service', component: ServiceComponent, canActivate: [AuthGuard] },
+  { path: ':lang/webshop', component: WebshopPageComponent, canActivate: [AuthGuard] },
   { path: 'product/:id', component: ProductPageComponent, canActivate: [AuthGuard] },
-  { path: ':lang/cart', component: CartPageComponent },
-  { path: ':lang/add-product', component: AddProductComponent },
+  { path: ':lang/cart', component: CartPageComponent, canActivate: [AuthGuard] },
+  { path: ':lang/add-product', component: AddProductComponent, canActivate: [AuthGuard] },
+  { path: 'delivery', component: DeliveryPageComponent },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
-  { path: '', component: HomeComponent }, 
-  { path: 'service', component: ServiceComponent  },
-  { path: 'webshop', component: WebshopPageComponent   }, 
+
 ];
 
 @NgModule({

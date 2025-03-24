@@ -1,10 +1,13 @@
 <div class="body">
   <button (click)="addProduct()">Termék Hozzáadás</button>
-  {{products|json}}
-  <ul>
-    <li *ngFor="let product of products">
+
+  <div class="product-grid">
+    <div *ngFor="let product of products" class="product-item">
       <a routerLink="/product/{{ product.id }}">
-        <img [src]="product.imageURL" alt="{{ product.name }}" />
+        <img *ngIf="product.imageURL" 
+             [src]="'http://localhost:8000' + product.imageURL" 
+             alt="{{ product.name }}" 
+             class="product-image" />
         <div class="content">
           <div class="name">
             {{ product.name }}
@@ -16,6 +19,6 @@
           </div>
         </div>
       </a>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>

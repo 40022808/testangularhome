@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../shared/models/product.model';
+import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
   selector: 'app-product-page',
@@ -9,12 +10,16 @@ import { Product } from '../shared/models/product.model';
   styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent implements OnInit {
-  product!: Product;
-  itemAdded = false;
+  
+ 
+// Removed duplicate addToCart method
+  product: Product|undefined;
+  itemAdded:boolean= false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   ngOnInit(): void {
@@ -30,12 +35,18 @@ export class ProductPageComponent implements OnInit {
     );
   }
 
-  addtoCart(): void {
-    this.itemAdded = true;
-
-    setTimeout(() => {
-      this.itemAdded = false;
-    }, 3000);
+  addToCart(): void {
+    if (this.product) {
+      this.shoppingCartService.addToCart(this.product); // Termék hozzáadása a kosárhoz
+      this.itemAdded = true;
+  
+      // Üzenet eltüntetése pár másodperc után
+      setTimeout(() => {
+        this.itemAdded = false;
+      }, 3000);
+  
+      console.log('Product added to cart:', this.product); // Debugging
+    }
   }
 
   goBack(): void {

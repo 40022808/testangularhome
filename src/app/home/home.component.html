@@ -1,47 +1,84 @@
 <div class="body">
-    <div class="moon">
-        <div class="moon_div1"></div>
-        <div class="moon_div2"></div>
-        <div class="moon_div3"></div>
-        <div class="moon_div4"></div>
-    </div>
+    
 
     <div class="h1s" *ngFor="let item of items">
 
-
-        <div class="h1div" #child>
-            <h1 class="h1">{{"Welcome!" | translate}} </h1>
-            <h1 class="h1">{{"to the barber shop!" | translate}}</h1>
-            <img src="assets/images/image1.svg" alt="scissors" class="imagebig">
-        </div>
-
-
-        <div class="h1div" #child>
-            <h1 class="h1">{{"Appointment time!" | translate}} <img src="assets/images/image2.svg" alt="time" class="imagesmall"></h1>
-            <h1 class="h1">{{"No need to wait!" | translate}} <img src="assets/images/image3.svg" alt="good" class="imagesmall"></h1>
-        </div>
-
-
-        <div class="h1div" #child>
-            <h1 class="h1">{{"Web Shop" | translate}} <img src="assets/images/image4.svg" alt="shop" class="imagesmall"></h1>
-            <h1 class="h1">{{"Affordable" | translate}} <img src="assets/images/image5.svg" alt="money" class="imagesmall2"></h1>
-            <br>
-            <h1 class="h1">{{"Complete range of products" | translate}} </h1>
-        </div>
-
-
-        <div class="h1div" #child>
-            <h1 class="h1">{{"express delivery" | translate}} <img src="assets/images/image6.svg" alt="express delivery" class="imagesmall"></h1>
-            <h1 class="h1">{{"fast and safe" | translate}} <img src="assets/images/image7.svg" alt="car" class="imagesmall2"></h1>
-        </div>
-        
-        
-        <div class="h1div" #child>
-            <a class="link" [routerLink]="['/', currentLang, 'user']" routerLinkActive="active">{{"Login Now!" | translate}}</a>
-            <br>
-            <img src="assets/images/image8.svg" alt="heart" class="imagebig">
+        <div class="divcontainer">
+                 
+            <div class="divblock">
+                <div class="h1div" #child>
+                    <h1 class="h1">{{"Welcome!" | translate}} </h1>
+                    <h1 class="h1">{{"to the barber shop!" | translate}}</h1>
+                </div>
+                <img src="assets/images/image1.webp" alt="image" class="image1" #child>
+                <img src="assets/images/image3.webp" alt="image" class="image3" #child>
+                <img src="assets/images/image2.webp" alt="image" class="image2" #child>
+                <img src="assets/images/image1.jpg" alt="image" class="image4" #child>
+                <img src="assets/images/image2.jpg" alt="image" class="image5" #child>
+                
+            </div>
             
         </div>
+
+        <div class="divcontainer II" #child>
+            <img src="assets/images/shape-curves--top.svg" alt="shape-curves--top">      
+            
+            <div class="divblock2">
+                <div class="divcontainer_II_div">
+                    <h1 class="divcontainer_II_text_h1">{{"Appointment time!" | translate}}</h1>
+                    <img src="assets/images/image2.svg" alt="time" class="time" >
+                </div>
+                
+                <div class="divcontainer_II_div">
+                    <h1 class="divcontainer_II_text_h1">{{"No need to wait!" | translate}}</h1>
+                    <img src="assets/images/image3.svg" alt="good" class="good" >
+                </div>
+
+            </div>
+            
+            <img src="assets/images/shape-curves--bottom.svg" alt="shape-curves--bottom">
+        </div>
+
+
+        <div class="divcontainer IV">
+            <div>
+                <p class="h1" #child>{{"Web Shop" | translate}} <img src="assets/images/image3.svg" alt="good" class="good1" #child></p>
+                <p class="h1" #child>{{"Affordable" | translate}} <img src="assets/images/image3.svg" alt="good" class="good2" #child></p>
+                <p class="h1" #child>{{"Complete range of products" | translate}} <img src="assets/images/image3.svg" alt="good" class="good3" #child></p>
+            </div>
+            <img src="assets/images/shop.png" alt="shop" class="shop" #child>
+        </div>
+
+        <div class="divcontainer III">
+
+            <img src="assets/images/image1.avif" alt="image" class="divcontainer_III_img">
+            <div class="divcontainer_III_text" #child>
+
+
+                <p class="h1">{{"express delivery" | translate}}</p>
+                <p class="h1">{{"fast and safe" | translate}}</p>
+
+            </div>
+
+
+        </div>
+        
+     
+        
+        <div class="divcontainer V">
+
+
+            <div class="divcontainer_V_div_block" #child>
+                <div class="divcontainer_V_div" #child>
+                    <a class="divcontainer_V_btn" [routerLink]="['/', currentLang, 'user']" routerLinkActive="active">{{"Login Now!" | translate}}</a>
+                    <img src="assets/images/image8.svg" alt="heart" class="heart">
+                </div>
+            </div>
+
+
+              
+            
+        </div> 
         
     </div>
     
@@ -49,3 +86,9 @@
 
 </div>
 
+<!-- <div class="moon">
+    <div class="moon_div1"></div>
+    <div class="moon_div2"></div>
+    <div class="moon_div3"></div>
+    <div class="moon_div4"></div>
+</div> -->

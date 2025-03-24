@@ -1,11 +1,14 @@
+
+
 <div class="nav">
     <div class="logo">
         <img src="assets/images/logo.png" alt="Logo" class="logoimage" />
-        <pre></pre>
         <h1 class="logoh1">LOGO</h1>
     </div>
 
-    <div class="nav-links">
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+    <div class="nav-links" [class.open]="menuOpen">
         <a [routerLink]="['/', currentLang, 'home']" routerLinkActive="active">{{
             "Home" | translate
             }}</a>
@@ -15,22 +18,21 @@
         <a [routerLink]="['/', currentLang, 'webshop']" routerLinkActive="active">{{
             "Web Shop" | translate
             }}</a>
-        <a [routerLink]="['/', currentLang, 'user']" routerLinkActive="active" class="user_a"><img
-                src="assets/images/user.svg" alt="user" class="img_user" /></a>
-
+        <a [routerLink]="['/', currentLang, 'user']" routerLinkActive="active" class="user_a">
+            <img src="assets/images/user.svg" alt="user" class="img_user" />
+        </a>
+        <a [routerLink]="['/', currentLang, 'cart']" routerLinkActive="active" class="cart_a">
+            <img src="assets/images/cart2.svg" alt="cart" class="img_cart" />
+        </a>
         <div class="language-switcher" (click)="toggleDropdown()">
             <button class="language_btn">
-                <img src="assets/images/language.svg" alt="language" class="img_lan" />
+                <img [src]="'assets/images/' + currentLang + '.svg'" alt="language" class="img_lan" />
             </button>
             <ul *ngIf="dropdownOpen" class="dropdown">
-                <li (click)="switchLang('en')">{{ "English" | translate }}</li>
-                <li (click)="switchLang('hu')">{{ "Hungarian" | translate }}</li>
-                <li (click)="switchLang('zh')">{{ "Chinese" | translate }}</li>
+                <li (click)="switchLang('en')">English</li>
+                <li (click)="switchLang('hu')">Magyar</li>
+                <li (click)="switchLang('zh')">中文</li>
             </ul>
         </div>
-
-        <a [routerLink]="['/', currentLang, 'cart']" routerLinkActive="active" class="cart_a">
-            <img src="assets/images/cart.svg" alt="cart" class="img_cart" />
-        </a>
     </div>
 </div>

@@ -5,15 +5,15 @@
 }
 
 .body {
-
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0);
-    background-image:
+    /* min-height: 500vh; */
+    background-color: rgb(255, 255, 255);
+    /* background-image:
         url('/assets/images/stars.png'),
         linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
     background-size: auto, cover; 
     background-repeat: repeat, no-repeat;
-    background-position: center center, center center;
+    background-position: center center, center center; */
     display: flex;
     justify-content: center;
 
@@ -43,7 +43,7 @@
     border-radius: 100%;
     background-color: rgb(233, 231, 231);
     box-shadow: 0px 0px 20px 5px rgb(233, 231, 231);
-    position: fixed;
+    position: absolute;
     top: 15vh;
     left: 10vw;
     z-index: 1;
@@ -97,42 +97,282 @@
 }
 
 
-.imagebig {
-    width: 150px;
-    height: auto;
-}
-
-.imagesmall {
-    width: 70px;
-    height: auto;
-}
-
-.imagesmall2 {
-    width: 70px;
-    height: auto;
-    position: relative;
-    top: 30px;
-}
-
 .h1s {
     position: relative;
     top: 80px;
+    gap: 30vh;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.divcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    z-index: 3;
+    background: #fff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #bdd3ff));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #bdd3ff 100%);
+}
+
+.divcontainer.II {
+    background-color: #11e1db;
+    background: -moz-linear-gradient(left, #11e1db 0%, #2c4ce9 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #11e1db), color-stop(100%, #2c4ce9));
+    background: -webkit-linear-gradient(left, #11e1db 0%, #2c4ce9 100%);
+    background: -o-linear-gradient(left, #11e1db 0%, #2c4ce9 100%);
+    background: -ms-linear-gradient(left, #11e1db 0%, #2c4ce9 100%);
+    background: linear-gradient(to right, #11e1db 0%, #2c4ce9 100%);
+    height: 100vh;
+    z-index: 2;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.divcontainer_II_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.divcontainer_II_text_h1 {
+    font-size: 7vmin;
+    color: white;
+}
+
+.time , .good {
+    width: 200px;
+    height: 200px;
+
+}
+
+.divcontainer.III {
+    height: 50vh;
+}
+
+.divcontainer_III_img {
+    width: 60vw;
+    height: 100%;
+}
+
+.divcontainer_III_text {
+    background: #131934;
+    background: -moz-linear-gradient(left, #131934 0%, #3b4769 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #131934), color-stop(100%, #3b4769));
+    background: -webkit-linear-gradient(left, #131934 0%, #3b4769 100%);
+    background: -o-linear-gradient(left, #131934 0%, #3b4769 100%);
+    background: -ms-linear-gradient(left, #131934 0%, #3b4769 100%);
+    background: linear-gradient(to right, #131934 0%, #3b4769 100%);
+    transform: skewX(9deg);
+    position: absolute;
+    right: calc(-10vw - 300px);
+    width: 70vw;
+    height: 100%;
+    gap: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.divcontainer_III_text .h1 {
+    color: white;
+}
+
+.divcontainer.IV {
+    height: 60vh;
+    background: #fff;
+}
+
+.divcontainer.IV div {
+    position: absolute;
+    top: 30%;
+    left: 10vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 20px 30px;
+    border-radius: 30px;
+}
+
+.divcontainer.IV div .h1 {
+    opacity: 0;
+}
+
+.good1, .good2, .good3 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    left: 5vw;
+    opacity: 0;
+
+}
+
+.shop {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 5%;
+    right: 10vw;
+    opacity: 0;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.divblock {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0);
+    position: relative;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divblock2 {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+
+.image1, .image2, .image3, .image4, .image5 {
+    opacity: 0;
+    border-radius: 20px;
+    position: relative;
+}
+
+.image1 {
+    right: 35vw;
+    top: -0vh;
+    width: 10vw;
+    height: 10vw;
+}
+.image2 {
+    top: -20vh;
+    width: 45vw;
+    height: 20vw;
+}
+.image3 {
+    top: -25vh;
+    left: 35vw;
+    width: 13vw;
+    height: 13vw;
+}
+.image4 {
+    top: -40vh;
+    right: 40vw;
+    width: 13vw;
+    height: 13vw;
+}
+.image5 {
+    top: -60vh;
+    left: 35vw;
+    width: 13vw;
+    height: 13vw;
+}
+
+.divcontainer.V {
+    height: 120vh;
+    position: relative;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.divcontainer_V_div {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+    background-color: #131934;
+    background-image:
+        url('/assets/images/stars.png'),
+        linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
+    background-size: auto, cover; 
+    background-repeat: repeat, no-repeat;
+    background-position: center center, center center;
+    width: 50vmin;
+    height: 50vmin;
+    border-radius: 100%;
+    overflow: hidden; 
+    opacity: 0;
+}
+
+.divcontainer_V_div_block {
+    width: 80vmin;
+    height: 80vmin;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-out;
+    border: solid 1px black;
+}
+  
+  
+
+.divcontainer_V_btn {
+    text-decoration: none;
+    font-size: 3vmin;
+    transition: all 0.2s;
+    padding: 30px;
+    border-radius: 200px;
+    color: rgb(255, 255, 255);
+    background-color: #008cff;
+}
+
+.divcontainer_V_btn:hover {
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
 }
 
 .h1div {
-    margin-top: 35vh;
-    margin-bottom: 65vh;
     opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: opacity 0.5s ease-out;
-    background-color: rgba(190, 190, 190, 0.062);
-    border-radius: 15px;
     padding: 30px;
     z-index: 2;
+    background-color: rgb(180, 180, 180);
+    border-radius: 30px;
 }
+
+
+.imgdiv {
+    position: absolute;
+    top: 35vh;
+    width: 10vw;
+}
+
 
 .link {
     text-decoration: none;
@@ -149,15 +389,17 @@
 }
 
 .h1 {
-    color: white;
+    color: black;
     font-size: 3em;
-    transition: all 0.1s;
-    
+    transition: all 0.1s;   
 }
 
-.h1:hover {
-    text-shadow: white 0px 0px 7px;
+.heart {
+    width: 200px;
+    height: 200px;
 }
+
+
 
 
 @keyframes slideUp {
@@ -170,8 +412,389 @@
         opacity: 1;
     }
 }
+
+@keyframes moveLeft {
+    from {
+      transform: translateX(300px) skewX(9deg);
+    }
+    to {
+      transform: translateX(0px) skewX(9deg);
+
+    }
+}
+
+@keyframes moveLeft2 {
+    from {
+      transform: translateX(50px) skewX(9deg);
+    }
+    to {
+      transform: translateX(0px) skewX(9deg);
+
+    }
+}
+
+@keyframes fadeInAndGrow {
+    from {
+      opacity: 0; 
+      transform: scale(0.8); 
+    }
+    to {
+      opacity: 1; 
+      transform: scale(1);
+    }
+}
+
+@keyframes fadeInFromLeft {
+    from {
+      opacity: 0; 
+      clip-path: inset(0 100% 0 0); 
+    }
+    to {
+      opacity: 1; 
+      clip-path: inset(0 0 0 0); 
+    }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2025-3-23 14:35:21
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shadow-inset-center
+ * ----------------------------------------
+ */
+
+@-webkit-keyframes shadow-inset-center {
+    0% {
+      -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+              background-color: #ffffff;
+    }
+    100% {
+      -webkit-box-shadow: inset 0 0 14px 10px rgba(0, 0, 0, 0.7);
+              box-shadow: inset 0 0 14px 10px rgba(0, 0, 0, 0.7);
+              background-color: #e4e4e4;
+    }
+}
+
+@keyframes shadow-inset-center {
+    0% {
+      -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+              background-color: #ffffff;
+    }
+    100% {
+      -webkit-box-shadow: inset 0 0 14px 10px rgba(0, 0, 0, 0.7);
+              box-shadow: inset 0 0 14px 10px rgba(0, 0, 0, 0.7);
+              background-color: #e4e4e4;
+    }
+}
+
+.shadow-inset-center {
+    -webkit-animation: shadow-inset-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: shadow-inset-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+  
+/* ----------------------------------------------
+ * Generated by Animista on 2025-3-23 14:33:48
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation bounce-in-bck
+ * ----------------------------------------
+ */
+ @-webkit-keyframes bounce-in-bck {
+    0% {
+      -webkit-transform: scale(7);
+              transform: scale(7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(1.24);
+              transform: scale(1.24);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(1.04);
+              transform: scale(1.04);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  @keyframes bounce-in-bck {
+    0% {
+      -webkit-transform: scale(7);
+              transform: scale(7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(1.24);
+              transform: scale(1.24);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(1.04);
+              transform: scale(1.04);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  
+  
+
+.bounce-in-top {
+    -webkit-animation: bounce-in-bck 1.2s both;
+    animation: bounce-in-bck 1.2s both;
+    opacity: 1;
+}
+
+.fadeInFromLeft {
+    animation: fadeInFromLeft 1s ease-out forwards;
+}
+
+.fadeInAndGrow {
+    animation: fadeInAndGrow 1s ease-out forwards;
+}
   
 .slide-up {
     opacity: 1;
     animation: slideUp 2.5s ease-out forwards;
+}
+
+.slide-up2 {
+    opacity: 1;
+    animation: slideUp 3s ease-out forwards;
+}
+
+.moveLeft {
+    right: -10vw;
+    animation: moveLeft 2s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+    .h1s {
+        top: 100px;
+        gap: 15vh;
+    }
+
+    .h1 {
+        font-size: 4vmin;
+    }
+
+    .h1div {
+        position: relative;
+        top: -14vh;
+    }
+
+    .divblock {
+        height: 80vh;
+    }
+
+    .image1 {
+        right: 20vw;
+        top: -13vh;
+        width: 23vw;
+        height: 23vw;
+    }
+    .image2 {
+        top: 0;
+        width: 75vw;
+        height: 30vh;
+    }
+    .image3 {
+        top: -22vh;
+        left: 22vw;
+        width: 25vw;
+        height: 25vw;
+    }
+    .image4 {
+        top: -45vh;
+        right: 30vw;
+        width: 30vw;
+        height: 30vw;
+    }
+    .image5 {
+        top: -55vh;
+        left: 25vw;
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .time , .good {
+        width: 100px;
+        height: 100px;
+    
+    }
+
+    .divcontainer.II {
+        height: 60vh;
+    }
+
+    .divcontainer_II_text_h1 {
+        font-size: 5vmin;
+        color: white;
+    }
+
+    .divcontainer.IV {
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 0vh;
+        gap: 8vh;
+    }
+
+    .divcontainer.IV div {
+        gap: 2vh;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .shop {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 0vh;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+    }
+
+    .good1, .good2, .good3 {
+        width: 35px;
+        height: 35px;
+    
+    }
+
+    .divcontainer.III {
+        height: 35vh;
+        top: 0vh;
+    }
+    
+    .divcontainer_III_img {
+        width: 70vw;
+        height: 100%;
+    }
+
+    .divcontainer_III_text {
+        width: 70vw;
+        right: calc(-10vw - 50px);
+    }
+
+
+    .moveLeft {
+        right: -10vw;
+        animation: moveLeft2 2s ease-out forwards;
+    }
+
+    .divcontainer.V {
+        height: 92vh;
+        justify-content: start;
+    }
+
+    .divcontainer_V_btn {
+        padding: 15px;
+    }
+
+    .divcontainer_V_div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        background-color: #131934;
+        width: 80vmin;
+        height: 80vmin;
+        border-radius: 100%;
+    }
+
+    .divcontainer_V_div_block {
+        width: 90vmin;
+        height: 90vmin;
+        position: relative;
+        top: 10vh;
+    }
+
+    .heart {
+        width: 100px;
+        height: 100px;
+    }
 }
