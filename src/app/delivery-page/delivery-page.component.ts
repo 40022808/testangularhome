@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-delivery-page',
@@ -7,6 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./delivery-page.component.css'],
 })
 export class DeliveryPageComponent {
+  constructor(private router: Router) {}
   deliveryInfo = {
     name: '',
     address: '',

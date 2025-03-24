@@ -23,6 +23,8 @@ const routes: Routes = [
     component: ServiceComponent,
     canActivate: [AuthGuard],
   },
+  { path: ':lang/delivery', component: DeliveryPageComponent },
+  { path: 'delivery', component: DeliveryPageComponent },
   {
     path: ':lang/webshop',
     component: WebshopPageComponent,
