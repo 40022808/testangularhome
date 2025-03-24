@@ -19,6 +19,14 @@
     background-position: center center, center center;
 }
 
+.Loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
 .register {
     width: 50vw;
     height: 60vh;
@@ -107,4 +115,30 @@
 
 .register-btn:hover {
     background-color: #29447e;
+}
+
+@media (max-width: 768px) {
+    .register {
+        width: 85vw;
+
+    }
+
+    .register-btn {
+        min-width: 60%;
+        height: 40px;
+        margin: 10px;
+        border-radius: 10px;
+        border: solid 1px black;
+        padding: 20px;
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #1b2947;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+    
+    }
 }

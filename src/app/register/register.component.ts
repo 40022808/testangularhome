@@ -24,6 +24,8 @@ export class RegisterComponent implements OnInit {
   passwordMinError: boolean = false;
   passwordMaxError: boolean = false;
   registerError: boolean = false;
+  loading: boolean = false;
+  unloading: boolean = true;
 
   currentLang = 'en';
 
@@ -77,6 +79,8 @@ export class RegisterComponent implements OnInit {
       } else if (this.containsPunctuation(this.password)) {
         this.passwordFormatError = true;
       } else {
+        this.loading = true;
+        this.unloading = false;
         this.registerUser();
       }
     }
@@ -123,11 +127,14 @@ export class RegisterComponent implements OnInit {
       response => {
         console.log('User registered successfully', response);
         this.router.navigate([this.currentLang, 'login']);
+        this.loading = false;
+        this.unloading = true;
       },
       error => {
         console.error('Registration error', error);
         this.registerError = true;
-        
+        this.loading = false;
+        this.unloading = true;
       }
     );
   }

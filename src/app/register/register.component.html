@@ -20,14 +20,20 @@
       
           <!-- Password Inputs -->
           <div class="input-div-3" *ngIf="currentStep === 3" [ngClass]="{'fade-in': currentStep === 3}">
-            <input type="password" placeholder='{{"Password" | translate}}' class="input" maxlength="10" [(ngModel)]="password" required>
-            <input type="password" placeholder='{{"Confirm Password" | translate}}' class="input" maxlength="10" [(ngModel)]="confirmPassword" required>
-            <div *ngIf="passwordError" class="error">{{"Passwords do not match!" | translate}}</div>
-            <div *ngIf="passwordnullError" class="error">{{"Passwords is required!" | translate}}</div>
-            <div *ngIf="passwordFormatError" class="error">{{"Password cannot contain punctuation!" | translate}}</div>
-            <div *ngIf="passwordMinError" class="error">{{"Password must be at least 6 characters long!" | translate}}</div>
-            <div *ngIf="passwordMaxError" class="error">{{"Password cannot be longer than 10 characters!" | translate}}</div>
-            <div *ngIf="registerError" class="error">{{"Register failed! Email already exists!" | translate}}</div>
+            <div *ngIf="unloading">
+              <input type="password" placeholder='{{"Password" | translate}}' class="input" maxlength="10" [(ngModel)]="password" required>
+              <input type="password" placeholder='{{"Confirm Password" | translate}}' class="input" maxlength="10" [(ngModel)]="confirmPassword" required>
+              <div *ngIf="passwordError" class="error">{{"Passwords do not match!" | translate}}</div>
+              <div *ngIf="passwordnullError" class="error">{{"Passwords is required!" | translate}}</div>
+              <div *ngIf="passwordFormatError" class="error">{{"Password cannot contain punctuation!" | translate}}</div>
+              <div *ngIf="passwordMinError" class="error">{{"Password must be at least 6 characters long!" | translate}}</div>
+              <div *ngIf="passwordMaxError" class="error">{{"Password cannot be longer than 10 characters!" | translate}}</div>
+              <div *ngIf="registerError" class="error">{{"Register failed! Email already exists!" | translate}}</div>
+            </div>
+
+            <div class="Loading">
+              <app-loading *ngIf="loading"></app-loading>
+            </div>
           </div>
       
         </div>

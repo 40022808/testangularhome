@@ -109,6 +109,7 @@
 .error {
     color: red;
     font-size: 1.2em;
+    text-align: center;
 }
 
 .login-btn-div , .register-link {
@@ -116,4 +117,17 @@
     top: 10vh;
 }
 
+@media (max-width: 768px) {
+    .login {
+        width: 85vw;
+        height: 60vh;
+    }
 
+    .register-link {
+        font-size: 3.5vmin;
+    }
+
+    .error {
+        font-size: 4vmin;
+    }
+}
