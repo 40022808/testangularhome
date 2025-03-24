@@ -104,6 +104,7 @@
     z-index: 3;
     display: flex;
     flex-direction: column;
+    margin-bottom: 80px;
 }
 
 .divcontainer {
@@ -649,10 +650,142 @@
     animation: moveLeft 2s ease-out forwards;
 }
 
+.divcontainer.VI {
+    width: 100vw;
+    height: 35vh;
+    background: rgb(59, 59, 59);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-card {
+    width: 20vw;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; 
+    z-index: 10; 
+    border: 1px solid #ddd; 
+    background-color: #ffffff; 
+}
+  
+.contact-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+  
+.contact-card p {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-icons {
+    position: relative;
+    display: flex;
+    flex-direction: column;  
+    gap: 20px; 
+    z-index: 1000;
+}
+
+.social-icons i {
+    font-size: 35px; 
+    color: whitesmoke;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons i:hover {
+    transform: scale(1.3); 
+    color: #ff7e5f; 
+}
+
+.logoimage {
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 20px;
+    position: relative;
+    right: 5vw;
+}
+
+.divcontainer_VI_div {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 @media (max-width: 768px) {
+
+    .logoimage {
+        width: 15vmin;
+        height: 15vmin;
+    }
+
+    .social-icons {
+        gap: 10px; 
+    }
+
+    .social-icons i {
+        font-size: 3vmin; 
+    }
+
+    .social-icons i:hover {
+        transform: scale(1.2); 
+        color: #ff7e5f; 
+    }
+
+    .contact-card {
+        width: 38vw;
+        height: 25vh;
+        background: white;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .contact-card h3 {
+        font-size: 2.7vmin;
+        margin-bottom: 10px;
+    }
+      
+    .contact-card p {
+        font-size: 2.2vmin;
+        gap: 3px;
+    }
+
+    .divcontainer_VI_div {
+        width: 50vw;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .contact-card-img {
+        font-size: 2.5vmin;
+        width: 2.5vmin;
+        height: 2.5vmin;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .h1s {
         top: 100px;
         gap: 15vh;
+        margin-bottom: 100px;
     }
 
     .h1 {
