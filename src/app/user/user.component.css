@@ -424,12 +424,12 @@
 }
 
 .close-btn {
-    width: 1.2em;
-    height: 1.2em;
+    width: 4vmin;
+    height: 4vmin;
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.5em;
+    top: 20px;
+    right: 25px;
+    font-size: 3vmin;
     color: black;
     background-color: rgba(0, 0, 0, 0);
     border: solid 1px black;
@@ -437,6 +437,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     transition: all 0.1s;
 }
 .close-btn:hover {
@@ -534,3 +535,89 @@
     }
   }
   
+
+  @media (max-width: 768px) {
+    .user-div-info {
+        width: 70vw;
+    }
+
+    .user-info p {
+        width: 55vw;
+    }
+
+    .user-div-superadmin {
+        width: 70vw;
+    }
+    
+    .user-div-admin {
+        width: 70vw;
+    }
+
+    .user-div-superadmin button {
+        width: 35vw;
+        font-size: 3vmin;
+    }
+    
+    .user-div-admin button {
+        width: 35vw;
+        font-size: 3vmin;
+    }
+
+    .logout {
+        width: 70vw;
+        font-size: 1.4em;
+    }
+
+    .change-password-btn {
+        width: 70vw;
+        font-size: 1.4em;
+    }
+
+    .user-div-username-div {
+        width: 80vw;
+        font-size: 1em;
+    }
+
+    .user-div-username-div-buttons {
+        width: 50vw;
+    }
+
+    .user-div-username-div-button-sure {
+        font-size: 1.2em;
+        width: 20vw;
+    }
+    
+    .user-div-username-div-button-back {
+        font-size: 1.2em;
+        width: 20vw;
+    }
+
+    .user-div-password-div {
+        width: 80vw;
+        font-size: 1em;
+    }
+
+    .close-btn {
+        width: 7vmin;
+        height: 7vmin;
+        font-size: 5vmin;
+    }
+
+    .input-div {
+        width: 80%;
+    }
+
+    .Changepassword-btn {
+        width: 30vw;
+    }
+
+    .input {
+        height: 50px;
+    }
+
+    .superadmin-actions-success p {
+        width: 50vw;
+        font-size: 3vmin;
+    }
+
+  }

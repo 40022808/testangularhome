@@ -310,7 +310,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10vh;
+    gap: 6vh;
     background-color: #131934;
     background-image:
         url('/assets/images/stars.png'),
@@ -343,7 +343,7 @@
     text-decoration: none;
     font-size: 3vmin;
     transition: all 0.2s;
-    padding: 30px;
+    padding: 20px;
     border-radius: 200px;
     color: rgb(255, 255, 255);
     background-color: #008cff;
