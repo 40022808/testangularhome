@@ -9,19 +9,19 @@
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
 
     <div class="nav-links" [class.open]="menuOpen">
-        <a [routerLink]="['/', currentLang, 'home']" routerLinkActive="active">{{
+        <a [routerLink]="['/', currentLang, 'home']" routerLinkActive="active" (click)="toggleMenu()">{{
             "Home" | translate
             }}</a>
-        <a [routerLink]="['/', currentLang, 'service']" routerLinkActive="active">{{
+        <a [routerLink]="['/', currentLang, 'service']" routerLinkActive="active" (click)="toggleMenu()">{{
             "Service" | translate
             }}</a>
-        <a [routerLink]="['/', currentLang, 'webshop']" routerLinkActive="active">{{
+        <a [routerLink]="['/', currentLang, 'webshop']" routerLinkActive="active" (click)="toggleMenu()">{{
             "Web Shop" | translate
             }}</a>
-        <a [routerLink]="['/', currentLang, 'user']" routerLinkActive="active" class="user_a">
+        <a [routerLink]="['/', currentLang, 'user']" routerLinkActive="active" class="user_a" (click)="toggleMenu()">
             <img src="assets/images/user.svg" alt="user" class="img_user" />
         </a>
-        <a [routerLink]="['/', currentLang, 'cart']" routerLinkActive="active" class="cart_a">
+        <a [routerLink]="['/', currentLang, 'cart']" routerLinkActive="active" class="cart_a" (click)="toggleMenu()">
             <img src="assets/images/cart2.svg" alt="cart" class="img_cart" />
         </a>
         <div class="language-switcher" (click)="toggleDropdown()">

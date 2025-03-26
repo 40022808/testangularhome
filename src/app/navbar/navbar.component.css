@@ -233,5 +233,23 @@
         display: inline-block;
         border: none !important;
     }
+
+    .img_lan {
+        width: 45px;
+        height: auto;
+    }
+    
+    .img_user {
+        width: 35px;
+        height: auto;
+    }
+    
+    
+    
+    .img_cart {
+        width: 35px;
+        height: 50px;
+    
+    }
     
 }
