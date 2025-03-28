@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ApiService } from '../api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -33,7 +34,8 @@ export class RegisterComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private apiService: ApiService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private http: HttpClient
   ) {
     this.route.params.subscribe(params => {
       const lang = params['lang'];
@@ -122,22 +124,26 @@ export class RegisterComponent implements OnInit {
       password: this.password,
       password_confirmation: this.confirmPassword
     };
-
+  
     this.apiService.registerUser(this.currentLang, formData).subscribe(
       response => {
         console.log('User registered successfully', response);
+        alert('Sikeresen regisztráltál! Nézd meg az e-mail fiókodat a visszaigazolásért.');
         this.router.navigate([this.currentLang, 'login']);
         this.loading = false;
         this.unloading = true;
       },
       error => {
         console.error('Registration error', error);
+        alert('Hiba történt a regisztráció során. Kérlek, próbáld újra.');
         this.registerError = true;
         this.loading = false;
         this.unloading = true;
       }
+      
     );
   }
+  
 }
 
 

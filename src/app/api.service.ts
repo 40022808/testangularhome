@@ -11,6 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   registerUser(lang: string, formData: any): Observable<any> {
+    const url = `http://localhost:8000/api/${lang}/registers`; 
     return this.http.post(`${this.baseUrl}/api/${lang}/register`, formData);
   }
 
