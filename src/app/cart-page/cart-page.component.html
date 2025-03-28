@@ -1,7 +1,7 @@
 <div class="body">
-  <h2>Kosár</h2>
+  <h2>{{ "Cart" | translate }}</h2>
   <div *ngIf="cart.length === 0" class="empty-cart">
-    <p>A kosara üres!</p>
+    <p>{{ "Your cart is empty!" | translate }}</p>
   </div>
   <div *ngIf="cart.length > 0" class="cart-container">
     <ul class="product-list">
@@ -11,15 +11,17 @@
         <div class="product-details">
           <div class="product-name">{{ item.product.name }}</div>
           <div class="product-price">{{ item.product.price | number:'1.2-2' }} Ft</div>
-          <div class="product-quantity">Darabszám: {{ item.quantity }}</div>
+          <div class="product-quantity">{{ "Quantity" | translate }}: {{ item.quantity }}</div>
         </div>
-        <button *ngIf="item.product.id !== undefined" (click)="removeFromCart(item.product.id)">Törlés</button>
+        <button *ngIf="item.product.id !== undefined" (click)="removeFromCart(item.product.id)">
+          {{ "Remove" | translate }}
+        </button>
       </li>
     </ul>
     <div class="total-price">
-      <p>Teljes összeg: {{ totalPrice | number:'1.2-2' }} Ft</p>
+      <p>{{ "Total" | translate }}: {{ totalPrice | number:'1.2-2' }} Ft</p>
       <div class="delivery-button">
-        <a routerLink="/delivery" class="delivery-link">Szállításhoz</a>
+        <a [routerLink]="['/', currentLang, 'delivery']" class="delivery-link">{{ "Checkout" | translate }}</a>
       </div>
     </div>
   </div>

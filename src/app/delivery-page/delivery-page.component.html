@@ -1,58 +1,58 @@
 <div class="body">
-    <h2>Szállítási adatok</h2>
+    <h2>{{ "Delivery Information" | translate }}</h2>
     <form #deliveryForm="ngForm" (ngSubmit)="onSubmit(deliveryForm)">
         <div class="form-group">
-            <label for="fullName">Teljes Név:</label>
+            <label for="fullName">{{ "Full Name" | translate }}:</label>
             <input type="text" id="fullName" name="fullName" ngModel required pattern="^[A-Za-z\s]+$"
                 #fullName="ngModel" (input)="validateInput($event)">
             <div *ngIf="deliveryForm.submitted && !fullName.valid" class="error-message">
-                A név megadása kötelező!
+                {{ "Full Name is required!" | translate }}
             </div>
         </div>
         <div class="form-group">
-            <label for="address">Cím:</label>
+            <label for="address">{{ "Address" | translate }}:</label>
             <input type="text" id="address" name="address" ngModel required pattern="^[A-Za-z\s]+$" #address="ngModel"
                 (input)="validateInput($event)">
-            <div *ngIf=" deliveryForm.submitted && !address.valid" class="error-message">
-                A cím megadása kötelező!
+            <div *ngIf="deliveryForm.submitted && !address.valid" class="error-message">
+                {{ "Address is required!" | translate }}
             </div>
         </div>
 
         <div class="form-group">
-            <label for="houseNumber">Házszám:</label>
+            <label for="houseNumber">{{ "House Number" | translate }}:</label>
             <input type="text" id="houseNumber" name="houseNumber" ngModel required #houseNumber="ngModel"
                 (input)="validateNumberInput($event)">
             <div *ngIf="deliveryForm.submitted && !houseNumber.valid" class="error-message">
-                A házszám megadása kötelező!
+                {{ "House Number is required!" | translate }}
             </div>
         </div>
         <div class="form-group">
-            <label for="city">Város:</label>
+            <label for="city">{{ "City" | translate }}:</label>
             <input type="text" id="city" name="city" ngModel required pattern="^[A-Za-z\s]+$" #city="ngModel"
                 (input)="validateInput($event)">
-            <div *ngIf=" deliveryForm.submitted && !city.valid" class="error-message">
-                A város megadása kötelező!
+            <div *ngIf="deliveryForm.submitted && !city.valid" class="error-message">
+                {{ "City is required!" | translate }}
             </div>
         </div>
         <div class="form-group">
-            <label for="postalCode">Irányítószám:</label>
+            <label for="postalCode">{{ "Postal Code" | translate }}:</label>
             <input type="text" id="postalCode" name="postalCode" ngModel required #postalCode="ngModel"
                 (input)="validateNumberInput($event)">
             <div *ngIf="deliveryForm.submitted && !postalCode.valid" class="error-message">
-                Az irányítószám megadása kötelező!
+                {{ "Postal Code is required!" | translate }}
             </div>
         </div>
         <div class="form-group">
-            <label for="phone">Telefonszám:</label>
+            <label for="phone">{{ "Phone Number" | translate }}:</label>
             <input type="tel" id="phone" name="phone" ngModel required #phone="ngModel"
                 (input)="validateNumberInput($event)">
             <div *ngIf="deliveryForm.submitted && !phone.valid" class="error-message">
-                A telefonszám megadása kötelező!
+                {{ "Phone Number is required!" | translate }}
             </div>
         </div>
-        <button type="submit">Ment</button>
+        <button type="submit">{{ "Save" | translate }}</button>
         <div *ngIf="formSubmitted" class="success-message">
-            Siker! Az adatokat elmentettük.
+            {{ "Success! Your data has been saved." | translate }}
         </div>
     </form>
 </div>

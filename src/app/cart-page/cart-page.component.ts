@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart.service';
 import { Product } from '../shared/models/product.model';
+import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
@@ -10,10 +12,21 @@ import { Product } from '../shared/models/product.model';
 export class CartPageComponent implements OnInit {
   cart: { product: Product; quantity: number }[] = [];
   totalPrice: number = 0;
+  currentLang: string = 'en';
 
-  constructor(private shoppingCartService: ShoppingCartService) {}
+  constructor(
+    private shoppingCartService: ShoppingCartService,
+    private translate: TranslateService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    // Figyeljük a nyelv változását az URL-ben
+    this.route.params.subscribe((params) => {
+      this.currentLang = params['lang'] || 'en';
+      this.translate.use(this.currentLang); // Nyelv beállítása
+    });
+
     this.cart = this.shoppingCartService.getCart();
     this.calculateTotalPrice();
   }

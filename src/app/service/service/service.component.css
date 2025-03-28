@@ -318,3 +318,24 @@ mat-icon:hover {
   transform: scale(0.95);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.custom-green-button {
+  background-color: #4caf50; /* Zöld szín */
+  color: white; /* Fehér szöveg */
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.custom-green-button:hover {
+  background-color: #45a049; /* Sötétebb zöld hover */
+}
+
+.custom-green-button:disabled {
+  background-color: #a5d6a7; /* Halvány zöld, ha le van tiltva */
+  cursor: not-allowed;
+}

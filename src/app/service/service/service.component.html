@@ -1,27 +1,23 @@
 <div class="body">
-
-
-
   <div class="container">
-
-
-
     <div class="datepicker-container">
       <mat-form-field>
-        <mat-label>Choose a date</mat-label>
+        <mat-label>{{ "Choose a date" | translate }}</mat-label>
         <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" (dateChange)="onDateChange($event)">
         <mat-hint></mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker>
           <mat-datepicker-actions>
-            <button mat-button matDatepickerCancel>Cancel</button>
-            <button class="mat-button" mat-raised-button matDatepickerApply (click)="onApplyClick()">Apply</button>
+            <button mat-button matDatepickerCancel>{{ "Cancel" | translate }}</button>
+            <button class="mat-button" mat-raised-button matDatepickerApply (click)="onApplyClick()">
+              {{ "Apply" | translate }}
+            </button>
           </mat-datepicker-actions>
         </mat-datepicker>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Choose a time</mat-label>
+        <mat-label>{{ "Choose a time" | translate }}</mat-label>
         <mat-select (selectionChange)="onTimeSelect($event)">
           <mat-option *ngFor="let time of availableTimes" [value]="time"
             [disabled]="isDateBooked(selectedDate?.toISOString().split('T')[0], time)">
@@ -30,48 +26,36 @@
         </mat-select>
       </mat-form-field>
       <div *ngIf="isDayFullyBooked" class="fully-booked-message">
-        Minden időpont foglalt erre a napra!
+        {{ "All appointments are booked for this day!" | translate }}
       </div>
 
       <mat-form-field>
-        <mat-label>Choose your gender</mat-label>
+        <mat-label>{{ "Choose your gender" | translate }}</mat-label>
         <mat-select [(value)]="selectedGender">
-          <mat-option value="male">Férfi</mat-option>
-          <mat-option value="female">Nő</mat-option>
-          <mat-option value="other">Egyéb</mat-option>
+          <mat-option value="male">{{ "Male" | translate }}</mat-option>
+          <mat-option value="female">{{ "Female" | translate }}</mat-option>
+          <mat-option value="other">{{ "Other" | translate }}</mat-option>
         </mat-select>
       </mat-form-field>
-      <!-- Lefoglalva üzenet -->
+      <button mat-raised-button color="primary" class="custom-green-button" (click)="onApplyClick()" [disabled]="!canBook()">
+        {{ "Book" | translate }}
+      </button>
+
+      <div *ngIf="isDayFullyBooked" class="fully-booked-message">
+        {{ "All appointments are booked for this day!" | translate }}
+      </div>
       <div class="booked-message-container">
         <div *ngIf="showBookedMessage" class="booked-message">
-          Lefoglalva
+          {{ "Booked" | translate }}
         </div>
       </div>
+      <style>
+        .success-message {
+          color: green;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+      </style>
     </div>
-
-
-    <div class="contact-card">
-      <h3>Elérhetőségek</h3>
-      <p><mat-icon>phone</mat-icon> +36 20 351 8200</p>
-      <p><mat-icon>email</mat-icon> info&#64;example.com</p>
-      <p><mat-icon>location_on</mat-icon> Budapest, Révay u. 16, 1065</p>
-    </div>
-
-    <div class="social-icons">
-      <a href="https://www.facebook.com" target="_blank">
-        <i class="fab fa-facebook"> Facebook</i>
-      </a>
-      <a href="https://www.instagram.com" target="_blank">
-        <i class="fab fa-instagram">Instagram</i>
-      </a>
-      <a href="https://twitter.com" target="_blank">
-        <i class="fab fa-twitter">Twitter</i>
-      </a>
-    </div>
-
-    <style>
-      .booked-message {
-        color: green;
-        font-weight: bold;
-      }
-    </style>
+  </div>
+</div>
