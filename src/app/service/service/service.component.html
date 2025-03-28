@@ -37,6 +37,10 @@
           <mat-option value="other">{{ "Other" | translate }}</mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ "Enter your email" | translate }}</mat-label>
+        <input matInput [(ngModel)]="email" type="email" placeholder="example@example.com">
+      </mat-form-field>
       <button mat-raised-button color="primary" class="custom-green-button" (click)="onApplyClick()" [disabled]="!canBook()">
         {{ "Book" | translate }}
       </button>

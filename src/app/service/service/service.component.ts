@@ -23,6 +23,7 @@ export class ServiceComponent implements OnInit {
 
 
   myFilter!: DateFilterFn<any>;
+  email: any;
 
   constructor(
     private http: HttpClient,
@@ -62,11 +63,12 @@ export class ServiceComponent implements OnInit {
   }
 
   onApplyClick() {
-    if (this.selectedDate && this.selectedTime && this.selectedGender) {
+    if (this.selectedDate && this.selectedTime && this.selectedGender && this.email) {
       const bookingData = {
         date: this.selectedDate.toISOString().split('T')[0],
         time: this.selectedTime,
         gender: this.selectedGender,
+        email: this.email,
       };
   
       this.bookingService.storeBooking(bookingData).subscribe(
@@ -92,10 +94,9 @@ export class ServiceComponent implements OnInit {
         }
       );
     } else {
-      console.error('Date, time, and gender must be selected!');
+      console.error('All fields must be filled out!');
     }
   }
-
   checkBooking() {
     if (!this.selectedDate || !this.selectedTime) {
       console.error('Date and time must be selected!');
