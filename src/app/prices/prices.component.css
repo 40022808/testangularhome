@@ -1,0 +1,140 @@
+html,
+body {
+  background: grey; /* Slightly lighter gray background for the entire page */
+  color: #e8e8e8; /* Softer light gray text for better readability */
+  margin: 0; /* Remove default margin to avoid white edges */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Ensure the background covers the full height */
+  font-family: "Arial", sans-serif;
+}
+
+.body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("/assets/images/stars.png"),
+    linear-gradient(
+      to bottom,
+      #1b2947,
+      #1b2947,
+      #2b3152,
+      #3b385d,
+      #3b385d,
+      #4c4067,
+      #615383,
+      #776092
+    );
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 6.5rem;
+  max-width: 1200px; /* Increased width for a wider layout */
+  background: #3a3a3a; /* Slightly lighter gray for the container */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+}
+
+h1 {
+  color: #ffffff; /* White text for the heading */
+  text-align: center;
+  font-size: 2.5rem; /* Slightly larger font size */
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-transform: uppercase; /* Add uppercase for a modern look */
+  letter-spacing: 1px; /* Add spacing between letters */
+}
+
+table {
+  width: 100%; /* Ensure the table takes up the full width of the container */
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 1rem 2rem; /* Adjusted padding for better spacing */
+  text-align: left;
+  border-bottom: 1px solid #555; /* Softer border color */
+}
+
+th {
+  background-color: #444; /* Slightly lighter gray for table headers */
+  font-weight: bold;
+  color: #e8e8e8; /* Softer light gray text for headers */
+}
+
+tr:hover {
+  background-color: #4a4a4a; /* Slightly lighter gray for hover effect */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+td {
+  font-size: 1rem;
+  color: #e0e0e0; /* Softer light gray text for table cells */
+}
+
+.price {
+  text-align: right;
+  font-weight: bold;
+  color: #ffffff; /* White text for prices */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    margin-top: 4rem;
+    max-width: 100%; /* Ensure it fits smaller screens */
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 1rem;
+  }
+
+  .price {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    display: block;
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  th {
+    background-color: transparent;
+    font-weight: bold;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    text-align: right;
+  }
+}

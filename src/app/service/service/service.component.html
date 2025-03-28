@@ -4,12 +4,6 @@
 
   <div class="container">
 
-    <div class="map-container">
-      <app-map></app-map>
-      <div class="google-maps-link-container">
-        <button class="google-maps-link" (click)="openGoogleMaps()">Megnyitás a Google Maps-en</button>
-      </div>
-    </div>
 
 
     <div class="datepicker-container">
@@ -25,11 +19,12 @@
           </mat-datepicker-actions>
         </mat-datepicker>
       </mat-form-field>
-    
+
       <mat-form-field>
         <mat-label>Choose a time</mat-label>
         <mat-select (selectionChange)="onTimeSelect($event)">
-          <mat-option *ngFor="let time of availableTimes" [value]="time" [disabled]="isDateBooked(selectedDate?.toISOString().split('T')[0], time)">
+          <mat-option *ngFor="let time of availableTimes" [value]="time"
+            [disabled]="isDateBooked(selectedDate?.toISOString().split('T')[0], time)">
             {{ time }}
           </mat-option>
         </mat-select>
@@ -37,7 +32,7 @@
       <div *ngIf="isDayFullyBooked" class="fully-booked-message">
         Minden időpont foglalt erre a napra!
       </div>
-    
+
       <mat-form-field>
         <mat-label>Choose your gender</mat-label>
         <mat-select [(value)]="selectedGender">
@@ -80,11 +75,3 @@
         font-weight: bold;
       }
     </style>
-    <div class="home-button-container">
-      <button class="home-button" (click)="navigateToHome()">Vissza a Kezdőlapra</button>
-    </div>
-    <div class="webshop-button-container">
-      <button class="webshop-button" (click)="navigateToWebshop()">Webshop</button>
-    </div>
-   
-    

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./delivery-page.component.css'],
 })
 export class DeliveryPageComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
   deliveryInfo = {
     name: '',
     address: '',
@@ -20,15 +21,14 @@ export class DeliveryPageComponent {
 
   formSubmitted = false;
 
-
   onSubmit(form: NgForm) {
     if (form.valid) {
       this.formSubmitted = true;
       console.log('Form Submitted!', form.value);
-  
+
       // Szállítási adatok mentése vagy API hívás
       this.submitDeliveryInfo(form.value);
-  
+
       // Üzenet eltüntetése pár másodperc után
       setTimeout(() => {
         this.formSubmitted = false;

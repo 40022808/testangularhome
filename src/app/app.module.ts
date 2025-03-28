@@ -37,6 +37,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PricesComponent } from './prices/prices.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -59,6 +60,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MapComponent,
     DeliveryPageComponent,
     AddProductComponent,
+    PricesComponent,
   ],
   imports: [
     BrowserAnimationsModule,

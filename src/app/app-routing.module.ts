@@ -12,6 +12,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
+import { PricesComponent } from './prices/prices.component';
 
 const routes: Routes = [
   { path: ':lang/home', component: HomeComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: ':lang/add-product', component: AddProductComponent },
+  { path: ':lang/prices', component: PricesComponent },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
 ];
 
