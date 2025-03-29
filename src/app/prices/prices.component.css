@@ -1,10 +1,10 @@
 html,
 body {
-  background: grey; /* Slightly lighter gray background for the entire page */
-  color: #e8e8e8; /* Softer light gray text for better readability */
-  margin: 0; /* Remove default margin to avoid white edges */
-  padding: 0; /* Remove default padding */
-  height: 100%; /* Ensure the background covers the full height */
+  background: grey; 
+  color: #e8e8e8; 
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
   font-family: "Arial", sans-serif;
 }
 
@@ -38,103 +38,80 @@ body {
   margin: 0 auto;
   padding: 2rem;
   margin-top: 6.5rem;
-  max-width: 1200px; /* Increased width for a wider layout */
-  background: #3a3a3a; /* Slightly lighter gray for the container */
-  border-radius: 12px; /* Rounded corners for a modern look */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+  width: 28vw;
+  background: #3a3a3a;
+  border-radius: 12px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-  color: #ffffff; /* White text for the heading */
+  color: #ffffff; 
   text-align: center;
-  font-size: 2.5rem; /* Slightly larger font size */
+  font-size: 2.5rem; 
   margin-bottom: 2rem;
   font-weight: bold;
-  text-transform: uppercase; /* Add uppercase for a modern look */
-  letter-spacing: 1px; /* Add spacing between letters */
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
 }
 
 table {
-  width: 100%; /* Ensure the table takes up the full width of the container */
+  width: 100%; 
   border-collapse: collapse;
   margin: 0 auto;
 }
 
-th,
-td {
-  padding: 1rem 2rem; /* Adjusted padding for better spacing */
+th,td {
+  padding: 1rem 2rem; 
   text-align: left;
-  border-bottom: 1px solid #555; /* Softer border color */
+  border-bottom: 1px solid #555; 
 }
 
 th {
-  background-color: #444; /* Slightly lighter gray for table headers */
+  background-color: #444; 
   font-weight: bold;
-  color: #e8e8e8; /* Softer light gray text for headers */
+  color: #e8e8e8; 
 }
 
 tr:hover {
-  background-color: #4a4a4a; /* Slightly lighter gray for hover effect */
-  transition: background-color 0.3s ease; /* Smooth transition for hover */
+  background-color: #4a4a4a; 
+  transition: background-color 0.3s ease; 
 }
 
 td {
   font-size: 1rem;
-  color: #e0e0e0; /* Softer light gray text for table cells */
+  color: #e0e0e0; 
 }
 
 .price {
   text-align: right;
   font-weight: bold;
-  color: #ffffff; /* White text for prices */
+  color: #ffffff; 
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
-    margin-top: 4rem;
-    max-width: 100%; /* Ensure it fits smaller screens */
+    width: 80vw;
   }
 
-  table {
-    font-size: 0.9rem;
+  h1 {
+    font-size: 8vmin;
   }
 
-  th,
-  td {
-    padding: 0.5rem 1rem;
-  }
-
-  .price {
+  th,td {
+    padding: 1.5rem 1rem; 
     text-align: left;
+    border-bottom: 1px solid #555; 
   }
+
+  td {
+    font-size: 3vmin;
+  }
+
+
 }
 
-@media (max-width: 480px) {
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
 
-  th,
-  td {
-    display: block;
-    text-align: left;
-    padding: 0.5rem;
-  }
-
-  th {
-    background-color: transparent;
-    font-weight: bold;
-  }
-
-  tr {
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .price {
-    text-align: right;
-  }
-}

@@ -96,10 +96,9 @@ li a:hover {
   padding: 0 20px;
 }
 .product-item {
-  flex: 1 1 calc(20% - 30px);
   box-sizing: border-box;
-  max-width: calc(20% - 30px);
-  width: 300px;
+  width: 15vw;
+  height: 15vw;
   text-align: center;
   margin: 0 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
