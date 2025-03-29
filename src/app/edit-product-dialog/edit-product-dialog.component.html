@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Edit Product</h2>
+<form [formGroup]="editForm" (ngSubmit)="save()">
+    <mat-form-field appearance="fill">
+        <mat-label>Product Name</mat-label>
+        <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+        <button mat-button type="button" (click)="close()">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+    </div>
+</form>

@@ -10,24 +10,26 @@ export class ProductService {
   private apiUrl = 'http://localhost:8000/api/products';
 
   constructor(private http: HttpClient) {}
+  addProduct(productData: FormData): Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, productData);
+  }
 
   getProduct(id: number): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
-  }
-
-  addProduct(productData: FormData): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, productData);
   }
 
   getProducts(productId: number): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl);
   }
 
-  updateProduct(id: number, product: Product): Observable<Product> {
-    return this.http.put<Product>(`${this.apiUrl}/${id}`, product);
+  updateProduct(
+    productId: number,
+    productData: Partial<Product>
+  ): Observable<Product> {
+    return this.http.put<Product>(`${this.apiUrl}/${productId}`, productData);
   }
 
-  deleteProduct(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  deleteProduct(productId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${productId}`);
   }
 }

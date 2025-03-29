@@ -6,14 +6,13 @@ import { ApiService } from '../api.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent implements OnInit {
   username: string = '';
   email: string = '';
   password: string = '';
 
-  
   emailError: boolean = false;
   passwordError: boolean = false;
   loginError: boolean = false;
@@ -28,7 +27,7 @@ export class LoginComponent implements OnInit {
     private apiService: ApiService,
     private translate: TranslateService
   ) {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const lang = params['lang'];
       if (lang) {
         this.currentLang = lang;
@@ -37,44 +36,41 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   login() {
     this.resetErrors();
-  
+
     if (this.email.trim() === '') {
       this.emailError = true;
-    } 
-    else if (this.password.trim() === '') {
+    } else if (this.password.trim() === '') {
       this.passwordError = true;
-    } 
-    else {
+    } else {
       this.loading = true;
-  
+
       const formData = {
         email: this.email,
-        password: this.password
+        password: this.password,
       };
-  
+
       this.apiService.loginUser(this.currentLang, formData).subscribe(
-        response => {
+        (response) => {
           localStorage.setItem('userToken', response.token);
-  
-          const redirectUrl = this.route.snapshot.queryParams['redirectUrl'] || `${this.currentLang}/user`;
+
+          const redirectUrl =
+            this.route.snapshot.queryParams['redirectUrl'] ||
+            `${this.currentLang}/home`;
           this.router.navigateByUrl(redirectUrl);
-  
+
           this.loading = false;
         },
-        error => {
+        (error) => {
           this.loading = false;
           this.loginError = true;
         }
       );
     }
   }
-  
 
   resetErrors() {
     this.emailError = false;

@@ -1,12 +1,9 @@
 <div class="body">
-
   <div class="product-grid">
     <div *ngFor="let product of products" class="product-item">
       <a routerLink="/product/{{ product.id }}">
-        <img *ngIf="product.imageURL" 
-             [src]="'http://localhost:8000' + product.imageURL" 
-             alt="{{ product.name }}" 
-            class="product-image" />
+        <img *ngIf="product.imageURL" [src]="'http://localhost:8000' + product.imageURL" alt="{{ product.name }}"
+          class="product-image" />
         <div class="content">
           <div class="name">
             {{ product.name }}
@@ -18,6 +15,11 @@
           </div>
         </div>
       </a>
+      <div class="admin-actions">
+        <button *ngIf="product.id !== undefined" (click)="editProduct(product.id)" class="edit-button">Edit</button>
+        <button *ngIf="product.id !== undefined" (click)="deleteProduct(product.id)"
+          class="delete-button">Delete</button>
+      </div>
     </div>
   </div>
 </div>

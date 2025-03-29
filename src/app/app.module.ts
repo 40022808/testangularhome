@@ -4,7 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  provideHttpClient,
+} from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
@@ -38,6 +42,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PricesComponent } from './prices/prices.component';
+import { EditProductDialogComponent } from './edit-product-dialog/edit-product-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -61,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     DeliveryPageComponent,
     AddProductComponent,
     PricesComponent,
+    EditProductDialogComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -81,6 +88,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HttpClientModule,
     MatSelectModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
 
     TranslateModule.forRoot({
       loader: {

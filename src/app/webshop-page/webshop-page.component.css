@@ -59,7 +59,6 @@ li a:hover {
   text-align: center;
 }
 
-
 .name {
   color: whitesmoke;
 }
@@ -91,35 +90,36 @@ li a:hover {
 
 .product-grid {
   display: flex;
-  flex-wrap: wrap; 
-  gap: 20px; 
-  justify-content: center; 
-  padding: 0 20px; 
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
 }
 .product-item {
-  flex: 1 1 calc(20% - 30px); 
+  flex: 1 1 calc(20% - 30px);
   box-sizing: border-box;
   max-width: calc(20% - 30px);
+  width: 300px;
   text-align: center;
   margin: 0 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2); 
-  border-radius: 15px; 
-  transition: all 0.3s ease; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .product-item:hover {
   border: 1px solid transparent;
 
   background-origin: border-box;
   background-clip: content-box, border-box;
-  box-shadow: 0 8px 15px rgba(27, 41, 71, 0.3); 
-  transform: translateY(-5px); 
-  border-radius: 15px; 
+  box-shadow: 0 8px 15px rgba(27, 41, 71, 0.3);
+  transform: translateY(-5px);
+  border-radius: 15px;
 }
 .product-image {
-  width: 100%; 
-  height: auto; 
-  border-radius: 8px; 
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .name {
@@ -132,6 +132,43 @@ li a:hover {
   font-size: 0.9rem;
   color: whitesmoke;
   margin-top: 5px;
+}
+.admin-actions {
+  display: flexbox;
+  justify-content: space-around; /* Space between the buttons */
+  margin-top: 25px;
+  width: 100%;
+}
+
+.edit-button,
+.delete-button {
+  flex: 0 0 auto; /* Prevent buttons from stretching or shrinking */
+  background-color: #007bff; /* Default blue for edit */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0; /* Remove unnecessary margins */
+  width: auto; /* Allow buttons to take their content width */
+}
+
+.edit-button {
+  background-color: #007bff; /* Blue for edit */
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Red for delete */
+  margin-left: 100px;
+}
+.edit-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.delete-button:hover {
+  background-color: #a71d2a; /* Darker red on hover */
 }
 @media (max-width: 1024px) {
   .product-item {
@@ -149,7 +186,7 @@ li a:hover {
 
 @media (max-width: 480px) {
   .product-item {
-    flex: 1 1 calc(50% - 30px); 
+    flex: 1 1 calc(50% - 30px);
     max-width: calc(50% - 30px);
   }
 }

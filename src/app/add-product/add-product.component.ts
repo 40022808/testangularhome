@@ -38,7 +38,7 @@ export class AddProductComponent {
     }
 
     this.productService.addProduct(formData).subscribe(
-      (response) => {
+      (response: any) => {
         console.log('Product added successfully:', response);
         this.successMessage = true;
 
@@ -58,7 +58,7 @@ export class AddProductComponent {
           this.successMessage = false;
         }, 3000);
       },
-      (error) => {
+      (error: any) => {
         console.error('Error adding product:', error);
       }
     );
