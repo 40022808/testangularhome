@@ -100,9 +100,10 @@
 
 
     <div class="user-div-info2">
-        
+        <h1>{{ 'My Bookings' | translate }}</h1>
         <button (click)="openBookingsModal()">{{ 'View My Bookings' | translate }}</button>
     </div>
+    
     <div class="modal" *ngIf="isBookingsModalOpen">
         <div class="modal-content">
             <!-- Bezáró gomb (X) -->
@@ -118,9 +119,6 @@
             </ul>
             <p *ngIf="userBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
         </div>
-    
-    
-
     </div>
 
     <!-- <div class="user-div-sure-give-body">

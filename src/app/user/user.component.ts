@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ApiService } from '../api.service';
+import { HttpClient } from '@angular/common/http';
+import { BookingService } from '../booking.service';
 
 @Component({
   selector: 'app-user',
