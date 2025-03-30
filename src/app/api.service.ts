@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  getBookings(role: string, email: any) {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl: string = 'http://127.0.0.1:8000'; 
 
   constructor(private http: HttpClient) { }
@@ -76,10 +79,18 @@ export class ApiService {
       headers: { Authorization: `Bearer ${token}` }
     });
   }
-  getUserBookings(email: string) {
-    return this.http.get(`http://localhost:8000/api/user-bookings?email=${email}`);
+  getUserBookings(role: string,email: string) {
+    return this.http.get(`http://localhost:8000/api/bookings?role=${role}&email=${email}`);
   }
   storeBooking(bookingData: any) {
     return this.http.post(`http://localhost:8000/api/store-booking`, bookingData);
+}
+getAllBookings(): Observable<any> {
+
+  const role = localStorage.getItem('userRole'); // A szerepkör betöltése
+  const token = localStorage.getItem('userToken');
+  return this.http.get(`http://127.0.0.1:8000/api/all-bookings?role=${role}`, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
 }
 }

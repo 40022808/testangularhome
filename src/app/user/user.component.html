@@ -35,6 +35,8 @@
             <button (click)="give()">{{ 'Give Admin' | translate }}</button>
             <button (click)="deprive()">{{ 'Deprive Admin' | translate }}</button>
             <button (click)="addProductPage()">{{ 'Product Management' | translate }}</button>
+            <button (click)="openAllBookingsModal()">{{ 'View All Bookings' | translate }}</button>
+
         </div>
 
         <div class="superadmin-actions-give" [ngClass]="{'fade-in': currentStep === 2}" *ngIf="currentStep === 2">
@@ -69,16 +71,11 @@
 
         <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
             <button (click)="addProductPage()">{{ 'Product Management' | translate }}</button>
+       
+            <button (click)="openAllBookingsModal()">{{ 'View All Bookings' | translate }}</button>
         </div>
     </div>
-    <div *ngIf="userBookings.length > 0" class="user-bookings">
-        <h2>{{ 'My Bookings' | translate }}</h2>
-        <ul>
-            <li *ngFor="let booking of userBookings">
-                {{ booking.date }} - {{ booking.time }} - {{ booking.gender }}
-            </li>
-        </ul>
-    </div>
+    
 
 
 
@@ -100,18 +97,22 @@
 
 
     <div class="user-div-info2">
-        <h1>{{ 'My Bookings' | translate }}</h1>
+        <h1>{{ 'Bookings' | translate }}</h1>
         <button (click)="openBookingsModal()">{{ 'View My Bookings' | translate }}</button>
+        
     </div>
     
+    
+    <div class="user-div-info2" *ngIf="userRole === '2' || userRole === '1'">
+        <h1>{{ 'All Bookings' | translate }}</h1>
+        <button (click)="openAllBookingsModal()">{{ 'View All Bookings' | translate }}</button>
+    </div>
+    
+    <!-- Modális ablak a saját foglalásokhoz -->
     <div class="modal" *ngIf="isBookingsModalOpen">
         <div class="modal-content">
-            <!-- Bezáró gomb (X) -->
             <span class="close-btn" (click)="closeBookingsModal()">&times;</span>
-            
             <h2>{{ 'My Bookings' | translate }}</h2>
-            
-            <!-- Foglalások listája -->
             <ul *ngIf="userBookings.length > 0">
                 <li *ngFor="let booking of userBookings">
                     {{ booking.date }} - {{ booking.time }} - {{ booking.gender }}
@@ -120,7 +121,20 @@
             <p *ngIf="userBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
         </div>
     </div>
-
+    
+    <!-- Modális ablak az összes foglaláshoz -->
+    <div class="modal" *ngIf="isAllBookingsModalOpen">
+  <div class="modal-content">
+    <span class="close-btn" (click)="closeAllBookingsModal()">&times;</span>
+    <h2>{{ 'All Bookings' | translate }}</h2>
+    <ul *ngIf="allBookings.length > 0">
+      <li *ngFor="let booking of allBookings">
+        {{ booking.date }} - {{ booking.time }} - {{ booking.gender }} - {{ booking.email }}
+      </li>
+    </ul>
+    <p *ngIf="allBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
+  </div>
+</div>
     <!-- <div class="user-div-sure-give-body">
         <div class="user-div-sure-give-div">
             <h1 class="user-div-sure-give-div-h1">{{ 'Give Admin' | translate }}</h1>

@@ -44,7 +44,7 @@
 .user-div-info2 {
     width: 30vw;
     min-height: 20vh;
-    max-height: 40vh;
+    max-height: 50vh;
     background-color: rgb(201, 201, 201);
     border-radius: 20px;
     display: flex;
@@ -196,9 +196,9 @@
 }
 
 .user-div-info2 button:hover {
-
     background-color: #776092;
     transition: all 0.2s;
+
 }
 .user-div-admin button:hover {
     background-color: #776092;
@@ -660,7 +660,7 @@
     }
 
   }
-  /* .user-bookings {
+  .user-bookings {
     margin-top: 20px;
   }
   
@@ -668,8 +668,8 @@
     font-size: 1.5em;
     margin-bottom: 10px;
   }
-   */
-  /* .user-bookings ul {
+  
+  .user-bookings ul {
     list-style-type: none;
     padding: 0;
   }
@@ -691,11 +691,11 @@
     transition: all 0.2s;
     border-radius: 10px;
     text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-} */
+}
 
-/* .user-div-admin button:hover {
+.user-div-admin button:hover {
     background-color: #776092;
-} */
+}
 .modal {
     display: flex;
     justify-content: center;
@@ -750,4 +750,20 @@
 
 .close-btn:hover {
     color: red;
+}
+.additional-button {
+
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3b385d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.additional-button:hover {
+    background-color: #776092;
 }
