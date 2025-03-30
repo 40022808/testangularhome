@@ -41,6 +41,39 @@
     position: relative;
 }
 
+.user-div-info2 {
+    width: 30vw;
+    height: 60vh;
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.user-div-info2 h1 {
+    font-size: 1.5em;
+    margin: 20px;
+    position: absolute;
+    top: 1vh;
+    
+}
+
+.user-div-info2 button {
+    width: 60%;
+    border-radius: 15px;
+    background-color:#3b385d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: solid 2px black;
+    padding: 15px;
+}
+
 .user-div-info h1 {
     font-size: 1.5em;
     margin: 20px;
