@@ -79,4 +79,7 @@ export class ApiService {
   getUserBookings(email: string) {
     return this.http.get(`http://localhost:8000/api/user-bookings?email=${email}`);
   }
+  storeBooking(bookingData: any) {
+    return this.http.post(`http://localhost:8000/api/store-booking`, bookingData);
+}
 }

@@ -278,7 +278,8 @@ export class UserComponent implements OnInit {
 
   addProductPage() {
     this.router.navigate([this.currentLang, 'add-product']);
-  }loadUserBookings() {
+  }
+  loadUserBookings() {
     const email = this.userInfo?.email; // Feltételezzük, hogy az email elérhető
     if (!email) {
         console.error('User email is not available.');

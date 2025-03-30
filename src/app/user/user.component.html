@@ -100,8 +100,27 @@
 
 
     <div class="user-div-info2">
-        <h1>h1</h1>
-        <button (click)="loadUserBookings()">{{ 'View My Bookings' | translate }}</button>
+        
+        <button (click)="openBookingsModal()">{{ 'View My Bookings' | translate }}</button>
+    </div>
+    <div class="modal" *ngIf="isBookingsModalOpen">
+        <div class="modal-content">
+            <!-- Bezáró gomb (X) -->
+            <span class="close-btn" (click)="closeBookingsModal()">&times;</span>
+            
+            <h2>{{ 'My Bookings' | translate }}</h2>
+            
+            <!-- Foglalások listája -->
+            <ul *ngIf="userBookings.length > 0">
+                <li *ngFor="let booking of userBookings">
+                    {{ booking.date }} - {{ booking.time }} - {{ booking.gender }}
+                </li>
+            </ul>
+            <p *ngIf="userBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
+        </div>
+    
+    
+
     </div>
 
     <!-- <div class="user-div-sure-give-body">
