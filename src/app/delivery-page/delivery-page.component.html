@@ -10,6 +10,13 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="email">{{ "Email" | translate }}:</label>
+            <input type="email" id="email" name="email" ngModel required #email="ngModel">
+            <div *ngIf="deliveryForm.submitted && !email.valid" class="error-message">
+                {{ "Email is required!" | translate }}
+            </div>
+        </div>
+        <div class="form-group">
             <label for="address">{{ "Address" | translate }}:</label>
             <input type="text" id="address" name="address" ngModel required pattern="^[A-Za-z\s]+$" #address="ngModel"
                 (input)="validateInput($event)">

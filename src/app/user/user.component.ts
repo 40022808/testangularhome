@@ -45,6 +45,8 @@ export class UserComponent implements OnInit {
     '1': 'Admin',
     '2': 'Super Admin',
   };
+  http: any;
+  userBookings: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -274,5 +276,16 @@ export class UserComponent implements OnInit {
 
   addProductPage() {
     this.router.navigate([this.currentLang, 'add-product']);
+  }
+  loadUserBookings() {
+    this.http.get('http://localhost:8000/api/user-bookings').subscribe(
+      (response: any) => {
+        this.userBookings = response.bookings;
+        console.log('User bookings loaded:', this.userBookings);
+      },
+      (error: any) => {
+        console.error('Error loading user bookings:', error);
+      }
+    );
   }
 }

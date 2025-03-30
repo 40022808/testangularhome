@@ -76,5 +76,7 @@ export class ApiService {
       headers: { Authorization: `Bearer ${token}` }
     });
   }
-
+  getUserBookings(email: string) {
+    return this.http.get(`http://localhost:8000/api/user-bookings?email=${email}`);
+  }
 }

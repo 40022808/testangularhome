@@ -69,7 +69,16 @@
 
         <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
             <button (click)="addProductPage()">{{ 'Product Management' | translate }}</button>
+            <button (click)="loadUserBookings()">{{ 'View My Bookings' | translate }}</button>
         </div>
+    </div>
+    <div *ngIf="userBookings.length > 0" class="user-bookings">
+        <h2>{{ 'My Bookings' | translate }}</h2>
+        <ul>
+            <li *ngFor="let booking of userBookings">
+                {{ booking.date }} - {{ booking.time }} - {{ booking.gender }}
+            </li>
+        </ul>
     </div>
 
 

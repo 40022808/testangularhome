@@ -41,10 +41,18 @@ export class DeliveryPageComponent implements OnInit {
     if (form.valid) {
       this.formSubmitted = true;
       console.log('Form Submitted!', form.value);
-
+  
       // Szállítási adatok mentése vagy API hívás
-      this.submitDeliveryInfo(form.value);
-
+      this.http.post('http://localhost:8000/api/delivery', form.value).subscribe(
+        (response: any) => {
+          console.log('Delivery details saved:', response);
+          alert(this.translate.instant('Delivery information saved successfully!'));
+        },
+        (error) => {
+          console.error('Error saving delivery details:', error);
+        }
+      );
+  
       // Üzenet eltüntetése pár másodperc után
       setTimeout(() => {
         this.formSubmitted = false;

@@ -621,3 +621,21 @@
     }
 
   }
+  .user-bookings {
+    margin-top: 20px;
+  }
+  
+  .user-bookings h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .user-bookings ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-bookings li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+  }

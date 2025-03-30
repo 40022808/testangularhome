@@ -20,10 +20,19 @@ export class ServiceComponent implements OnInit {
   selectedGender: string | null = null;
   isDayFullyBooked: boolean = false;
   currentLang: string = 'en';
-
-
-  myFilter!: DateFilterFn<any>;
   email: any;
+
+  myFilter: DateFilterFn<Date | null> = (d: Date | null): boolean => {
+    if (!d) return false;
+  
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); 
+  
+    const day = d.getDay(); 
+    const isWeekend = day === 0 || day === 6; 
+  
+    return d >= today && !isWeekend; 
+  };
 
   constructor(
     private http: HttpClient,
@@ -64,8 +73,11 @@ export class ServiceComponent implements OnInit {
 
   onApplyClick() {
     if (this.selectedDate && this.selectedTime && this.selectedGender && this.email) {
+      const selectedDate = new Date(this.selectedDate);
+      const formattedDate = selectedDate.toLocaleDateString('en-CA'); // ISO formátum: YYYY-MM-DD
+  
       const bookingData = {
-        date: this.selectedDate.toISOString().split('T')[0],
+        date: formattedDate,
         time: this.selectedTime,
         gender: this.selectedGender,
         email: this.email,
