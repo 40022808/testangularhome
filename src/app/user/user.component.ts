@@ -28,6 +28,7 @@ export class UserComponent implements OnInit {
   user_div_password_div_input_number: number = 1;
   oldPasswordError: boolean = false;
   oldPasswordincorrectError: boolean = false;
+  
 
   passwordError: boolean = false;
   passwordnullError: boolean = false;
@@ -47,6 +48,7 @@ export class UserComponent implements OnInit {
   };
   http: any;
   userBookings: any[] = [];
+  isBookingsModalOpen: boolean | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -276,16 +278,34 @@ export class UserComponent implements OnInit {
 
   addProductPage() {
     this.router.navigate([this.currentLang, 'add-product']);
-  }
-  loadUserBookings() {
-    this.http.get('http://localhost:8000/api/user-bookings').subscribe(
-      (response: any) => {
-        this.userBookings = response.bookings;
-        console.log('User bookings loaded:', this.userBookings);
-      },
-      (error: any) => {
-        console.error('Error loading user bookings:', error);
-      }
+  }loadUserBookings() {
+    const email = this.userInfo?.email; // Feltételezzük, hogy az email elérhető
+    if (!email) {
+        console.error('User email is not available.');
+        return;
+    }
+
+    this.apiService.getUserBookings(email).subscribe(
+        (response: any) => {
+            if (response.success) {
+                this.userBookings = response.bookings;
+                console.log('User bookings loaded:', this.userBookings);
+            } else {
+                console.error('Failed to load bookings:', response.message);
+            }
+        },
+        (error: any) => {
+            console.error('Error loading user bookings:', error);
+        }
     );
-  }
+}
+  
+openBookingsModal() {
+  this.isBookingsModalOpen = true;
+  this.loadUserBookings(); // Foglalások betöltése
+}
+
+closeBookingsModal() {
+  this.isBookingsModalOpen = false;
+}
 }
