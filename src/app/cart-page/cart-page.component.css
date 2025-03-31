@@ -3,18 +3,7 @@
   width: 100vw;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url("/assets/images/stars.png"),
-    linear-gradient(
-      to bottom,
-      #1b2947,
-      #1b2947,
-      #2b3152,
-      #3b385d,
-      #3b385d,
-      #4c4067,
-      #615383,
-      #776092
-    );
+  background-image: url("/assets/images/cart.jpg");
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-position: center center, center center;
@@ -143,4 +132,59 @@ button {
 }
 h2 {
   color: whitesmoke;
+}
+
+.total-price {
+  margin-top: 30px;
+  padding: 25px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.total-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.total-price-container:last-child {
+  border-bottom: none;
+}
+
+.total-label {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.total-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #20c997;
+}
+
+.delivery-button {
+  margin-top: 20px;
+}
+
+.delivery-link {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #17a2b8;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delivery-link:hover {
+  background-color: #138496;
+  transform: translateY(-3px);
 }

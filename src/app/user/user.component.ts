@@ -51,6 +51,8 @@ export class UserComponent implements OnInit {
   http: any;
   userBookings: any[] = [];
   isBookingsModalOpen: boolean | undefined;
+  allBookings: any[] = [];
+  isAllBookingsModalOpen: boolean =false;
 
   constructor(
     private route: ActivatedRoute,
@@ -282,26 +284,28 @@ export class UserComponent implements OnInit {
     this.router.navigate([this.currentLang, 'Product-Management']);
   }
   loadUserBookings() {
-    const email = this.userInfo?.email; // Feltételezzük, hogy az email elérhető
+    const email = this.userInfo?.email;
+    const role = this.userRole;
+  
     if (!email) {
-        console.error('User email is not available.');
-        return;
+      console.error('User email is not available.');
+      return;
     }
-
-    this.apiService.getUserBookings(email).subscribe(
-        (response: any) => {
-            if (response.success) {
-                this.userBookings = response.bookings;
-                console.log('User bookings loaded:', this.userBookings);
-            } else {
-                console.error('Failed to load bookings:', response.message);
-            }
-        },
-        (error: any) => {
-            console.error('Error loading user bookings:', error);
+  
+    this.apiService.getUserBookings(role, email).subscribe(
+      (response: any) => {
+        if (response.success) {
+          this.userBookings = response.bookings;
+          console.log('User bookings loaded:', this.userBookings);
+        } else {
+          console.error('Failed to load bookings:', response.message);
         }
+      },
+      (error: any) => {
+        console.error('Error loading user bookings:', error);
+      }
     );
-}
+  }
   
 openBookingsModal() {
   this.isBookingsModalOpen = true;
@@ -310,5 +314,46 @@ openBookingsModal() {
 
 closeBookingsModal() {
   this.isBookingsModalOpen = false;
+}
+openAllBookingsModal() {
+  this.isAllBookingsModalOpen = true;
+  this.loadAllBookings(); // Az összes foglalás betöltése
+}
+
+closeAllBookingsModal() {
+  this.isAllBookingsModalOpen = false;
+}
+loadAllBookings() {
+  const email = this.userInfo?.email;
+  const role = this.userRole;
+
+  if (!email) {
+    console.error('User email is not available.');
+    return;
+  }
+
+  this.apiService.getAllBookings(role, email).subscribe(
+    (response: any) => {
+      if (response.success) {
+        // Rendezés dátum és idő szerint
+        this.allBookings = response.bookings.sort((a: any, b: any) => {
+          const dateA = new Date(`${a.date}T${a.time}`);
+          const dateB = new Date(`${b.date}T${b.time}`);
+          return dateA.getTime() - dateB.getTime(); // Növekvő sorrend
+        });
+        console.log('All bookings loaded:', this.allBookings);
+      } else {
+        console.error('Failed to load bookings:', response.message);
+      }
+    },
+    (error: any) => {
+      console.error('Error loading all bookings:', error);
+    }
+  );
+}
+showAllBookedDates() {
+  console.log('All booked dates button clicked');
+  // Itt adhatsz hozzá logikát, például egy modális ablak megnyitását
+  alert('This will show all booked dates.');
 }
 }
