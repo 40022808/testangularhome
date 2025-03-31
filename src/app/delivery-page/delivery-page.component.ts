@@ -53,7 +53,7 @@ export class DeliveryPageComponent implements OnInit {
       this.http.post('http://localhost:8000/api/delivery', form.value).subscribe(
         (response: any) => {
           console.log('Delivery details saved:', response);
-          alert(this.translate.instant('Delivery information saved successfully!'));
+          
         },
         (error) => {
           console.error('Error saving delivery details:', error);
@@ -71,7 +71,8 @@ export class DeliveryPageComponent implements OnInit {
 
   validateInput(event: Event) {
     const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/[^a-zA-Z0-9\s]/g, ''); // Betűk, számok és szóközök engedélyezése
+    // Betűk (ékezetesek is), számok és szóközök engedélyezése
+    input.value = input.value.replace(/[^a-zA-Z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ\s]/g, '');
   }
 
   validateNumberInput(event: Event) {

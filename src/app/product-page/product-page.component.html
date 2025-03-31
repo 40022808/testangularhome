@@ -12,7 +12,9 @@
                     </span>
                 </div>
                 <!-- Hozzáad gomb -->
-                <button (click)="product.id !== undefined && addToCart(product.id)">{{ "Hozzáad" | translate }}</button>
+                <button [disabled]="itemAdded" (click)="product.id !== undefined && addToCart(product.id)">
+                    {{ "Hozzáad" | translate }}
+                </button>
                 <button (click)="goBack()">{{ "Vissza" | translate }}</button>
                 <div *ngIf="itemAdded" class="success-message">
                     Hozzáadva a kosárhoz!

@@ -21,7 +21,8 @@ export class ServiceComponent implements OnInit {
   isDayFullyBooked: boolean = false;
   currentLang: string = 'en';
   email: any;
-
+  showAvailableMessage: boolean = false;
+  isTimeBooked: boolean = false;
   myFilter: DateFilterFn<Date | null> = (d: Date | null): boolean => {
     if (!d) return false;
   
@@ -106,7 +107,12 @@ export class ServiceComponent implements OnInit {
         (error: any) => {
           console.error('Error storing booking:', error);
           if (error.error && error.error.message) {
-            alert(error.error.message); // Megjeleníti a backend által küldött hibaüzenetet
+            // Hibaüzenet megjelenítése stílusos értesítési div-ben
+            this.isTimeBooked = true;
+            this.showAvailableMessage = false;
+            setTimeout(() => {
+              this.isTimeBooked = false;
+            }, 5000);
           }
         }
       );
@@ -119,7 +125,7 @@ export class ServiceComponent implements OnInit {
       console.error('Date and time must be selected!');
       return;
     }
-
+  
     const formattedDate = this.selectedDate.toISOString().split('T')[0];
     this.http
       .get(
@@ -128,13 +134,23 @@ export class ServiceComponent implements OnInit {
       .subscribe(
         (response: any) => {
           if (response.booked) {
-            console.log('A dátum és időpont már le van foglalva!');
+            this.isTimeBooked = true;
+            this.showAvailableMessage = false;
+            console.log('The selected date and time are already booked!');
           } else {
-            console.log('A dátum és időpont szabad!');
+            this.isTimeBooked = false;
+            this.showAvailableMessage = true;
+            console.log('The selected date and time are available!');
           }
+  
+          // Az értesítés automatikus eltüntetése 5 másodperc után
+          setTimeout(() => {
+            this.isTimeBooked = false;
+            this.showAvailableMessage = false;
+          }, 5000);
         },
         (error) => {
-          console.error('Hiba történt:', error);
+          console.error('An error occurred:', error);
         }
       );
   }

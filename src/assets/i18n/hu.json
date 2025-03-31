@@ -106,6 +106,32 @@
   "Haircut + Beard Trim": "Hajvágás + Szakáll igazítás",
   "Kids Haircut": "Gyerek hajvágás",
   "Shaving": "Borotválás",
-  "add product": "Termék hozzáadása"
+  "add product": "Termék hozzáadása",
+  "NOTIFICATION": {
+    "TIME_BOOKED": "A kiválasztott dátum és időpont már foglalt!",
+    "TIME_AVAILABLE": "A kiválasztott dátum és időpont elérhető!",
+    "BOOKING_SUCCESS": "A foglalás sikeres volt!"
+  },
+  "USER": {
+    "MY_BOOKINGS": "Saját foglalások",
+    "ALL_BOOKINGS": "Összes foglalás",
+    "DATE": "Dátum",
+    "TIME": "Időpont",
+    "GENDER": "Nem",
+    "EMAIL": "Email",
+    "NO_BOOKINGS_FOUND": "Nem találhatók foglalások.",
+    "VIEW_MY_BOOKINGS": "Saját foglalások megtekintése",
+    "VIEW_ALL_BOOKINGS": "Összes foglalás megtekintése"
+  },
+  "Bookings": "Foglalások",
+  "CART": {
+    "TITLE": "Kosár",
+    "EMPTY_MESSAGE": "A kosarad üres!",
+    "QUANTITY": "Mennyiség",
+    "DECREASE": "Csökkentés",
+    "REMOVE": "Eltávolítás",
+    "TOTAL": "Összesen",
+    "CHECKOUT": "Szállítás"
+  }
   
 }

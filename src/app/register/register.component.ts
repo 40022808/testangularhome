@@ -128,7 +128,6 @@ export class RegisterComponent implements OnInit {
     this.apiService.registerUser(this.currentLang, formData).subscribe(
       response => {
         console.log('User registered successfully', response);
-        alert('Sikeresen regisztráltál! Nézd meg az e-mail fiókodat a visszaigazolásért.');
         this.router.navigate([this.currentLang, 'login']);
         this.loading = false;
         this.unloading = true;
