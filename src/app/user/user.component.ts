@@ -5,7 +5,6 @@ import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { BookingService } from '../booking.service';
 
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -296,7 +295,12 @@ export class UserComponent implements OnInit {
     this.apiService.getUserBookings(role, email).subscribe(
       (response: any) => {
         if (response.success) {
-          this.userBookings = response.bookings;
+          // Rendezés dátum és idő szerint
+          this.userBookings = response.bookings.sort((a: any, b: any) => {
+            const dateA = new Date(`${a.date}T${a.time}`);
+            const dateB = new Date(`${b.date}T${b.time}`);
+            return dateA.getTime() - dateB.getTime(); // Növekvő sorrend
+          });
           console.log('User bookings loaded:', this.userBookings);
         } else {
           console.error('Failed to load bookings:', response.message);
@@ -307,7 +311,6 @@ export class UserComponent implements OnInit {
       }
     );
   }
-  
 openBookingsModal() {
   this.isBookingsModalOpen = true;
   this.loadUserBookings(); // Foglalások betöltése
@@ -325,14 +328,26 @@ closeAllBookingsModal() {
   this.isAllBookingsModalOpen = false;
 }
 loadAllBookings() {
-  console.log('User role:', this.userRole); // Ellenőrizd a szerepkör értékét
-  this.apiService.getAllBookings().subscribe(
+  const email = this.userInfo?.email;
+  const role = this.userRole;
+
+  if (!email) {
+    console.error('User email is not available.');
+    return;
+  }
+
+  this.apiService.getAllBookings(role, email).subscribe(
     (response: any) => {
       if (response.success) {
-        this.allBookings = response.bookings;
+        // Rendezés dátum és idő szerint
+        this.allBookings = response.bookings.sort((a: any, b: any) => {
+          const dateA = new Date(`${a.date}T${a.time}`);
+          const dateB = new Date(`${b.date}T${b.time}`);
+          return dateA.getTime() - dateB.getTime(); // Növekvő sorrend
+        });
         console.log('All bookings loaded:', this.allBookings);
       } else {
-        console.error('Failed to load all bookings:', response.message);
+        console.error('Failed to load bookings:', response.message);
       }
     },
     (error: any) => {

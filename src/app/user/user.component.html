@@ -113,12 +113,16 @@
         <div class="modal-content">
             <span class="close-btn" (click)="closeBookingsModal()">&times;</span>
             <h2>{{ 'My Bookings' | translate }}</h2>
-            <ul *ngIf="userBookings.length > 0">
-                <li *ngFor="let booking of userBookings">
-                    {{ booking.date }} - {{ booking.time }} - {{ booking.gender }}
+            <ul *ngIf="userBookings.length > 0" class="booking-list">
+                <li *ngFor="let booking of userBookings" class="booking-item">
+                  <div class="booking-card">
+                    <p><strong>Date:</strong> {{ booking.date }}</p>
+                    <p><strong>Time:</strong> {{ booking.time }}</p>
+                    <p><strong>Gender:</strong> {{ booking.gender }}</p>
+                  </div>
                 </li>
-            </ul>
-            <p *ngIf="userBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
+              </ul>
+              <p *ngIf="userBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
         </div>
     </div>
     
@@ -127,12 +131,17 @@
   <div class="modal-content">
     <span class="close-btn" (click)="closeAllBookingsModal()">&times;</span>
     <h2>{{ 'All Bookings' | translate }}</h2>
-    <ul *ngIf="allBookings.length > 0">
-      <li *ngFor="let booking of allBookings">
-        {{ booking.date }} - {{ booking.time }} - {{ booking.gender }} - {{ booking.email }}
-      </li>
-    </ul>
-    <p *ngIf="allBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
+    <ul *ngIf="allBookings.length > 0" class="booking-list">
+        <li *ngFor="let booking of allBookings" class="booking-item">
+          <div class="booking-card">
+            <p><strong>Date:</strong> {{ booking.date }}</p>
+            <p><strong>Time:</strong> {{ booking.time }}</p>
+            <p><strong>Gender:</strong> {{ booking.gender }}</p>
+            <p><strong>Email:</strong> {{ booking.email }}</p>
+          </div>
+        </li>
+      </ul>
+      <p *ngIf="allBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
   </div>
 </div>
     <!-- <div class="user-div-sure-give-body">

@@ -711,6 +711,7 @@
 
 /* Modális tartalom */
 .modal {
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -725,6 +726,8 @@
 
 /* Modális tartalom */
 .modal-content {
+    width: 50vw;
+    height: 60vh;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -733,6 +736,18 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative; /* A bezáró gomb pozicionálásához */
+    overflow-y: auto; /* Görgethetővé teszi a tartalmat */
+}
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
 }
 
 /* Bezáró gomb (X) */
@@ -767,3 +782,46 @@
 .additional-button:hover {
     background-color: #776092;
 }
+.booking-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Egyedi foglalási kártyák stílusa */
+  .booking-item {
+    flex: 1 1 calc(33.333% - 20px); /* Három oszlopos elrendezés */
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+  
+  .booking-card {
+
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow-y: auto; /* Görgethetővé teszi a tartalmat */
+  }
+  
+  .booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Szöveg stílusok */
+  .booking-card p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .booking-card p strong {
+    color: #555;
+  }
