@@ -295,12 +295,7 @@ export class UserComponent implements OnInit {
     this.apiService.getUserBookings(role, email).subscribe(
       (response: any) => {
         if (response.success) {
-          // Rendezés dátum és idő szerint
-          this.userBookings = response.bookings.sort((a: any, b: any) => {
-            const dateA = new Date(`${a.date}T${a.time}`);
-            const dateB = new Date(`${b.date}T${b.time}`);
-            return dateA.getTime() - dateB.getTime(); // Növekvő sorrend
-          });
+          this.userBookings = response.bookings;
           console.log('User bookings loaded:', this.userBookings);
         } else {
           console.error('Failed to load bookings:', response.message);
@@ -311,6 +306,7 @@ export class UserComponent implements OnInit {
       }
     );
   }
+  
 openBookingsModal() {
   this.isBookingsModalOpen = true;
   this.loadUserBookings(); // Foglalások betöltése
