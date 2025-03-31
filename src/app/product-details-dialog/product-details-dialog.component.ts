@@ -25,9 +25,11 @@ export class ProductDetailsDialogComponent {
 
   updateProduct(): void {
   
-
+    console.log(this.product.description)
     this.productService.updateProduct(this.product.id, this.product).subscribe(
+  
       (response: any) => {
+        console.log(this.product)
         console.log('商品更新成功:', response);
         this.dialogRef.close({ updatedProduct: true });
       },

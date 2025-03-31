@@ -3,17 +3,27 @@
         <img *ngIf="product.imageURL" [src]="'http://localhost:8000' + product.imageURL" alt="{{ product.name }}" />
         <div class="details">
             <div class="header">
-                <span class="name">
-                    {{ product.name }}
-                </span>
-                <div class="price">
-                    <span class="price">
-                        {{ product.price | currency : "Ft " }}
+
+                <div class="title">
+                    <span class="name">
+                        {{ product.name }}
                     </span>
+                    <div class="price">
+                        <span class="price">
+                            {{ product.price }} Ft
+                        </span>
+                    </div>
+                    <div class="description">
+                        {{ product.description }}
+                    </div>
                 </div>
+
                 <!-- Hozzáad gomb -->
-                <button (click)="product.id !== undefined && addToCart(product.id)">{{ "Hozzáad" | translate }}</button>
-                <button (click)="goBack()">{{ "Vissza" | translate }}</button>
+                 <div class="buttons">
+                    <button (click)="product.id !== undefined && addToCart(product.id)">{{ "Hozzáad" | translate }}</button>
+                    <button (click)="goBack()">{{ "Vissza" | translate }}</button>
+                 </div>
+
                 <div *ngIf="itemAdded" class="success-message">
                     Hozzáadva a kosárhoz!
                 </div>

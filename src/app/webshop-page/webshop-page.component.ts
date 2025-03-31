@@ -24,20 +24,9 @@ export class WebshopPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProducts();
-    this.loadUserRole();
   }
 
-  loadUserRole(): void {
-    this.userService.getUserRole().subscribe(
-      (role: string) => {
-        this.userRole = role;
-        console.log('User role:', this.userRole); // Debugging statement
-      },
-      (error) => {
-        console.error('Error fetching user role:', error); // Debugging statement
-      }
-    );
-  }
+  
 
   loadProducts(): void {
     this.productService.getProducts(1).subscribe(

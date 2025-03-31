@@ -11,14 +11,16 @@
   background-position: center center, center center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 10vh;
-  padding-top: 15vh;
-  padding-bottom: 15vh;
+  padding-top: 10vh;
 }
 
 
 .addproduc {
   position: absolute;
+  top: 15vh;
   left: 25vw;
   width: 50vw;
   padding: 2rem;
@@ -26,7 +28,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
   text-align: center;
   background-color: #f9f9f9; 
   border-radius: 10px;
@@ -91,8 +92,7 @@ h1 {
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 2vw;
+  justify-content: space-evenly;
 }
 
 .addproduc-cancel-btn  {
@@ -141,7 +141,35 @@ h1 {
   gap: 20px;
   justify-content: center;
   padding: 0 20px;
+  height: 90vh;
+  overflow-y: auto;
 }
+
+/* Webkit browsers (Chrome, Edge, Safari) */
+.product-grid::-webkit-scrollbar {
+  width: 10px; /* 滚动条的宽度 */
+}
+
+.product-grid::-webkit-scrollbar-track {
+  background: #f1f1f100; /* 滚动条轨道背景颜色 */
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+  background: #888; /* 滚动条滑块背景颜色 */
+  border-radius: 5px; /* 滑块圆角 */
+}
+
+.product-grid::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 滑块悬停背景颜色 */
+}
+
+/* Firefox */
+.product-grid {
+  scrollbar-width: thin; /* 滚动条的宽度 */
+  scrollbar-color: #888 #f1f1f100; /* 滑块颜色 轨道颜色 */
+}
+
+
 .product-item {
   box-sizing: border-box;
   width: 17vw;
@@ -206,9 +234,9 @@ h1 {
 
 @media (max-width: 768px) {
   .product-item {
-    width: 35vw;
-    height: 35vw;
-    margin: 0 7px;
+    width: 40vw;
+    height: 40vw;
+    margin: 0;
   }
   .name {
     font-size: 3.5vmin;
@@ -236,5 +264,21 @@ h1 {
     text-shadow:  none;
   }
 
+
+  .add-product-btn {
+    left: calc(50vw - 35vw);
+    width: 70vw;
+    height: 10vw;
+  }
+
+  .addproduc {
+    width: 90vw;
+    left: 5vw;
+  }
+
+  form button {
+    font-size: 3vmin;
+    padding: 0.5rem 1rem;
+  }
 
 }
