@@ -133,6 +133,33 @@
     "REMOVE": "Remove",
     "TOTAL": "Total",
     "CHECKOUT": "Delivery"
+  },
+  "EDIT_PRODUCT": {
+    "TITLE": "Edit Product",
+    "NAME": "Product Name",
+    "PRICE": "Price",
+    "DESCRIPTION": "Description",
+    "CANCEL": "Cancel",
+    "SAVE": "Save"
+  },
+  "CONTACT": {
+    "TITLE": "Contact Information",
+    "PHONE": "+36 20 351 8200",
+    "EMAIL": "info@example.com",
+    "ADDRESS": "Budapest, Révay u. 16, 1065"
+  },
+  "PRODUCT_DETAILS": {
+    "TITLE": "Product Details",
+    "NAME": "Name:",
+    "DESCRIPTION": "Description:",
+    "PRICE": "Price:",
+    "UPDATE": "Update",
+    "DELETE": "Delete",
+    "CLOSE": "Close",
+    "UPDATE_SUCCESS": "Product updated successfully.",
+    "UPDATE_ERROR": "An error occurred while updating the product.",
+    "DELETE_SUCCESS": "Product deleted successfully.",
+    "DELETE_ERROR": "An error occurred while deleting the product."
   }
   
 
