@@ -120,7 +120,7 @@
     "GENDER": "Nem",
     "EMAIL": "Email",
     "NO_BOOKINGS_FOUND": "Nem találhatók foglalások.",
-    "VIEW_MY_BOOKINGS": "Saját foglalások megtekintése",
+    "VIEW_MY_BOOKINGS": "Saját foglalások",
     "VIEW_ALL_BOOKINGS": "Összes foglalás megtekintése"
   },
   "Bookings": "Foglalások",

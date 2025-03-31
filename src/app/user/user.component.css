@@ -63,8 +63,9 @@
 }
 
 .user-div-info2 button {
-    width: 60%;
-    border-radius: 15px;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 10px;
     background-color:#3b385d;
     color: white;
     display: flex;
@@ -587,6 +588,8 @@
     .user-div-info2 button {
         font-size: 3vmin;
         padding: 8px;
+        width: 35vw;
+        border-radius: 10px;
     }
 
     .user-info p {

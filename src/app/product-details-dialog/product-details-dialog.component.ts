@@ -14,12 +14,18 @@ export class ProductDetailsDialogComponent {
   product: any;
   selectedFile: File | null = null; // 添加选中的文件属性
   
+  currentLang = 'zh';
 
   ngOnInit(): void {
-    this.translate.use(this.currentLang);
+    this.route.params.subscribe((params) => {
+      const lang = params['lang'];
+      if (lang) {
+        this.currentLang = lang;
+        this.translate.use(lang);
+      }
+    });
     
   }
-  currentLang = 'hu';
 
 
   constructor(
@@ -33,13 +39,7 @@ export class ProductDetailsDialogComponent {
   ) {
     this.product = { ...data.product }; // 克隆商品数据，避免直接修改
     
-      this.route.params.subscribe((params) => {
-        const lang = params['lang'];
-        if (lang) {
-          this.currentLang = lang;
-          this.translate.use(lang);
-        }
-      });
+    
   }
 
 
