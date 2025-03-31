@@ -51,7 +51,8 @@ export class ShoppingCartService {
    */
   removeCartItem(productId: number): Observable<any> {
     const token = localStorage.getItem('userToken');
-    return this.http.delete(`${this.baseUrl}api/cart/${productId}`, {
+    console.log('Removing item with productId:', productId); // Debugging
+    return this.http.delete(`${this.baseUrl}api/cartdelete/${productId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
   }
@@ -90,5 +91,11 @@ export class ShoppingCartService {
       this.cart.push({ product, quantity: 1 }); // Új termék hozzáadása
     }
     this.saveCart(); // Kosár mentése
+  }
+  decreaseCartItem(productId: number): Observable<any> {
+    const token = localStorage.getItem('userToken'); // Hitelesítési token
+    return this.http.post(`${this.baseUrl}api/cart/decrease/${productId}`, {}, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
   }
 }

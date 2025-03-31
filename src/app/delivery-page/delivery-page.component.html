@@ -11,15 +11,8 @@
         </div>
         <div class="form-group">
             <label for="email">{{ "Email" | translate }}:</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                ngModel
-                [(ngModel)]="deliveryInfo.email"
-                required
-                #email="ngModel"
-            />
+            <input type="email" id="email" name="email" ngModel [(ngModel)]="deliveryInfo.email" required
+                #email="ngModel" />
             <div *ngIf="deliveryForm.submitted && !email.valid" class="error-message">
                 {{ "Email is required!" | translate }}
             </div>

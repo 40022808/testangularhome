@@ -49,10 +49,15 @@
         {{ "All appointments are booked for this day!" | translate }}
       </div>
       <div class="booked-message-container">
-        <div *ngIf="showBookedMessage" class="booked-message">
-          {{ "Booked" | translate }}
+        <div *ngIf="isTimeBooked" class="notification booked">
+          {{ "NOTIFICATION.TIME_BOOKED" | translate }}
         </div>
-      </div>
+        <div *ngIf="!isTimeBooked && showAvailableMessage" class="notification available">
+          {{ "NOTIFICATION.TIME_AVAILABLE" | translate }}
+        </div>
+        <div *ngIf="showBookedMessage" class="notification success">
+          {{ "NOTIFICATION.BOOKING_SUCCESS" | translate }}
+        </div>
       <style>
         .success-message {
           color: green;

@@ -13,9 +13,6 @@ export class CartPageComponent implements OnInit {
   cart: { product: Product; quantity: number }[] = [];
   totalPrice: number = 0;
   currentLang: string = 'en';
-  cartItems: any[] = [];
-  userService: any;
-products: any;
 
   constructor(
     private shoppingCartService: ShoppingCartService,
@@ -28,20 +25,16 @@ products: any;
     this.route.params.subscribe((params) => {
       this.currentLang = params['lang'] || 'en';
       this.translate.use(this.currentLang); // Nyelv beállítása
-      this.loadCart();
+      this.loadCart(); // Kosár betöltése a backendből
     });
-
-    this.shoppingCartService.getCart().subscribe((data) => {
-      this.cart = data;
-    });
-    this.calculateTotalPrice();
   }
+
   loadCart(): void {
-    this.shoppingCartService.getCart().subscribe(
+    this.shoppingCartService.getCartFromBackend().subscribe(
       (response: any) => {
         if (response.success) {
-          this.cart = response.cartItems;
-          this.calculateTotalPrice();
+          this.cart = response.cartItems; // A backendből kapott kosár adatok
+          this.calculateTotalPrice(); // Teljes ár újraszámítása
           console.log('Cart items loaded:', this.cart);
         } else {
           console.error('Failed to load cart items:', response.message);
@@ -52,12 +45,13 @@ products: any;
       }
     );
   }
+
   addToCart(productId: number, quantity: number = 1): void {
     this.shoppingCartService.addCartItem(productId, quantity).subscribe(
       (response: any) => {
         if (response.success) {
           console.log('Item added to cart:', response.cartItem);
-          this.loadCart(); // Frissítsük a kosár tartalmát
+          this.loadCart(); // Frissítsük a kosár tartalmát a backendből
         } else {
           console.error('Failed to add item to cart:', response.message);
         }
@@ -67,31 +61,13 @@ products: any;
       }
     );
   }
-  
-  
-  loadCartItems(): void {
-    this.userService.getCartItems().subscribe(
-      (response: any) => {
-        if (response.success) {
-          this.cartItems = response.cartItems;
-          console.log('Cart items loaded:', this.cartItems); // Debugging
-        } else {
-          console.error('Failed to load cart items:', response.message);
-        }
-      },
-      (error: any) => {
-        console.error('Error loading cart items:', error);
-      }
-    );
-  }
 
   removeFromCart(productId: number): void {
     this.shoppingCartService.removeCartItem(productId).subscribe(
       (response: any) => {
         if (response.success) {
-          this.cart = this.cart.filter(item => item.product.id !== productId);
-          this.calculateTotalPrice();
           console.log('Item removed from cart:', productId);
+          this.loadCart(); // Frissítsük a kosár tartalmát a backendből
         } else {
           console.error('Failed to remove item from cart:', response.message);
         }
@@ -108,5 +84,19 @@ products: any;
       0
     );
   }
-  
+  decreaseFromCart(productId: number): void {
+    this.shoppingCartService.decreaseCartItem(productId).subscribe(
+      (response: any) => {
+        if (response.success) {
+          console.log('Item quantity decreased:', productId);
+          this.loadCart(); // Frissítsük a kosár tartalmát a backendből
+        } else {
+          console.error('Failed to decrease item quantity:', response.message);
+        }
+      },
+      (error: any) => {
+        console.error('Error decreasing item quantity:', error);
+      }
+    );
+  }
 }

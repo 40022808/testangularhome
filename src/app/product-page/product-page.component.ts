@@ -48,25 +48,24 @@ export class ProductPageComponent implements OnInit {
    * @param productId A termék azonosítója
    */
   addToCart(productId: number): void {
+    if (this.itemAdded) return; // Megakadályozzuk a dupla kattintást
+  
+    this.itemAdded = true; // Gomb letiltása
     this.shoppingCartService.addCartItem(productId, 1).subscribe(
-      (response) => {
-        console.log('Backend response:', response); // Debugging
+      (response: any) => {
         if (response.success) {
-          this.itemAdded = true; // Sikeres hozzáadás
           console.log('Product added to cart:', response.cartItem);
-
-          // Üzenet eltüntetése pár másodperc után
           setTimeout(() => {
-            this.itemAdded = false;
+            this.itemAdded = false; // Gomb újra engedélyezése
           }, 3000);
         } else {
           console.error('Failed to add product to cart:', response.message);
-          this.errorMessage = 'Failed to add product to cart. Please try again.';
+          this.itemAdded = false; // Gomb újra engedélyezése
         }
       },
-      (error) => {
+      (error: any) => {
         console.error('Error adding product to cart:', error);
-        this.errorMessage = 'An error occurred while adding the product to the cart.';
+        this.itemAdded = false; // Gomb újra engedélyezése
       }
     );
   }

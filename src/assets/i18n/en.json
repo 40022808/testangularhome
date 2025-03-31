@@ -106,5 +106,34 @@
   "Haircut + Beard Trim": "Haircut + Beard Trim",
   "Kids Haircut": "Kids Haircut",
   "Shaving": "Shaving",
-  "add product": "add product"
+  "add product": "add product",
+  "NOTIFICATION": {
+    "TIME_BOOKED": "The selected date and time are already booked!",
+    "TIME_AVAILABLE": "The selected date and time are available!",
+    "BOOKING_SUCCESS": "Your booking was successful!"
+  },
+  "USER": {
+    "MY_BOOKINGS": "My Bookings",
+    "ALL_BOOKINGS": "All Bookings",
+    "DATE": "Date",
+    "TIME": "Time",
+    "GENDER": "Gender",
+    "EMAIL": "Email",
+    "NO_BOOKINGS_FOUND": "No bookings found.",
+     "VIEW_MY_BOOKINGS": "View My Bookings",
+    "VIEW_ALL_BOOKINGS": "View All Bookings"
+
+  },
+  "Bookings": "Bookings",
+  "CART": {
+    "TITLE": "Cart",
+    "EMPTY_MESSAGE": "Your cart is empty!",
+    "QUANTITY": "Quantity",
+    "DECREASE": "Decrease",
+    "REMOVE": "Remove",
+    "TOTAL": "Total",
+    "CHECKOUT": "Delivery"
+  }
+  
+
 }

@@ -1,7 +1,7 @@
 <div class="cart-body">
-  <h2 class="cart-title">{{ "Cart" | translate }}</h2>
+  <h2 class="cart-title">{{ "CART.TITLE" | translate }}</h2>
   <div *ngIf="cart.length === 0" class="empty-cart">
-    <p>{{ "Your cart is empty!" | translate }}</p>
+    <p>{{ "CART.EMPTY_MESSAGE" | translate }}</p>
   </div>
   <div *ngIf="cart.length > 0" class="cart-container">
     <ul class="product-list">
@@ -11,20 +11,25 @@
         <div class="product-details">
           <div class="product-name">{{ item.product.name }}</div>
           <div class="product-price">{{ item.product.price | number:'1.2-2' }} Ft</div>
-          <div class="product-quantity">{{ "Quantity" | translate }}: {{ item.quantity }}</div>
+          <div class="product-quantity">{{ "CART.QUANTITY" | translate }}: {{ item.quantity }}</div>
         </div>
-        <button *ngIf="item.product.id !== undefined" (click)="removeFromCart(item.product.id)" class="remove-button">
-          {{ "Remove" | translate }}
-        </button>
+        <div class="product-actions">
+          <button *ngIf="item.product.id !== undefined" (click)="decreaseFromCart(item.product.id)" class="decrease-button">
+            {{ "CART.DECREASE" | translate }}
+          </button>
+          <button *ngIf="item.product.id !== undefined" (click)="removeFromCart(item.product.id)" class="remove-button">
+            {{ "CART.REMOVE" | translate }}
+          </button>
+        </div>
       </li>
     </ul>
     <div class="total-price">
       <div class="total-price-container">
-        <p class="total-label">{{ "Total" | translate }}:</p>
+        <p class="total-label">{{ "CART.TOTAL" | translate }}:</p>
         <p class="total-amount">{{ totalPrice | number:'1.2-2' }} Ft</p>
       </div>
       <div class="delivery-button">
-        <a [routerLink]="['/', currentLang, 'delivery']" class="delivery-link">{{ "Checkout" | translate }}</a>
+        <a [routerLink]="['/', currentLang, 'delivery']" class="delivery-link">{{ "CART.CHECKOUT" | translate }}</a>
       </div>
     </div>
   </div>

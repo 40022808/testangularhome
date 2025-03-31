@@ -98,51 +98,51 @@
 
     <div class="user-div-info2">
         <h1>{{ 'Bookings' | translate }}</h1>
-        <button (click)="openBookingsModal()">{{ 'View My Bookings' | translate }}</button>
+  <button (click)="openBookingsModal()">{{ 'USER.VIEW_MY_BOOKINGS' | translate }}</button>
         
     </div>
     
     
     <div class="user-div-info2" *ngIf="userRole === '2' || userRole === '1'">
         <h1>{{ 'All Bookings' | translate }}</h1>
-        <button (click)="openAllBookingsModal()">{{ 'View All Bookings' | translate }}</button>
+        <button (click)="openAllBookingsModal()">{{ 'USER.VIEW_ALL_BOOKINGS' | translate }}</button>
     </div>
     
     <!-- Modális ablak a saját foglalásokhoz -->
     <div class="modal" *ngIf="isBookingsModalOpen">
         <div class="modal-content">
             <span class="close-btn" (click)="closeBookingsModal()">&times;</span>
-            <h2>{{ 'My Bookings' | translate }}</h2>
+            <h2>{{ 'USER.MY_BOOKINGS' | translate }}</h2>
             <ul *ngIf="userBookings.length > 0" class="booking-list">
-                <li *ngFor="let booking of userBookings" class="booking-item">
-                  <div class="booking-card">
-                    <p><strong>Date:</strong> {{ booking.date }}</p>
-                    <p><strong>Time:</strong> {{ booking.time }}</p>
-                    <p><strong>Gender:</strong> {{ booking.gender }}</p>
-                  </div>
-                </li>
-              </ul>
-              <p *ngIf="userBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
-        </div>
+              <li *ngFor="let booking of userBookings" class="booking-item">
+                <div class="booking-card">
+                  <p><strong>{{ 'USER.DATE' | translate }}:</strong> {{ booking.date }}</p>
+                  <p><strong>{{ 'USER.TIME' | translate }}:</strong> {{ booking.time }}</p>
+                  <p><strong>{{ 'USER.GENDER' | translate }}:</strong> {{ booking.gender }}</p>
+                </div>
+              </li>
+            </ul>
+            <p *ngIf="userBookings.length === 0">{{ 'USER.NO_BOOKINGS_FOUND' | translate }}</p>
+          </div>
     </div>
     
     <!-- Modális ablak az összes foglaláshoz -->
     <div class="modal" *ngIf="isAllBookingsModalOpen">
-  <div class="modal-content">
-    <span class="close-btn" (click)="closeAllBookingsModal()">&times;</span>
-    <h2>{{ 'All Bookings' | translate }}</h2>
-    <ul *ngIf="allBookings.length > 0" class="booking-list">
-        <li *ngFor="let booking of allBookings" class="booking-item">
-          <div class="booking-card">
-            <p><strong>Date:</strong> {{ booking.date }}</p>
-            <p><strong>Time:</strong> {{ booking.time }}</p>
-            <p><strong>Gender:</strong> {{ booking.gender }}</p>
-            <p><strong>Email:</strong> {{ booking.email }}</p>
+        <div class="modal-content">
+            <span class="close-btn" (click)="closeAllBookingsModal()">&times;</span>
+            <h2>{{ 'USER.ALL_BOOKINGS' | translate }}</h2>
+            <ul *ngIf="allBookings.length > 0" class="booking-list">
+              <li *ngFor="let booking of allBookings" class="booking-item">
+                <div class="booking-card">
+                  <p><strong>{{ 'USER.DATE' | translate }}:</strong> {{ booking.date }}</p>
+                  <p><strong>{{ 'USER.TIME' | translate }}:</strong> {{ booking.time }}</p>
+                  <p><strong>{{ 'USER.GENDER' | translate }}:</strong> {{ booking.gender }}</p>
+                  <p><strong>{{ 'USER.EMAIL' | translate }}:</strong> {{ booking.email }}</p>
+                </div>
+              </li>
+            </ul>
+            <p *ngIf="allBookings.length === 0">{{ 'USER.NO_BOOKINGS_FOUND' | translate }}</p>
           </div>
-        </li>
-      </ul>
-      <p *ngIf="allBookings.length === 0">{{ 'No bookings found.' | translate }}</p>
-  </div>
 </div>
     <!-- <div class="user-div-sure-give-body">
         <div class="user-div-sure-give-div">
