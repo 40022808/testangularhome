@@ -4,14 +4,22 @@
         <div class="form-group">
             <label for="fullName">{{ "Full Name" | translate }}:</label>
             <input type="text" id="fullName" name="fullName" ngModel required pattern="^[A-Za-z\s]+$"
-                #fullName="ngModel" (input)="validateInput($event)">
+                #fullName="ngModel" (input)="validateInput($event)" />
             <div *ngIf="deliveryForm.submitted && !fullName.valid" class="error-message">
                 {{ "Full Name is required!" | translate }}
             </div>
         </div>
         <div class="form-group">
             <label for="email">{{ "Email" | translate }}:</label>
-            <input type="email" id="email" name="email" ngModel required #email="ngModel">
+            <input
+                type="email"
+                id="email"
+                name="email"
+                ngModel
+                [(ngModel)]="deliveryInfo.email"
+                required
+                #email="ngModel"
+            />
             <div *ngIf="deliveryForm.submitted && !email.valid" class="error-message">
                 {{ "Email is required!" | translate }}
             </div>
@@ -19,16 +27,15 @@
         <div class="form-group">
             <label for="address">{{ "Address" | translate }}:</label>
             <input type="text" id="address" name="address" ngModel required pattern="^[A-Za-z\s]+$" #address="ngModel"
-                (input)="validateInput($event)">
+                (input)="validateInput($event)" />
             <div *ngIf="deliveryForm.submitted && !address.valid" class="error-message">
                 {{ "Address is required!" | translate }}
             </div>
         </div>
-
         <div class="form-group">
             <label for="houseNumber">{{ "House Number" | translate }}:</label>
             <input type="text" id="houseNumber" name="houseNumber" ngModel required #houseNumber="ngModel"
-                (input)="validateNumberInput($event)">
+                (input)="validateInput($event)" />
             <div *ngIf="deliveryForm.submitted && !houseNumber.valid" class="error-message">
                 {{ "House Number is required!" | translate }}
             </div>
@@ -36,7 +43,7 @@
         <div class="form-group">
             <label for="city">{{ "City" | translate }}:</label>
             <input type="text" id="city" name="city" ngModel required pattern="^[A-Za-z\s]+$" #city="ngModel"
-                (input)="validateInput($event)">
+                (input)="validateInput($event)" />
             <div *ngIf="deliveryForm.submitted && !city.valid" class="error-message">
                 {{ "City is required!" | translate }}
             </div>
@@ -44,7 +51,7 @@
         <div class="form-group">
             <label for="postalCode">{{ "Postal Code" | translate }}:</label>
             <input type="text" id="postalCode" name="postalCode" ngModel required #postalCode="ngModel"
-                (input)="validateNumberInput($event)">
+                (input)="validateNumberInput($event)" maxlength="4" />
             <div *ngIf="deliveryForm.submitted && !postalCode.valid" class="error-message">
                 {{ "Postal Code is required!" | translate }}
             </div>
@@ -52,7 +59,7 @@
         <div class="form-group">
             <label for="phone">{{ "Phone Number" | translate }}:</label>
             <input type="tel" id="phone" name="phone" ngModel required #phone="ngModel"
-                (input)="validateNumberInput($event)">
+                (input)="validateNumberInput($event)" maxlength="11" />
             <div *ngIf="deliveryForm.submitted && !phone.valid" class="error-message">
                 {{ "Phone Number is required!" | translate }}
             </div>

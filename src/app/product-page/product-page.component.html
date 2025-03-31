@@ -11,7 +11,8 @@
                         {{ product.price | currency : "Ft " }}
                     </span>
                 </div>
-                <button (click)="addToCart()">{{ "Hozzáad" | translate }}</button>
+                <!-- Hozzáad gomb -->
+                <button (click)="product.id !== undefined && addToCart(product.id)">{{ "Hozzáad" | translate }}</button>
                 <button (click)="goBack()">{{ "Vissza" | translate }}</button>
                 <div *ngIf="itemAdded" class="success-message">
                     Hozzáadva a kosárhoz!

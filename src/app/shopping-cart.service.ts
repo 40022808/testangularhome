@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Product } from './shared/models/product.model';
-import { Cart } from './shared/models/Cart';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,11 +7,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ShoppingCartService {
-  private apiUrl = 'http://localhost:3000/api/cart'; // API URL for user cart
-  getUserCart(): Observable<any> {
-    return this.http.get(this.apiUrl); // Auth token will be sent automatically if using an interceptor
-  }
-  private cart: { product: Product; quantity: number }[] = [];
+  private baseUrl = 'http://localhost:8000/'; // Backend alap URL
+  private cart: { product: Product; quantity: number }[] = []; // Helyi kosár
 
   constructor(private http: HttpClient) {
     // Kosár betöltése a localStorage-ból
@@ -22,43 +18,77 @@ export class ShoppingCartService {
     }
   }
 
+  /**
+   * Termék hozzáadása a kosárhoz a backend segítségével
+   * @param productId A termék azonosítója
+   * @param quantity A termék mennyisége
+   */
+  addCartItem(productId: number, quantity: number): Observable<any> {
+    const token = localStorage.getItem('userToken'); // Hitelesítési token
+    const payload = {
+      product_id: productId,
+      quantity: quantity,
+    };
+    console.log('Sending cart data to backend:', payload); // Debugging
+    return this.http.post(`${this.baseUrl}api/cart`, payload, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
+  /**
+   * Kosár lekérése a backendről
+   */
+  getCartFromBackend(): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.get(`${this.baseUrl}api/cart`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
+  /**
+   * Termék eltávolítása a kosárból a backend segítségével
+   * @param productId A termék azonosítója
+   */
+  removeCartItem(productId: number): Observable<any> {
+    const token = localStorage.getItem('userToken');
+    return this.http.delete(`${this.baseUrl}api/cart/${productId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
+
+  /**
+   * Helyi kosár mentése a localStorage-ba
+   */
   private saveCart(): void {
-    // Kosár mentése a localStorage-ba
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
-  addToCart(product: Product): void {
-    const existingItem = this.cart.find(
-      (item) => item.product.id === product.id
-    );
-    if (existingItem) {
-      existingItem.quantity++;
-    } else {
-      this.cart.push({ product, quantity: 1 });
-    }
-    this.saveCart(); // Mentés a localStorage-ba
+  /**
+   * Helyi kosár törlése
+   */
+  clearCart(): void {
+    this.cart = [];
+    this.saveCart(); // Kosár törlése a localStorage-ból
   }
 
+  /**
+   * Helyi kosár lekérése
+   */
   getCart(): Observable<{ product: Product; quantity: number }[]> {
     return of(this.cart); // Wrap the cart array in an Observable
   }
 
-  removeFromCart(productId: number): void {
-    const itemIndex = this.cart.findIndex(
-      (item) => item.product.id === productId
-    );
-    if (itemIndex !== -1) {
-      if (this.cart[itemIndex].quantity > 1) {
-        this.cart[itemIndex].quantity--; // Csökkenti a darabszámot
-      } else {
-        this.cart.splice(itemIndex, 1); // Eltávolítja a terméket, ha a darabszám 0
-      }
-      this.saveCart(); // Frissíti a localStorage-t
+  /**
+   * Termék hozzáadása a helyi kosárhoz
+   * @param product A termék objektuma
+   */
+  addToLocalCart(product: Product): void {
+    const existingItem = this.cart.find((item) => item.product.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += 1; // Ha már létezik, növeljük a mennyiséget
+    } else {
+      this.cart.push({ product, quantity: 1 }); // Új termék hozzáadása
     }
-  }
-
-  clearCart(): void {
-    this.cart = [];
-    this.saveCart(); // Kosár törlése a localStorage-ból
+    this.saveCart(); // Kosár mentése
   }
 }

@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class DeliveryPageComponent implements OnInit {
   deliveryInfo = {
     name: '',
+    email: '',
     address: '',
     city: '',
     houseNumber: '',
@@ -35,6 +36,12 @@ export class DeliveryPageComponent implements OnInit {
       this.currentLang = params['lang'] || 'en';
       this.translate.use(this.currentLang); // Nyelv beállítása
     });
+  
+    // Email cím automatikus kitöltése
+    const userEmail = localStorage.getItem('userEmail');
+    if (userEmail) {
+      this.deliveryInfo.email = userEmail; // Az email mező automatikus kitöltése
+    }
   }
 
   onSubmit(form: NgForm) {
@@ -64,12 +71,17 @@ export class DeliveryPageComponent implements OnInit {
 
   validateInput(event: Event) {
     const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+    input.value = input.value.replace(/[^a-zA-Z0-9\s]/g, ''); // Betűk, számok és szóközök engedélyezése
   }
 
   validateNumberInput(event: Event) {
     const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/[^0-9]/g, '');
+    input.value = input.value.replace(/[^0-9]/g, ''); // Csak számok engedélyezése
+    if (input.id === 'postalCode' && input.value.length > 4) {
+      input.value = input.value.slice(0, 4); // Maximum 4 számjegy az irányítószámhoz
+    } else if (input.id === 'phone' && input.value.length > 11) {
+      input.value = input.value.slice(0, 11); // Maximum 11 számjegy a telefonszámhoz
+    }
   }
 
   submitDeliveryInfo(value: any) {

@@ -13,6 +13,9 @@ export class CartPageComponent implements OnInit {
   cart: { product: Product; quantity: number }[] = [];
   totalPrice: number = 0;
   currentLang: string = 'en';
+  cartItems: any[] = [];
+  userService: any;
+products: any;
 
   constructor(
     private shoppingCartService: ShoppingCartService,
@@ -33,20 +36,70 @@ export class CartPageComponent implements OnInit {
     });
     this.calculateTotalPrice();
   }
-
   loadCart(): void {
-    this.shoppingCartService.getCart().subscribe((data) => {
-      this.cart = data;
-      this.calculateTotalPrice();
-    });
+    this.shoppingCartService.getCart().subscribe(
+      (response: any) => {
+        if (response.success) {
+          this.cart = response.cartItems;
+          this.calculateTotalPrice();
+          console.log('Cart items loaded:', this.cart);
+        } else {
+          console.error('Failed to load cart items:', response.message);
+        }
+      },
+      (error: any) => {
+        console.error('Error loading cart items:', error);
+      }
+    );
+  }
+  addToCart(productId: number, quantity: number = 1): void {
+    this.shoppingCartService.addCartItem(productId, quantity).subscribe(
+      (response: any) => {
+        if (response.success) {
+          console.log('Item added to cart:', response.cartItem);
+          this.loadCart(); // Frissítsük a kosár tartalmát
+        } else {
+          console.error('Failed to add item to cart:', response.message);
+        }
+      },
+      (error: any) => {
+        console.error('Error adding item to cart:', error);
+      }
+    );
+  }
+  
+  
+  loadCartItems(): void {
+    this.userService.getCartItems().subscribe(
+      (response: any) => {
+        if (response.success) {
+          this.cartItems = response.cartItems;
+          console.log('Cart items loaded:', this.cartItems); // Debugging
+        } else {
+          console.error('Failed to load cart items:', response.message);
+        }
+      },
+      (error: any) => {
+        console.error('Error loading cart items:', error);
+      }
+    );
   }
 
   removeFromCart(productId: number): void {
-    this.shoppingCartService.removeFromCart(productId);
-    this.shoppingCartService.getCart().subscribe((data) => {
-      this.cart = data;
-    });
-    this.calculateTotalPrice();
+    this.shoppingCartService.removeCartItem(productId).subscribe(
+      (response: any) => {
+        if (response.success) {
+          this.cart = this.cart.filter(item => item.product.id !== productId);
+          this.calculateTotalPrice();
+          console.log('Item removed from cart:', productId);
+        } else {
+          console.error('Failed to remove item from cart:', response.message);
+        }
+      },
+      (error: any) => {
+        console.error('Error removing item from cart:', error);
+      }
+    );
   }
 
   calculateTotalPrice(): void {
@@ -55,4 +108,5 @@ export class CartPageComponent implements OnInit {
       0
     );
   }
+  
 }

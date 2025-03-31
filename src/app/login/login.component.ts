@@ -36,32 +36,39 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    // Ellenőrizzük, hogy van-e elmentett email a localStorage-ban
+    const savedEmail = localStorage.getItem('userEmail');
+    if (savedEmail) {
+      this.email = savedEmail; // Az email mező automatikus kitöltése
+    }
+  }
 
   login() {
     this.resetErrors();
-
+  
     if (this.email.trim() === '') {
       this.emailError = true;
     } else if (this.password.trim() === '') {
       this.passwordError = true;
     } else {
       this.loading = true;
-
+  
       const formData = {
         email: this.email,
         password: this.password,
       };
-
+  
       this.apiService.loginUser(this.currentLang, formData).subscribe(
         (response) => {
           localStorage.setItem('userToken', response.token);
-
+          localStorage.setItem('userEmail', this.email); // Email cím mentése
+  
           const redirectUrl =
             this.route.snapshot.queryParams['redirectUrl'] ||
             `${this.currentLang}/home`;
           this.router.navigateByUrl(redirectUrl);
-
+  
           this.loading = false;
         },
         (error) => {

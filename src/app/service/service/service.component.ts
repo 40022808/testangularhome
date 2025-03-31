@@ -47,11 +47,16 @@ export class ServiceComponent implements OnInit {
       this.currentLang = params['lang'] || 'en';
       this.translate.use(this.currentLang); // Nyelv beállítása
     });
-
+  
     this.loadBookedDates(); // Lefoglalt időpontok betöltése
     this.generateAvailableTimes(); // Elérhető időpontok generálása
+  
+    // Email automatikus kitöltése
+    const userEmail = localStorage.getItem('userEmail');
+    if (userEmail) {
+      this.email = userEmail; // Az email mező automatikus kitöltése
+    }
   }
-
   generateAvailableTimes() {
     this.availableTimes = [];
     for (let hour = 8; hour <= 18; hour++) {

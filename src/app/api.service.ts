@@ -110,4 +110,17 @@ export class ApiService {
 getAllBookings(role: string, email: any): Observable<any> {
   return this.http.get(`http://localhost:8000/api/all-bookings?role=${role}&email=${email}`);
 }
+getCartItems(): Observable<any> {
+  const token = localStorage.getItem('userToken');
+  return this.http.get(`${this.baseUrl}/api/cart`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
 }
+removeCartItem(productId: number): Observable<any> {
+  const token = localStorage.getItem('userToken');
+  return this.http.delete(`${this.baseUrl}/api/cart/${productId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+}
+}
+

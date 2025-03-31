@@ -1,5 +1,5 @@
-<div class="body">
-  <h2>{{ "Cart" | translate }}</h2>
+<div class="cart-body">
+  <h2 class="cart-title">{{ "Cart" | translate }}</h2>
   <div *ngIf="cart.length === 0" class="empty-cart">
     <p>{{ "Your cart is empty!" | translate }}</p>
   </div>
@@ -13,7 +13,7 @@
           <div class="product-price">{{ item.product.price | number:'1.2-2' }} Ft</div>
           <div class="product-quantity">{{ "Quantity" | translate }}: {{ item.quantity }}</div>
         </div>
-        <button *ngIf="item.product.id !== undefined" (click)="removeFromCart(item.product.id)">
+        <button *ngIf="item.product.id !== undefined" (click)="removeFromCart(item.product.id)" class="remove-button">
           {{ "Remove" | translate }}
         </button>
       </li>
