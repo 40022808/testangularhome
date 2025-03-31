@@ -281,7 +281,7 @@ export class UserComponent implements OnInit {
   }
 
   addProductPage() {
-    this.router.navigate([this.currentLang, 'add-product']);
+    this.router.navigate([this.currentLang, 'Product-Management']);
   }
   loadUserBookings() {
     const email = this.userInfo?.email;

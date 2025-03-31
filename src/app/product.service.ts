@@ -22,13 +22,11 @@ export class ProductService {
     return this.http.get<Product[]>(this.apiUrl);
   }
 
-  updateProduct(
-    productId: number,
-    productData: Partial<Product>
-  ): Observable<Product> {
-    return this.http.put<Product>(`${this.apiUrl}/${productId}`, productData);
+  updateProduct(productId: number, formData: FormData): Observable<Product> {
+    return this.http.put<Product>(`${this.apiUrl}/${productId}`, formData);
   }
 
+  
   deleteProduct(productId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${productId}`);
   }
