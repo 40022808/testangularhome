@@ -41,7 +41,7 @@ const routes: Routes = [
     component: CartPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: ':lang/add-product', component: AddProductComponent },
+  { path: ':lang/Product-Management', component: AddProductComponent },
   { path: ':lang/prices', component: PricesComponent },
   { path: '', redirectTo: '/en/home', pathMatch: 'full' },
 ];

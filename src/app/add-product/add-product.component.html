@@ -1,21 +1,52 @@
 <div class="body">
-  <h1>Termék hozzáadása</h1>
-  <form (submit)="onSubmit()" enctype="multipart/form-data">
-    <label for="name">Név</label>
-    <input type="text" id="name" [(ngModel)]="product.name" name="name" required />
 
-    <label for="description">Leírás</label>
-    <textarea id="description" [(ngModel)]="product.description" name="description"></textarea>
 
-    <label for="price">Ár</label>
-    <input type="number" id="price" [(ngModel)]="product.price" name="price" required />
-
-    <label for="image">Kép</label>
-    <input type="file" id="image" (change)="onFileSelected($event)" />
-
-    <button type="submit">Hozzáadás</button>
-  </form>
-  <div *ngIf="successMessage" class="success-message">
-    Sikeres hozzáadás!
+  <div class="product-grid" *ngIf="!addproducForm">
+    <div *ngFor="let product of products" class="product-item" (click)="openProductDialog(product)">
+      <div class="a">
+        <img *ngIf="product.imageURL" [src]="'http://localhost:8000' + product.imageURL" alt="{{ product.name }}" class="product-image" />
+        <div class="content">
+          <div class="name">{{ product.name }}</div>
+          <div class="price">
+            <span>{{ product.id }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
+
+
+  <button class="add-product-btn" (click)="addproducForm = true">{{"add product" | translate}}</button>
+
+
+  <div class="addproduc" *ngIf="addproducForm">
+    <h1>Termék hozzáadása</h1>
+    <form (submit)="onSubmit()" enctype="multipart/form-data">
+      <label for="name">Név</label>
+      <input type="text" id="name" [(ngModel)]="product.name" name="name" required />
+  
+      <label for="description">Leírás</label>
+      <textarea id="description" [(ngModel)]="product.description" name="description"></textarea>
+  
+      <label for="price">Ár</label>
+      <input type="number" id="price" [(ngModel)]="product.price" name="price" required />
+  
+      <label for="image">Kép</label>
+      <input type="file" id="image" (change)="onFileSelected($event)" />
+      
+      <div class="buttons">
+        <button type="submit">Hozzáadás</button>
+        <button (click)="addproducForm = false" class="addproduc-cancel-btn">Mégse</button>
+      </div>
+      
+    </form>
+    <div *ngIf="successMessage" class="success-message">
+      Sikeres hozzáadás!
+    </div>
+  </div>
+
+
+
+
 </div>

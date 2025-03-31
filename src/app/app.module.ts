@@ -44,6 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PricesComponent } from './prices/prices.component';
 import { EditProductDialogComponent } from './edit-product-dialog/edit-product-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductDetailsDialogComponent } from './product-details-dialog/product-details-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -68,8 +70,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AddProductComponent,
     PricesComponent,
     EditProductDialogComponent,
+    ProductDetailsDialogComponent,
   ],
   imports: [
+    MatDialogModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,

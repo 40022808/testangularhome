@@ -27,3 +27,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.cdk-overlay-pane.mat-mdc-dialog-panel {
+    max-width: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.mdc-dialog--open .mat-mdc-dialog-surface {
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .mdc-dialog--open .mat-mdc-dialog-surface {
+        padding: 5px;
+    }
+}

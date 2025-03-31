@@ -1,4 +1,26 @@
+
+
 .body {
+  width: 100vw;
+  height: 100vh;
+  background-image:
+  url('/assets/images/stars.png'),
+  linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
+  background-size: auto, cover; 
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+
+
+.addproduc {
+  position: absolute;
+  left: 25vw;
+  width: 50vw;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -6,9 +28,10 @@
   justify-content: center;
   margin-top: 5rem;
   text-align: center;
-  background-color: #f9f9f9; /* Light background for consistency */
+  background-color: #f9f9f9; 
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: solid 5px #5900ff77;
 }
 
 form {
@@ -63,4 +86,155 @@ h1 {
   font-weight: bold;
   margin-top: 1rem;
   font-size: 1.2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.addproduc-cancel-btn  {
+  background-color: red !important;
+}
+
+.add-product-btn {
+  position:fixed;
+  bottom: 5vh;
+  left: calc(50vw - 10vw);
+  width: 20vw;
+  height: 3vw;
+  padding: 5px 10px;
+  font-size: 3vmin;
+  background-color: #09ff00;
+  border-radius: 15px;
+  border: solid 2px black;
+  color: white;
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+  transition: all 0.2s;
+}
+
+.add-product-btn:hover {
+  background-color: #67ff21;
+}
+
+.content {
+  padding: 0.5rem, 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 17vw;
+  height: 17vw;
+  text-decoration: none;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
+}
+.product-item {
+  box-sizing: border-box;
+  width: 17vw;
+  height: 17vw;
+  text-align: center;
+  margin: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.144);
+}
+.product-item:hover {
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 8px 15px rgba(27, 41, 71, 0.3);
+  transform: translateY(-5px);
+  border-radius: 15px;
+}
+.product-image {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 8px;
+}
+
+.name , .price {
+  color: black;
+  text-shadow:  1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+
+.edit-button,
+.delete-button {
+  flex: 0 0 auto; /* Prevent buttons from stretching or shrinking */
+  background-color: #007bff; /* Default blue for edit */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0; /* Remove unnecessary margins */
+  width: auto; /* Allow buttons to take their content width */
+}
+
+
+
+@media (max-width: 768px) {
+  .product-item {
+    width: 35vw;
+    height: 35vw;
+    margin: 0 7px;
+  }
+  .name {
+    font-size: 3.5vmin;
+    font-weight: bold;
+  }
+  
+  .price {
+    font-size: 3.2vmin;
+    color: whitesmoke;
+    margin-top: 5px;
+  }
+
+  a {
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .product-image {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .name , .price {
+    color: white;
+    text-shadow:  none;
+  }
+
+
 }
