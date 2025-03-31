@@ -19,7 +19,10 @@
       </li>
     </ul>
     <div class="total-price">
-      <p>{{ "Total" | translate }}: {{ totalPrice | number:'1.2-2' }} Ft</p>
+      <div class="total-price-container">
+        <p class="total-label">{{ "Total" | translate }}:</p>
+        <p class="total-amount">{{ totalPrice | number:'1.2-2' }} Ft</p>
+      </div>
       <div class="delivery-button">
         <a [routerLink]="['/', currentLang, 'delivery']" class="delivery-link">{{ "Checkout" | translate }}</a>
       </div>

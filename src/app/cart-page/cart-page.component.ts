@@ -25,15 +25,27 @@ export class CartPageComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.currentLang = params['lang'] || 'en';
       this.translate.use(this.currentLang); // Nyelv beállítása
+      this.loadCart();
     });
 
-    this.cart = this.shoppingCartService.getCart();
+    this.shoppingCartService.getCart().subscribe((data) => {
+      this.cart = data;
+    });
     this.calculateTotalPrice();
+  }
+
+  loadCart(): void {
+    this.shoppingCartService.getCart().subscribe((data) => {
+      this.cart = data;
+      this.calculateTotalPrice();
+    });
   }
 
   removeFromCart(productId: number): void {
     this.shoppingCartService.removeFromCart(productId);
-    this.cart = this.shoppingCartService.getCart();
+    this.shoppingCartService.getCart().subscribe((data) => {
+      this.cart = data;
+    });
     this.calculateTotalPrice();
   }
 
