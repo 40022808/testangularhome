@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-product-dialog',
@@ -9,10 +10,14 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class EditProductDialogComponent {
   editForm: FormGroup;
-
+  ngOnInit(): void {
+    this.translate.use(this.currentLang); // Nyelv beállítása
+  }
+  currentLang = 'en';
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<EditProductDialogComponent>,
+     private translate: TranslateService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.editForm = this.fb.group({

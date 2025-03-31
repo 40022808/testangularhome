@@ -132,6 +132,35 @@
     "REMOVE": "Eltávolítás",
     "TOTAL": "Összesen",
     "CHECKOUT": "Szállítás"
+  },
+  "EDIT_PRODUCT": {
+    "TITLE": "Termék szerkesztése",
+    "NAME": "Termék neve",
+    "PRICE": "Ár",
+    "DESCRIPTION": "Leírás",
+    "CANCEL": "Mégse",
+    "SAVE": "Mentés"
+  },
+  "CONTACT": {
+    "TITLE": "Elérhetőségek",
+    "PHONE": "+36 20 351 8200",
+    "EMAIL": "info@example.com",
+    "ADDRESS": "Budapest, Révay u. 16, 1065"
+  },
+  "PRODUCT_DETAILS": {
+    "TITLE": "Termék részletei",
+    "NAME": "Név:",
+    "DESCRIPTION": "Leírás:",
+    "PRICE": "Ár:",
+    "UPDATE": "Frissítés",
+    "DELETE": "Törlés",
+    "CLOSE": "Bezárás",
+    "UPDATE_SUCCESS": "A termék sikeresen frissítve.",
+    "UPDATE_ERROR": "Hiba történt a termék frissítése közben.",
+    "DELETE_SUCCESS": "A termék sikeresen törölve.",
+    "DELETE_ERROR": "Hiba történt a termék törlése közben."
+    
   }
+  
   
 }

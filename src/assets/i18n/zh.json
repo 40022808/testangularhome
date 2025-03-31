@@ -132,5 +132,32 @@
     "REMOVE": "移除",
     "TOTAL": "总计",
     "CHECKOUT": "運輸"
+  },
+  "EDIT_PRODUCT": {
+    "TITLE": "编辑产品",
+    "NAME": "产品名称",
+    "PRICE": "价格",
+    "DESCRIPTION": "描述",
+    "CANCEL": "取消",
+    "SAVE": "保存"
+  },
+  "CONTACT": {
+    "TITLE": "联系方式",
+    "PHONE": "+36 20 351 8200",
+    "EMAIL": "info@example.com",
+    "ADDRESS": "布达佩斯, Révay u. 16, 1065"
+  },
+  "PRODUCT_DETAILS": {
+    "TITLE": "商品详情",
+    "NAME": "名称：",
+    "DESCRIPTION": "描述：",
+    "PRICE": "价格：",
+    "UPDATE": "更新",
+    "DELETE": "删除",
+    "CLOSE": "关闭",
+    "UPDATE_SUCCESS": "商品更新成功。",
+    "UPDATE_ERROR": "更新商品时发生错误。",
+    "DELETE_SUCCESS": "商品删除成功。",
+    "DELETE_ERROR": "删除商品时发生错误。"
   }
 }
