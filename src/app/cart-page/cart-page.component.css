@@ -161,7 +161,8 @@
 @media (max-width: 768px) {
   .product-item {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 2.5vh;
   }
 
   .product-details {
@@ -172,6 +173,9 @@
   .total-price {
     width: 100%;
   }
+
+
+
 }
 .decrease-button {
   background-color: #f0ad4e; /* Narancssárga szín */

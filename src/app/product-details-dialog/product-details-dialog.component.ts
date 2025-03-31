@@ -20,6 +20,7 @@ export class ProductDetailsDialogComponent {
     private productService: ProductService
   ) {
     this.product = { ...data.product }; // 克隆商品数据，避免直接修改
+    
   }
 
 

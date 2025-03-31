@@ -161,7 +161,7 @@
 
 .user-div-admin {
     width: 30vw;
-    min-height: 20vh;
+    min-height: 25vh;
     max-height: 50vh;
     background-color: rgb(201, 201, 201);
     border-radius: 20px;
@@ -579,6 +579,15 @@
     .user-div-info {
         width: 70vw;
     }
+    
+    .user-div-info2 {
+        width: 70vw;
+    }
+
+    .user-div-info2 button {
+        font-size: 3vmin;
+        padding: 8px;
+    }
 
     .user-info p {
         width: 55vw;
@@ -598,8 +607,8 @@
     }
     
     .user-div-admin button {
-        width: 35vw;
-        font-size: 3vmin;
+        width: 35vw !important;
+        font-size: 3vmin !important;
     }
 
     .logout {

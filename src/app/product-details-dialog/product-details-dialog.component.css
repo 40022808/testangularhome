@@ -2,10 +2,6 @@
     font-size: 2.5vmin;
 }
 
-img {
-    width: 20vw;
-    height: 20vw;
-}
 
 input, textarea {
     text-align: center;
@@ -36,4 +32,18 @@ input, textarea {
 
 .button {
     font-size: 3vmin;
+}
+
+@media (max-width: 768px)  {
+    * {
+        font-size: 5vmin;
+    }
+
+    .h1 {
+        font-size: 6vmin;
+      }
+
+    .button {
+        font-size: 6vmin;
+    }
 }
