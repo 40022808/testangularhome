@@ -38,7 +38,7 @@
       
         </div>
       
-        <div class="register-btn-div">
+        <div class="register-btn-div" *ngIf="!loading">
           <button class="register-btn" (click)="previousStep()">{{"Back" | translate}}</button>
           <button class="register-btn" (click)="nextStep()">{{"Next" | translate}}</button>
         </div>

@@ -12,21 +12,12 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url("/assets/images/stars.png"),
-    linear-gradient(
-      to bottom,
-      #1b2947,
-      #1b2947,
-      #2b3152,
-      #3b385d,
-      #3b385d,
-      #4c4067,
-      #615383,
-      #776092
-    );
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-  background-position: center center, center center;
+  background: -moz-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #bdd3ff));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #bdd3ff 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #bdd3ff 100%);
   display: flex;
   flex-direction: column;
   gap: 10vh;

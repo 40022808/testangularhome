@@ -134,7 +134,6 @@ export class RegisterComponent implements OnInit {
       },
       error => {
         console.error('Registration error', error);
-        alert('Hiba történt a regisztráció során. Kérlek, próbáld újra.');
         this.registerError = true;
         this.loading = false;
         this.unloading = true;
