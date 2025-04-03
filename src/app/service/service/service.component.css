@@ -25,6 +25,7 @@
   padding-top: 15vh;
   padding-bottom: 15vh;
 }
+
 .datepicker-container {
   display: flex;
   flex-direction: column;

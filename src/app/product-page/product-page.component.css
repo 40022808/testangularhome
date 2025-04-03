@@ -122,7 +122,6 @@ img {
   gap: 10px;
 }
 
-
 .quantity-display {
   font-size: 1.2rem;
   font-weight: bold;
@@ -137,12 +136,13 @@ img {
 @media (max-width: 768px) {
   img {
     border-radius: 2rem;
-    width: 60vw;
-    height: 60vw;
+    width: 75vw;
+    height: 35vw;
   }
 
   .container {
     flex-direction: row;
     padding-top: 15px;
+    height: 82vh;
   }
 }
