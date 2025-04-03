@@ -4,7 +4,16 @@
   padding: 20px;
   width: 100vw;
   min-height: calc(100vh - 70px); /* Navbar magasságának levonása */
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Világos átmenetes háttér */
+  background: linear-gradient(
+    to bottom,
+    #d0d8e5,
+    #c2cde0,
+    #b5c2db,
+    #a8b7d6,
+    #9bacd1,
+    #8fa1cc,
+    #8296c7
+  );
   color: #333; /* Sötét szöveg */
   display: flex;
   flex-direction: column;
@@ -63,8 +72,8 @@
 }
 
 .cart-image {
-  width: 80px;
-  height: 80px;
+  width: 10rem;
+  height: 10rem;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -92,7 +101,7 @@
 
 .remove-button {
   padding: 10px 15px;
-  background-color: #dc3545;
+  background-color: rgba(43, 49, 82, 0.95);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -101,7 +110,7 @@
 }
 
 .remove-button:hover {
-  background-color: #c82333;
+  background-color: rgb(76, 64, 103, 0.95);
   transform: translateY(-2px);
 }
 
@@ -132,7 +141,7 @@
 .total-amount {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #28a745;
+  color: #333;
 }
 
 /* Checkout gomb */
@@ -146,14 +155,14 @@
   font-size: 1.1rem;
   font-weight: bold;
   color: #fff;
-  background-color: #007bff;
+  background-color: rgba(43, 49, 82, 0.95);
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .delivery-link:hover {
-  background-color: #0056b3;
+  background-color: rgb(76, 64, 103, 0.95);
   transform: translateY(-2px);
 }
 
@@ -173,12 +182,9 @@
   .total-price {
     width: 100%;
   }
-
-
-
 }
 .decrease-button {
-  background-color: #f0ad4e; /* Narancssárga szín */
+  background-color: rgb(97, 83, 131, 0.95); /* Narancssárga szín */
   color: white;
   border: none;
   padding: 10px 15px;
@@ -190,7 +196,11 @@
 }
 
 .decrease-button:hover {
-  background-color: #ec971f; /* Sötétebb narancssárga szín hover állapotban */
+  background-color: rgb(
+    76,
+    64,
+    103,
+    0.95
+  ); /* Sötétebb narancssárga szín hover állapotban */
   transform: translateY(-2px);
 }
-

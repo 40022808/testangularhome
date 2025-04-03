@@ -46,7 +46,7 @@ export class CartPageComponent implements OnInit {
     );
   }
 
-  addToCart(productId: number, quantity: number = 1): void {
+  addToCart(productId: number, quantity: number): void {
     this.shoppingCartService.addCartItem(productId, quantity).subscribe(
       (response: any) => {
         if (response.success) {

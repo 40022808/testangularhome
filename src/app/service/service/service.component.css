@@ -6,22 +6,19 @@
 .body {
   width: 100vw;
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: url("/assets/images/stars.png"),
-    linear-gradient(
-      to bottom,
-      #1b2947,
-      #1b2947,
-      #2b3152,
-      #3b385d,
-      #3b385d,
-      #4c4067,
-      #615383,
-      #776092
-    );
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-  background-position: center center, center center;
+  background: linear-gradient(
+    to bottom,
+    #d0d8e5,
+    #c2cde0,
+    #b5c2db,
+    #a8b7d6,
+    #9bacd1,
+    #8fa1cc,
+    #8296c7
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   gap: 10vh;

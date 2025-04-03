@@ -26,7 +26,7 @@
 .container {
   display: flex;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
   flex-wrap: wrap;
   background-color: rgba(255, 255, 255, 0.836);
   border-radius: 15px;
@@ -41,10 +41,9 @@
 
 img {
   border-radius: 5rem;
-  object-fit:fill;
+  object-fit: fill;
   width: 30vw;
   height: 30vw;
-
 }
 
 .details {
@@ -82,7 +81,6 @@ img {
   background-color: white;
   padding: 30px;
   border-radius: 15px;
-  
 }
 
 .details .price::before {
@@ -118,20 +116,33 @@ img {
   opacity: 0;
 }
 
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.quantity-display {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+  min-width: 40px;
+}
 
 @media (max-width: 768px) {
-
   img {
     border-radius: 2rem;
     width: 60vw;
     height: 60vw;
-  
   }
 
   .container {
     flex-direction: row;
     padding-top: 15px;
   }
-
-
 }

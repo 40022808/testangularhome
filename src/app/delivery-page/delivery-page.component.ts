@@ -36,7 +36,7 @@ export class DeliveryPageComponent implements OnInit {
       this.currentLang = params['lang'] || 'en';
       this.translate.use(this.currentLang); // Nyelv beállítása
     });
-  
+
     // Email cím automatikus kitöltése
     const userEmail = localStorage.getItem('userEmail');
     if (userEmail) {
@@ -48,21 +48,22 @@ export class DeliveryPageComponent implements OnInit {
     if (form.valid) {
       this.formSubmitted = true;
       console.log('Form Submitted!', form.value);
-  
+
       // Szállítási adatok mentése vagy API hívás
-      this.http.post('http://localhost:8000/api/delivery', form.value).subscribe(
-        (response: any) => {
-          console.log('Delivery details saved:', response);
-          
-        },
-        (error) => {
-          console.error('Error saving delivery details:', error);
-        }
-      );
-  
+      this.http
+        .post('http://localhost:8000/api/delivery', form.value)
+        .subscribe(
+          (response: any) => {
+            console.log('Delivery details saved:', response);
+          },
+          (error) => {
+            console.error('Error saving delivery details:', error);
+          }
+        );
+
       // Üzenet eltüntetése pár másodperc után
       setTimeout(() => {
-        this.formSubmitted = false;
+        this.router.navigate(['/', this.currentLang, 'home']);
       }, 3000);
     } else {
       console.log('Form Invalid!');

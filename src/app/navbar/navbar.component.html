@@ -1,9 +1,8 @@
 <div class="nav">
-    <div class="logo">
+    <a [routerLink]="['/', currentLang, 'home']" class="logo">
         <img src="assets/images/logo.png" alt="Logo" class="logoimage" />
-        <h1 class="logoh1">LOGO</h1>
-    </div>
-
+        <h1 class="logoh1">Barber</h1>
+    </a>
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
 
     <div class="nav-links" [class.open]="menuOpen">
@@ -19,7 +18,7 @@
         <a [routerLink]="['/', currentLang, 'webshop']" routerLinkActive="active" (click)="toggleMenu()">{{
             "Web Shop" | translate
             }}</a>
-           
+
 
         <a [routerLink]="['/', currentLang, 'user']" routerLinkActive="active" class="user_a" (click)="toggleMenu()">
             <img src="assets/images/user.svg" alt="user" class="img_user" />

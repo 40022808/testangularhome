@@ -10,9 +10,10 @@ import { ShoppingCartService } from '../shopping-cart.service';
   styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent implements OnInit {
-  product: Product | undefined; // A termék adatai
-  itemAdded: boolean = false; // Jelzi, hogy a termék sikeresen hozzá lett adva a kosárhoz
-  errorMessage: string = ''; // Hibák megjelenítésére
+  product: Product | undefined;
+  itemAdded: boolean = false;
+  errorMessage: string = '';
+  quantity: number = 1;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -34,45 +35,49 @@ export class ProductPageComponent implements OnInit {
     this.productService.getProduct(productId).subscribe(
       (product: Product) => {
         this.product = product;
-        console.log('Product fetched:', this.product); // Debugging
+        console.log('Product fetched:', this.product);
       },
       (error) => {
-        console.error('Error fetching product:', error); // Debugging
-        this.errorMessage = 'Failed to load product details. Please try again later.';
+        console.error('Error fetching product:', error);
+        this.errorMessage =
+          'Failed to load product details. Please try again later.';
       }
     );
   }
 
-  /**
-   * Termék hozzáadása a kosárhoz
-   * @param productId A termék azonosítója
-   */
-  addToCart(productId: number): void {
-    if (this.itemAdded) return; // Megakadályozzuk a dupla kattintást
-  
-    this.itemAdded = true; // Gomb letiltása
-    this.shoppingCartService.addCartItem(productId, 1).subscribe(
+  addToCart(productId: number, quantity: number): void {
+    if (this.itemAdded) return;
+    console.log(`Product ID: ${productId}, Quantity: ${quantity}`);
+    this.itemAdded = true;
+    this.shoppingCartService.addCartItem(productId, quantity).subscribe(
       (response: any) => {
         if (response.success) {
           console.log('Product added to cart:', response.cartItem);
           setTimeout(() => {
-            this.itemAdded = false; // Gomb újra engedélyezése
+            this.itemAdded = false;
           }, 3000);
         } else {
           console.error('Failed to add product to cart:', response.message);
-          this.itemAdded = false; // Gomb újra engedélyezése
+          this.itemAdded = false;
         }
       },
       (error: any) => {
         console.error('Error adding product to cart:', error);
-        this.itemAdded = false; // Gomb újra engedélyezése
+        this.itemAdded = false;
       }
     );
   }
 
-  /**
-   * Visszalépés az előző oldalra
-   */
+  increaseQuantity(): void {
+    this.quantity++;
+  }
+
+  decreaseQuantity(): void {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
+
   goBack(): void {
     window.history.back();
   }

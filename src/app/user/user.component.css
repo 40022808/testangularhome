@@ -1,541 +1,539 @@
 * {
-    margin: 0;
-    padding: 0;
-
+  margin: 0;
+  padding: 0;
 }
 
 .body {
-
-    width: 100vw;
-    min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0);
-    background-image:
-        url('/assets/images/stars.png'),
-        linear-gradient(to bottom, #1b2947, #1b2947, #2b3152, #3b385d, #3b385d, #4c4067, #615383, #776092);
-    background-size: auto, cover; 
-    background-repeat: repeat, no-repeat;
-    background-position: center center, center center;
-    display: flex;
-    flex-direction: column;
-    gap: 10vh;
-    justify-content: center;
-    align-items: center;
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("/assets/images/stars.png"),
+    linear-gradient(
+      to bottom,
+      #1b2947,
+      #1b2947,
+      #2b3152,
+      #3b385d,
+      #3b385d,
+      #4c4067,
+      #615383,
+      #776092
+    );
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .user-div-info {
-    width: 30vw;
-    height: 60vh;
-    background-color: rgb(201, 201, 201);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  width: 30vw;
+  height: 60vh;
+  background-color: rgb(201, 201, 201);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .user-div-info2 {
-    width: 30vw;
-    min-height: 20vh;
-    max-height: 50vh;
-    background-color: rgb(201, 201, 201);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  width: 30vw;
+  min-height: 20vh;
+  max-height: 50vh;
+  background-color: rgb(201, 201, 201);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .user-div-info2 h1 {
-    font-size: 1.5em;
-    margin: 20px;
-    position: absolute;
-    top: 1vh;
-    
+  font-size: 1.5em;
+  margin: 20px;
+  position: absolute;
+  top: 1vh;
 }
 
 .user-div-info2 button {
-    width: 15vw;
-    height: 5vh;
-    border-radius: 10px;
-    background-color:#3b385d;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    border: solid 2px black;
-    padding: 15px;
+  width: 15vw;
+  height: 5vh;
+  border-radius: 10px;
+  background-color: #3b385d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border: solid 2px black;
+  padding: 15px;
 }
 
 .user-div-info h1 {
-    font-size: 1.5em;
-    margin: 20px;
-    position: absolute;
-    top: 1vh;
-    
+  font-size: 1.5em;
+  margin: 20px;
+  position: absolute;
+  top: 1vh;
 }
 
 .user-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1vh;
-    position: relative;
-    top: 2vh;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+  position: relative;
+  top: 2vh;
 }
 
 .user-info h2 {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .user-info p {
-    width: 20vw;
-    border: solid 1px black;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 2vh;
-    background-color: rgb(236, 236, 236);
+  width: 20vw;
+  border: solid 1px black;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2vh;
+  background-color: rgb(236, 236, 236);
 }
 
-
 .logout {
-    width: 20vw;
-    height: 5vh;
-    background-color: red;
-    color: black;
-    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    border: solid 5px rgba(0, 0, 0, 0);
-    transition: all 0.1s;
-    border-radius: 10px;
+  width: 20vw;
+  height: 5vh;
+  background-color: red;
+  color: black;
+  text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border: solid 5px rgba(0, 0, 0, 0);
+  transition: all 0.1s;
+  border-radius: 10px;
 }
 
 .change-password-btn {
-    width: 20vw;
-    height: 5vh;
-    background-color: rgb(0, 132, 255);
-    color: black;
-    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    border: solid 5px rgba(0, 0, 0, 0);
-    transition: all 0.1s;
-    border-radius: 10px;
+  width: 20vw;
+  height: 5vh;
+  background-color: rgb(0, 132, 255);
+  color: black;
+  text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border: solid 5px rgba(0, 0, 0, 0);
+  transition: all 0.1s;
+  border-radius: 10px;
 }
 
 .change-password-btn:hover {
-    border: solid 5px black;
+  border: solid 5px black;
 }
 
 .logout:hover {
-    border: solid 5px black;
+  border: solid 5px black;
 }
 
 .user-div-superadmin {
-    width: 30vw;
-    height: 50vh;
-    background-color: rgb(201, 201, 201);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  width: 30vw;
+  height: 50vh;
+  background-color: rgb(201, 201, 201);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .user-div-admin {
-    width: 30vw;
-    min-height: 25vh;
-    max-height: 50vh;
-    background-color: rgb(201, 201, 201);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  width: 30vw;
+  min-height: 25vh;
+  max-height: 50vh;
+  background-color: rgb(201, 201, 201);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .user-div-admin h1 {
-    font-size: 1.5em;
-    margin: 20px;
-    position: absolute;
-    top: 1vh;
-    
+  font-size: 1.5em;
+  margin: 20px;
+  position: absolute;
+  top: 1vh;
 }
 
 .user-div-admin button {
-    width: 15vw;
-    height: 5vh;
-    background-color:#3b385d;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    border: solid 2px black;
-    transition: all 0.2s;
-    border-radius: 10px;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  width: 15vw;
+  height: 5vh;
+  background-color: #3b385d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border: solid 2px black;
+  transition: all 0.2s;
+  border-radius: 10px;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
 }
 
 .user-div-info2 button:hover {
-    background-color: #776092;
-    transition: all 0.2s;
-
+  background-color: #776092;
+  transition: all 0.2s;
 }
 .user-div-admin button:hover {
-    background-color: #776092;
-    
+  background-color: #776092;
 }
 
-
 .user-div-superadmin input {
-    width: 80%;
-    height: 40px;
-    margin: 10px;
-    border-radius: 10px;
-    border: solid 1px black;
-    padding: 10px;
-    font-size: 20px;
-    text-align: center;
+  width: 80%;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  border: solid 1px black;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
 }
 
 .user-div-superadmin h1 {
-    font-size: 1.5em;
-    margin: 20px;
-    position: absolute;
-    top: 1vh;
-    
+  font-size: 1.5em;
+  margin: 20px;
+  position: absolute;
+  top: 1vh;
 }
 
 .superadmin-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3vh;
-    position: relative;
-    top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  position: relative;
+  top: 2vh;
 }
 
 .user-div-superadmin button {
-    width: 15vw;
-    height: 5vh;
-    background-color:#3b385d;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    border: solid 2px black;
-    transition: all 0.2s;
-    border-radius: 10px;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  width: 15vw;
+  height: 5vh;
+  background-color: #3b385d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border: solid 2px black;
+  transition: all 0.2s;
+  border-radius: 10px;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
 }
 
 .user-div-superadmin button:hover {
-    background-color: #776092;
-    
+  background-color: #776092;
 }
 
 .fade-in {
-    animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
-  
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
 
-    to {
-      opacity: 1;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .superadmin-actions-give {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3vh;
-    position: relative;
-    top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  position: relative;
+  top: 2vh;
 }
 
 .superadmin-actions-deprive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3vh;
-    position: relative;
-    top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  position: relative;
+  top: 2vh;
 }
 
-.superadmin-actions-success, .superadmin-actions-error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3vh;
-    position: relative;
-    top: 2vh;
+.superadmin-actions-success,
+.superadmin-actions-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  position: relative;
+  top: 2vh;
 }
 
 .superadmin-actions-success p {
-    width: 20vw;
-    border: solid 1px black;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 2vh;
-    font-size: 1.2em;
-    background-color: #3b385d;
-    color: rgb(0, 223, 0);
+  width: 20vw;
+  border: solid 1px black;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2vh;
+  font-size: 1.2em;
+  background-color: #3b385d;
+  color: rgb(0, 223, 0);
 }
 
 .superadmin-actions-error p {
-    width: 20vw;
-    border: solid 1px black;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 2vh;
-    background-color: #3b385d;
-    color: red;
-    font-size: 1.2em;
+  width: 20vw;
+  border: solid 1px black;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2vh;
+  background-color: #3b385d;
+  color: red;
+  font-size: 1.2em;
 }
 
 .username-btn {
-    width: 45px;
-    height: 45px;
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    transition: all 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    position: relative;
-    left: 10px;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  position: relative;
+  left: 10px;
 }
 
 .username-btn:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .username-img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .username-div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-    left: 22.5px;
-    
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  left: 22.5px;
 }
 
 .user-div-username-body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .user-div-username-div {
-    width: 60vw;
-    height: 70vh;
-    background-color: white;
-    border-radius: 20px;
-    border: solid 5px #776092;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 1.5em;
-    -webkit-animation: scale-in-center 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: scale-in-center 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  width: 60vw;
+  height: 70vh;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #776092;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  -webkit-animation: scale-in-center 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .user-div-username-div-h1 {
-    position: relative;
-    top: -3vh;
+  position: relative;
+  top: -3vh;
 }
 
 .input {
-    width: 80%;
-    height: 60px;
-    margin: 10px;
-    border-radius: 10px;
-    border: solid 1px black;
-    padding: 10px;
-    font-size: 25px;
-    text-align: center;
-
+  width: 80%;
+  height: 60px;
+  margin: 10px;
+  border-radius: 10px;
+  border: solid 1px black;
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
 }
 
 .user-div-username-div-buttons {
-    width: 30vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .user-div-username-div-button-sure {
-    font-size: 1.2em;
-    width: 10vw;
-    height: 5vh;
-    background-color: rgb(0, 228, 0);
-    color: black;
+  font-size: 1.2em;
+  width: 10vw;
+  height: 5vh;
+  background-color: rgb(0, 228, 0);
+  color: black;
 }
 
 .user-div-username-div-button-sure:hover {
-    background-color: rgb(0, 255, 0);
+  background-color: rgb(0, 255, 0);
 }
 
 .user-div-username-div-button-back {
-    font-size: 1.2em;
-    width: 10vw;
-    height: 5vh;
-    background-color: rgb(202, 0, 0);
-    color: black;
+  font-size: 1.2em;
+  width: 10vw;
+  height: 5vh;
+  background-color: rgb(202, 0, 0);
+  color: black;
 }
 
 .user-div-username-div-button-back:hover {
-    background-color: rgb(255, 0, 0);
+  background-color: rgb(255, 0, 0);
 }
 
 .user-div-password-body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .user-div-password-div {
-    width: 60vw;
-    height: 70vh;
-    background-color: white;
-    border-radius: 20px;
-    border: solid 5px #776092;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 1.5em;
-    position: relative;
-    -webkit-animation: scale-in-center 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: scale-in-center 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  width: 60vw;
+  height: 70vh;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #776092;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  position: relative;
+  -webkit-animation: scale-in-center 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .close-btn {
-    width: 4vmin;
-    height: 4vmin;
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 3vmin;
-    color: black;
-    background-color: rgba(0, 0, 0, 0);
-    border: solid 1px black;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.1s;
+  width: 4vmin;
+  height: 4vmin;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 3vmin;
+  color: black;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 1px black;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.1s;
 }
 .close-btn:hover {
-    color: white;
-    background-color: black;
+  color: white;
+  background-color: black;
 }
 
-
 .Changepassword-btn {
-    width: 10vw;
-    height: 40px;
-    margin: 10px;
-    border-radius: 10px;
-    border: solid 1px black;
-    padding: 20px;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: #1b2947;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-
+  width: 10vw;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  border: solid 1px black;
+  padding: 20px;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #1b2947;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
 }
 
 .Changepassword-btn:hover {
-    background-color: #29447e;
+  background-color: #29447e;
 }
 
 .input-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
 }
 
 .user-div-password-div-ok {
-    width: 60vw;
-    height: 70vh;
-    background-color: white;
-    border-radius: 20px;
-    border: solid 5px #776092;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 1.5em;
-    position: relative;
+  width: 60vw;
+  height: 70vh;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #776092;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  position: relative;
 }
 
 .user-div-button {
-    height: 15vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* ----------------------------------------------
@@ -550,290 +548,286 @@
  * animation scale-in-center
  * ----------------------------------------
  */
- @-webkit-keyframes scale-in-center {
-    0% {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      opacity: 1;
-    }
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
   }
-  @keyframes scale-in-center {
-    0% {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      opacity: 1;
-    }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
-  
-
-  @media (max-width: 768px) {
-    .user-div-info {
-        width: 70vw;
-    }
-    
-    .user-div-info2 {
-        width: 70vw;
-    }
-
-    .user-div-info2 button {
-        font-size: 3vmin;
-        padding: 8px;
-        width: 35vw;
-        border-radius: 10px;
-    }
-
-    .user-info p {
-        width: 55vw;
-    }
-
-    .user-div-superadmin {
-        width: 70vw;
-    }
-    
-    .user-div-admin {
-        width: 70vw;
-    }
-
-    .user-div-superadmin button {
-        width: 35vw;
-        font-size: 3vmin;
-    }
-    
-    .user-div-admin button {
-        width: 35vw !important;
-        font-size: 3vmin !important;
-    }
-
-    .logout {
-        width: 70vw;
-        font-size: 1.4em;
-    }
-
-    .change-password-btn {
-        width: 70vw;
-        font-size: 1.4em;
-    }
-
-    .user-div-username-div {
-        width: 80vw;
-        font-size: 1em;
-    }
-
-    .user-div-username-div-buttons {
-        width: 50vw;
-    }
-
-    .user-div-username-div-button-sure {
-        font-size: 1.2em;
-        width: 20vw;
-    }
-    
-    .user-div-username-div-button-back {
-        font-size: 1.2em;
-        width: 20vw;
-    }
-
-    .user-div-password-div {
-        width: 80vw;
-        font-size: 1em;
-    }
-
-    .close-btn {
-        width: 7vmin;
-        height: 7vmin;
-        font-size: 5vmin;
-    }
-
-    .input-div {
-        width: 80%;
-    }
-
-    .Changepassword-btn {
-        width: 30vw;
-    }
-
-    .input {
-        height: 50px;
-    }
-
-    .superadmin-actions-success p {
-        width: 50vw;
-        font-size: 3vmin;
-    }
-
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
   }
-  .user-bookings {
-    margin-top: 20px;
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .user-bookings h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .user-div-info {
+    width: 70vw;
   }
-  
-  .user-bookings ul {
-    list-style-type: none;
-    padding: 0;
+
+  .user-div-info2 {
+    width: 70vw;
   }
-  
-  .user-bookings li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ccc;
-  }
-  .user-div-admin button {
-    width: 15vw;
-    height: 5vh;
-    background-color: #3b385d;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    border: solid 2px black;
-    transition: all 0.2s;
+
+  .user-div-info2 button {
+    font-size: 3vmin;
+    padding: 8px;
+    width: 35vw;
     border-radius: 10px;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  }
+
+  .user-info p {
+    width: 55vw;
+  }
+
+  .user-div-superadmin {
+    width: 70vw;
+  }
+
+  .user-div-admin {
+    width: 70vw;
+  }
+
+  .user-div-superadmin button {
+    width: 35vw;
+    font-size: 3vmin;
+  }
+
+  .user-div-admin button {
+    width: 35vw !important;
+    font-size: 3vmin !important;
+  }
+
+  .logout {
+    width: 70vw;
+    font-size: 1.4em;
+  }
+
+  .change-password-btn {
+    width: 70vw;
+    font-size: 1.4em;
+  }
+
+  .user-div-username-div {
+    width: 80vw;
+    font-size: 1em;
+  }
+
+  .user-div-username-div-buttons {
+    width: 50vw;
+  }
+
+  .user-div-username-div-button-sure {
+    font-size: 1.2em;
+    width: 20vw;
+  }
+
+  .user-div-username-div-button-back {
+    font-size: 1.2em;
+    width: 20vw;
+  }
+
+  .user-div-password-div {
+    width: 80vw;
+    font-size: 1em;
+  }
+
+  .close-btn {
+    width: 7vmin;
+    height: 7vmin;
+    font-size: 5vmin;
+  }
+
+  .input-div {
+    width: 80%;
+  }
+
+  .Changepassword-btn {
+    width: 30vw;
+  }
+
+  .input {
+    height: 50px;
+  }
+
+  .superadmin-actions-success p {
+    width: 50vw;
+    font-size: 3vmin;
+  }
+}
+.user-bookings {
+  margin-top: 20px;
+}
+
+.user-bookings h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.user-bookings ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-bookings li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+.user-div-admin button {
+  width: 15vw;
+  height: 5vh;
+  background-color: #3b385d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border: solid 2px black;
+  transition: all 0.2s;
+  border-radius: 10px;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
 }
 
 .user-div-admin button:hover {
-    background-color: #776092;
+  background-color: #776092;
 }
 .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 /* Modális tartalom */
 .modal {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 /* Modális tartalom */
 .modal-content {
-    width: 50vw;
-    height: 60vh;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative; /* A bezáró gomb pozicionálásához */
-    overflow-y: auto; /* Görgethetővé teszi a tartalmat */
+  width: 50vw;
+  height: 60vh;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* A bezáró gomb pozicionálásához */
+  overflow-y: auto; /* Görgethetővé teszi a tartalmat */
 }
 .modal-content h2 {
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
 }
 
 .modal-content p {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    color: #555;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #555;
 }
 
 /* Bezáró gomb (X) */
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5em;
-    cursor: pointer;
-    color: black;
-    background-color: transparent;
-    border: none;
-    outline: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .close-btn:hover {
-    color: red;
+  color: red;
 }
 .additional-button {
-
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #3b385d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #3b385d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .additional-button:hover {
-    background-color: #776092;
+  background-color: #776092;
 }
 .booking-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  /* Egyedi foglalási kártyák stílusa */
-  .booking-item {
-    flex: 1 1 calc(33.333% - 20px); /* Három oszlopos elrendezés */
-    max-width: 300px;
-    box-sizing: border-box;
-  }
-  
-  .booking-card {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    overflow-y: auto; /* Görgethetővé teszi a tartalmat */
-  }
-  
-  .booking-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Szöveg stílusok */
-  .booking-card p {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .booking-card p strong {
-    color: #555;
-  }
+/* Egyedi foglalási kártyák stílusa */
+.booking-item {
+  flex: 1 1 calc(33.333% - 20px); /* Három oszlopos elrendezés */
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.booking-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow-y: auto; /* Görgethetővé teszi a tartalmat */
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Szöveg stílusok */
+.booking-card p {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.booking-card p strong {
+  color: #555;
+}

@@ -34,7 +34,8 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px;
+  max-width: 300px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: white;

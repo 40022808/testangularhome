@@ -18,15 +18,25 @@
                     </div>
                 </div>
 
-                <!-- Hozzáad gomb -->
-                 <div class="buttons">
-                    <button (click)="product.id !== undefined && addToCart(product.id)">{{ "Hozzáad" | translate }}</button>
-                    <button (click)="goBack()">{{ "Vissza" | translate }}</button>
-                 </div>
-
-                <div *ngIf="itemAdded" class="success-message">
-                    Hozzáadva a kosárhoz!
+                <div class="quantity">
+                    <label for="quantity">{{ "Mennyiség" | translate }}:</label>
+                    <div class="quantity-controls">
+                        <button type="button" (click)="decreaseQuantity()">-</button>
+                        <span class="quantity-display">{{ quantity }}</span>
+                        <button type="button" (click)="increaseQuantity()">+</button>
+                    </div>
                 </div>
+            </div>
+            <!-- Hozzáad gomb -->
+            <div class="buttons">
+                <button (click)="product.id !== undefined && addToCart(product.id, quantity)">{{ "Hozzáad" |
+                    translate
+                    }}</button>
+                <button (click)="goBack()">{{ "Vissza" | translate }}</button>
+            </div>
+
+            <div *ngIf="itemAdded" class="success-message">
+                Hozzáadva a kosárhoz!
             </div>
         </div>
     </div>

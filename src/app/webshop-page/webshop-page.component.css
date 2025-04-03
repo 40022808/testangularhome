@@ -1,22 +1,19 @@
 .body {
   width: 100vw;
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: url("/assets/images/stars.png"),
-    linear-gradient(
-      to bottom,
-      #1b2947,
-      #1b2947,
-      #2b3152,
-      #3b385d,
-      #3b385d,
-      #4c4067,
-      #615383,
-      #776092
-    );
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-  background-position: center center, center center;
+  background: linear-gradient(
+    to bottom,
+    #d0d8e5,
+    #c2cde0,
+    #b5c2db,
+    #a8b7d6,
+    #9bacd1,
+    #8fa1cc,
+    #8296c7
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   gap: 10vh;
@@ -67,9 +64,7 @@ a {
   width: 17vw;
   height: 17vw;
   text-decoration: none;
-
 }
-
 
 .body button {
   position: absolute;
@@ -134,9 +129,11 @@ a {
   border-radius: 8px;
 }
 
-.name , .price {
+.name,
+.price {
   color: black;
-  text-shadow:  1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white,
+    -1px 1px 0 white;
 }
 
 .name {
@@ -186,7 +183,6 @@ a {
   background-color: #a71d2a; /* Darker red on hover */
 }
 
-
 @media (max-width: 768px) {
   .product-item {
     width: 35vw;
@@ -197,7 +193,7 @@ a {
     font-size: 3.5vmin;
     font-weight: bold;
   }
-  
+
   .price {
     font-size: 3.2vmin;
     color: whitesmoke;
@@ -214,12 +210,9 @@ a {
     height: 15vw;
   }
 
-  .name , .price {
+  .name,
+  .price {
     color: white;
-    text-shadow:  none;
+    text-shadow: none;
   }
-
-
 }
-
-
