@@ -121,7 +121,8 @@
     "EMAIL": "Email",
     "NO_BOOKINGS_FOUND": "Nem találhatók foglalások.",
     "VIEW_MY_BOOKINGS": "Saját foglalások",
-    "VIEW_ALL_BOOKINGS": "Összes foglalás"
+    "VIEW_ALL_BOOKINGS": "Összes foglalás",
+    "DELETE": "Törlés"
   },
   "Bookings": "Foglalások",
   "CART": {

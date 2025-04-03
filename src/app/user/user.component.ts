@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { BookingService } from '../booking.service';
+
+
 
 @Component({
   selector: 'app-user',
@@ -11,6 +13,7 @@ import { BookingService } from '../booking.service';
   styleUrl: './user.component.css',
 })
 export class UserComponent implements OnInit {
+  selectedBooking: any = null; // Property to hold the selected booking
   currentLang: string = 'en';
   userInfo: any = null;
   userRole: string = '';
@@ -25,12 +28,13 @@ export class UserComponent implements OnInit {
   newUsername: string = '';
   newPassword: string = '';
   oldPassword: string = '';
+  today: string = '';
   confirmPassword: string = '';
   usernameError: boolean = false;
   user_div_password_div_input_number: number = 1;
   oldPasswordError: boolean = false;
   oldPasswordincorrectError: boolean = false;
-  
+
 
   passwordError: boolean = false;
   passwordnullError: boolean = false;
@@ -48,17 +52,18 @@ export class UserComponent implements OnInit {
     '1': 'Admin',
     '2': 'Super Admin',
   };
-  http: any;
   userBookings: any[] = [];
   isBookingsModalOpen: boolean | undefined;
   allBookings: any[] = [];
-  isAllBookingsModalOpen: boolean =false;
-
+  isAllBookingsModalOpen: boolean = false;
+  availableTimes: string[] = [];
+  hours: string[] = [];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private apiService: ApiService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private http: HttpClient
   ) {
     this.route.params.subscribe((params) => {
       const lang = params['lang'];
@@ -68,11 +73,26 @@ export class UserComponent implements OnInit {
       }
     });
   }
+  isAdminOrSuperAdmin: boolean = false;
 
-  ngOnInit() {
-    /* this.router.navigate([this.currentLang, 'user']); */
+  ngOnInit(): void {
+
+
+
+    const token = localStorage.getItem('userToken');
+    if (!token) {
+      console.error('No token found. Redirecting to login.');
+      this.router.navigate(['/login']);
+    }
+    this.isAdminOrSuperAdmin = this.userRole === '1' || this.userRole === '2';
     this.getUserInfo();
   }
+  openModal(): void {
+    this.isAllBookingsModalOpen = true;
+  }
+
+
+
 
   getUserInfo() {
     const token = localStorage.getItem('userToken');
@@ -286,12 +306,12 @@ export class UserComponent implements OnInit {
   loadUserBookings() {
     const email = this.userInfo?.email;
     const role = this.userRole;
-  
+
     if (!email) {
       console.error('User email is not available.');
       return;
     }
-  
+
     this.apiService.getUserBookings(role, email).subscribe(
       (response: any) => {
         if (response.success) {
@@ -306,54 +326,80 @@ export class UserComponent implements OnInit {
       }
     );
   }
-  
-openBookingsModal() {
-  this.isBookingsModalOpen = true;
-  this.loadUserBookings(); // Foglalások betöltése
-}
 
-closeBookingsModal() {
-  this.isBookingsModalOpen = false;
-}
-openAllBookingsModal() {
-  this.isAllBookingsModalOpen = true;
-  this.loadAllBookings(); // Az összes foglalás betöltése
-}
-
-closeAllBookingsModal() {
-  this.isAllBookingsModalOpen = false;
-}
-loadAllBookings() {
-  const email = this.userInfo?.email;
-  const role = this.userRole;
-
-  if (!email) {
-    console.error('User email is not available.');
-    return;
+  openBookingsModal() {
+    this.isBookingsModalOpen = true;
+    this.loadUserBookings(); // Foglalások betöltése
   }
 
-  this.apiService.getAllBookings(role, email).subscribe(
-    (response: any) => {
-      if (response.success) {
-        // Rendezés dátum és idő szerint
-        this.allBookings = response.bookings.sort((a: any, b: any) => {
-          const dateA = new Date(`${a.date}T${a.time}`);
-          const dateB = new Date(`${b.date}T${b.time}`);
-          return dateA.getTime() - dateB.getTime(); // Növekvő sorrend
-        });
-        console.log('All bookings loaded:', this.allBookings);
-      } else {
-        console.error('Failed to load bookings:', response.message);
-      }
-    },
-    (error: any) => {
-      console.error('Error loading all bookings:', error);
+  closeBookingsModal() {
+    this.isBookingsModalOpen = false;
+  }
+  openAllBookingsModal() {
+    this.isAllBookingsModalOpen = true;
+    this.loadAllBookings(); // Az összes foglalás betöltése
+  }
+
+  closeAllBookingsModal() {
+    this.isAllBookingsModalOpen = false;
+  }
+  loadAllBookings() {
+    const email = this.userInfo?.email;
+    const role = this.userRole;
+
+    if (!email) {
+      console.error('User email is not available.');
+      return;
     }
-  );
+
+    this.apiService.getAllBookings(role, email).subscribe(
+      (response: any) => {
+        if (response.success) {
+          // Rendezés dátum és idő szerint
+          this.allBookings = response.bookings.sort((a: any, b: any) => {
+            const dateA = new Date(`${a.date}T${a.time}`);
+            const dateB = new Date(`${b.date}T${b.time}`);
+            return dateA.getTime() - dateB.getTime(); // Növekvő sorrend
+          });
+          console.log('All bookings loaded:', this.allBookings);
+        } else {
+          console.error('Failed to load bookings:', response.message);
+        }
+      },
+      (error: any) => {
+        console.error('Error loading all bookings:', error);
+      }
+    );
+  }
+  showAllBookedDates() {
+    console.log('All booked dates button clicked');
+    // Itt adhatsz hozzá logikát, például egy modális ablak megnyitását
+    alert('This will show all booked dates.');
+  }
+
+
+  deleteBooking(bookingId: string): void {
+    const token = localStorage.getItem('userToken'); // Token lekérése a localStorage-ból
+    if (!token) {
+      console.error('No token found. User is not authenticated.');
+      return;
+    }
+
+    const headers = { Authorization: `Bearer ${token}` };
+
+    this.http.delete(`http://localhost:8000/api/bookings/${bookingId}`, { headers }).subscribe(
+      (response: any) => {
+        console.log('Booking deleted successfully:', response);
+        this.loadAllBookings(); // Frissítsd a foglalások listáját
+      },
+      (error: any) => {
+        console.error('Error deleting booking:', error);
+      }
+    );
+  }
+  closeEditModal(): void {
+    this.selectedBooking = null; // Töröld a kiválasztott foglalást
+  }
+
 }
-showAllBookedDates() {
-  console.log('All booked dates button clicked');
-  // Itt adhatsz hozzá logikát, például egy modális ablak megnyitását
-  alert('This will show all booked dates.');
-}
-}
+

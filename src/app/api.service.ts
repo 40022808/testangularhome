@@ -122,5 +122,9 @@ removeCartItem(productId: number): Observable<any> {
     headers: { Authorization: `Bearer ${token}` },
   });
 }
+deleteBooking(bookingId: string): Observable<any> {
+  return this.http.delete(`http://localhost:8000/api/bookings/${bookingId}`);
+}
+
 }
 

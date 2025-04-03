@@ -3,8 +3,7 @@
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0);
   background-image: url("/assets/images/stars.png"),
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #1b2947,
       #1b2947,
       #2b3152,
@@ -12,8 +11,7 @@
       #3b385d,
       #4c4067,
       #615383,
-      #776092
-    );
+      #776092);
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-position: center center, center center;
@@ -23,6 +21,7 @@
   justify-content: center;
   gap: 10vh;
 }
+
 .container {
   display: flex;
   justify-content: space-evenly;
@@ -136,7 +135,7 @@ img {
 @media (max-width: 768px) {
   img {
     border-radius: 2rem;
-    width: 75vw;
+    width: 53vw;
     height: 35vw;
   }
 

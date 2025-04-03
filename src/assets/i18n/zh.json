@@ -121,7 +121,8 @@
     "EMAIL": "电子邮件",
     "NO_BOOKINGS_FOUND": "未找到预订。",
     "VIEW_MY_BOOKINGS": "查看我的预订",
-    "VIEW_ALL_BOOKINGS": "查看所有预订"
+    "VIEW_ALL_BOOKINGS": "查看所有预订",
+    "Delete": "删除"
   },
   "Bookings": "预订",
   "CART": {

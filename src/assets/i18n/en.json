@@ -121,7 +121,8 @@
     "EMAIL": "Email",
     "NO_BOOKINGS_FOUND": "No bookings found.",
      "VIEW_MY_BOOKINGS": "View My Bookings",
-    "VIEW_ALL_BOOKINGS": "View All Bookings"
+    "VIEW_ALL_BOOKINGS": "View All Bookings",
+    "DELETE": "Delete"
 
   },
   "Bookings": "Bookings",
