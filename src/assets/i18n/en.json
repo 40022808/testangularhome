@@ -161,7 +161,8 @@
     "UPDATE_ERROR": "An error occurred while updating the product.",
     "DELETE_SUCCESS": "Product deleted successfully.",
     "DELETE_ERROR": "An error occurred while deleting the product."
-  }
+  },
+  "Close":"Close"
   
 
 }

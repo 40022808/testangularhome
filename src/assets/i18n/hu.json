@@ -161,7 +161,8 @@
     "DELETE_SUCCESS": "A termék sikeresen törölve.",
     "DELETE_ERROR": "Hiba történt a termék törlése közben."
     
-  }
+  },
+  "Close": "Bezárás"
   
   
 }

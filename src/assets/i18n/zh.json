@@ -160,5 +160,6 @@
     "UPDATE_ERROR": "更新商品时发生错误。",
     "DELETE_SUCCESS": "商品删除成功。",
     "DELETE_ERROR": "删除商品时发生错误。"
-  }
+  },
+  "Close": "关闭"
 }
