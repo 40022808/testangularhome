@@ -35,7 +35,7 @@
             <button (click)="give()">{{ 'Give Admin' | translate }}</button>
             <button (click)="deprive()">{{ 'Deprive Admin' | translate }}</button>
             <button (click)="addProductPage()">{{ 'Product Management' | translate }}</button>
-            <button (click)="openAllBookingsModal()">{{ 'View All Bookings' | translate }}</button>
+            <button (click)="openAllBookingsModal()">{{ 'USER.VIEW_ALL_BOOKINGS' | translate }}</button>
 
         </div>
 
@@ -72,7 +72,7 @@
         <div class="superadmin-actions" [ngClass]="{'fade-in': currentStep === 1}" *ngIf="currentStep === 1">
             <button (click)="addProductPage()">{{ 'Product Management' | translate }}</button>
 
-            <button (click)="openAllBookingsModal()">{{ 'View All Bookings' | translate }}</button>
+            <button (click)="openAllBookingsModal()">{{ 'USER.VIEW_ALL_BOOKINGS' | translate }}</button>
         </div>
     </div>
 
@@ -103,10 +103,6 @@
     </div>
 
 
-    <div class="user-div-info2" *ngIf="userRole === '2' || userRole === '1'">
-        <h1>{{ 'All Bookings' | translate }}</h1>
-        <button (click)="openAllBookingsModal()">{{ 'USER.VIEW_ALL_BOOKINGS' | translate }}</button>
-    </div>
 
     <!-- Modális ablak a saját foglalásokhoz -->
     <div class="modal" *ngIf="isBookingsModalOpen">
