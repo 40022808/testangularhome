@@ -1,19 +1,19 @@
 .body {
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    #d0d8e5,
-    #c2cde0,
-    #b5c2db,
-    #a8b7d6,
-    #9bacd1,
-    #8fa1cc,
-    #8296c7
-  );
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-image: url("/assets/images/stars.png"),
+  linear-gradient(to bottom,
+    #1b2947,
+    #1b2947,
+    #2b3152,
+    #3b385d,
+    #3b385d,
+    #4c4067,
+    #615383,
+    #776092);
+background-size: auto, cover;
+background-repeat: repeat, no-repeat;
+background-position: center center, center center;
   display: flex;
   flex-direction: column;
   gap: 10vh;
@@ -104,7 +104,7 @@ a {
   height: 17vw;
   text-align: center;
   margin: 0 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -112,7 +112,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.144);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .product-item:hover {
   border: 1px solid transparent;
